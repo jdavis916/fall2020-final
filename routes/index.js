@@ -15,6 +15,39 @@ router
                 group: 'The whole class'
             });
 	})
+    .get('/contact', function(req, res, next) {
+        res.render('contact', 
+            { 
+                pageMainClass: 'contactUs',
+                title: 'Contact Us',
+                msg: 'Send Us Your Feedback:'
+            });
+    })
+    .get('/questionnaire', function(req, res, next) {
+        res.render('questionnaire', 
+            { 
+                pageMainClass: 'questionnaire',
+                title: 'Personality Questionnaire',
+                msg: 'Please answer honestly to ensure accurate results'  
+            });
+    })
+    .get('/advSearch', function(req, res, next) {
+        res.render('advSearch', 
+            { 
+                pageMainClass: 'advSearch',
+                title: 'Advanced Search',
+                msg: 'Select filters to apply:'
+            });
+    })
+    .get('/carList', function(req, res, next) {
+        res.render('carList', 
+            { 
+                pageMainClass: 'carList',
+                title: 'Car Catalogue',
+                msg: 'Browse our selection of automobiles...'
+            });
+    })
+
     /* POST user page. */
 	.post('/user', (req, res, next) =>{
 		/*console.log(req.body);*/
