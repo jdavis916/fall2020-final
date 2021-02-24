@@ -1,5 +1,6 @@
 import express from "express";
-import User from "../backend/models/UserModel"
+import ContactForm from "../backend/models/formModel"
+import QuestionForm from "../backend/models/questionForm"
 import mongoose from "mongoose";
 
 const router = express.Router();
@@ -49,23 +50,57 @@ router
     })
 
     /* POST user page. */
-	.post('/user', (req, res, next) =>{
-		/*console.log(req.body);*/
-		/*console.log(req.headers);*/
-        const user = new User({
+	.post('/formModel', (req, res, next) =>{
+        console.log(req.body);
+        /*console.log(req.headers);*/
+        const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            salary: req.body.salary
+            phone: req.body.phone,
+            subject: req.body.subject,
+            msg: req.body.msg
         });
-        /*res.status(200).json({
-            res: [req.body.firstName]
-        });*/
-        user.save()
+        //res.redirect(200, path)({
+        //    res: "Message recieved. Check for a response later."
+        //});
+        contactMsg.save()
         .then(result => {
+            //res.redirect(200, '/path')({
+            //    //res: "Message recieved. Check for a response later."
+            //});
             res.status(200).json({
-                docs:[user]
+                docs:[contactMsg]
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    })
+    .post('/questionForm', (req, res, next) =>{
+        console.log(req.body);
+        /*console.log(req.headers);*/
+        const questions = new QuestionForm({
+            _id: mongoose.Types.ObjectId(),
+            price: req.body.price,
+            seats: req.body.seats,
+            body_style: req.body.body_style,
+            personality: req.body.personality,
+            activity: req.body.activity,
+            driving: req.body.driving,
+            priority: req.body.priority
+        });
+        //res.redirect(200, path)({
+        //    res: "Message recieved. Check for a response later."
+        //});
+        questions.save()
+        .then(result => {
+            //res.redirect(200, '/path')({
+            //    //res: "Message recieved. Check for a response later."
+            //});
+            res.status(200).json({
+                docs:[questions]
             });
         })
         .catch(err => {
