@@ -3,11 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//this is a sanitize module that protects from xss attacks
 var xss = require('xss-clean');
 import mongoose from 'mongoose';
 import bodyparser from 'body-parser';
 import cors from 'cors';
-import mongoSanitize from "express-mongo-sanitize";
+//import mongoSanitize from "express-mongo-sanitize";
 var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 
@@ -19,9 +20,9 @@ var dbName = 'copFinal';
 
 //Loads the handlebars module
 const handlebars = require('express-handlebars');
-//sanitizes form data
-app.use(xss());
-app.use(mongoSanitize());
+//sanitizes form data, will add next time
+//app.use(xss());
+//app.use(mongoSanitize());
 //mongo connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/' + dbName, {
