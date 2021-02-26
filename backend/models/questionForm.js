@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 export const questionSchema = new Schema({
-    price: Number,
-    seats: Number,
+    price: String,
+    seats: String,
     body_style: String,
     personality: String,
     activity: String,

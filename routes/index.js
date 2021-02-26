@@ -2,11 +2,29 @@ import express from "express";
 import ContactForm from "../backend/models/formModel"
 import QuestionForm from "../backend/models/questionForm"
 import mongoose from "mongoose";
-//I will include working sanitization in the next push
-//import xss from 'xss-clean';
-//import mongoSanitize from "express-mongo-sanitize";
+const { body, validationResult } = require('express-validator');
 const router = express.Router();
-var errorMsg = "Cyberattack imminent";
+var errorMsg = "Prohibited characters detected in input";
+//variables storing express-validator arguments for .post
+//contact form
+var sanitizeArr = [
+    body('firstName').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('lastName').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('email').isEmail().normalizeEmail([{gmail_remove_dots: true}]).trim(),
+    body('phone').isNumeric([{no_symbols: true}]).trim(),
+    body('subject').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('msg').matches(/^[a-zA-Z0-9 ]*$/).trim()
+];
+//questionnaire form
+var sanitizeArr2 = [
+    body('price').isNumeric([{no_symbols: true}]).trim(),
+    body('seats').isNumeric([{no_symbols: true}]).trim(),
+    body('body_style').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('personality').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('activity').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('driving').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('priority').matches(/^[a-zA-Z0-9 ]*$/).trim()
+];
 //mock data for contact pulldown, update to pull from db later
 function getContactSubjects(){
     let subArr = [];
@@ -328,8 +346,15 @@ router
     })
 
     /* POST user page. */
-	.post('/formModel', (req, res, next) =>{
+	.post('/formModel', sanitizeArr,
+        (req, res, next) =>{
         console.log(req.body);
+        const errors = validationResult(req);
+        console.log(errors);
+        //returns error array if input fails check
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
         /*console.log(req.headers);*/
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
@@ -343,7 +368,6 @@ router
         //res.redirect(200, path)({
         //    res: "Message recieved. Check for a response later."
         //});
-        //I took this out for now; clarity's sake
         //if (Object.keys(contactMsg).length !== 7){
         //    //throw "Cyber attack uh-oh";
         //    throw new Error(errorMsg);
@@ -358,14 +382,20 @@ router
             });
         })
         .catch(err => {
-            res.status(200).json({
+            res.status(500).json({
                 errRes:[errorMsg]
             });
             console.log(err);
         });
     })
-    .post('/questionForm', (req, res, next) =>{
+    .post('/questionForm', sanitizeArr2,
+        (req, res, next) =>{
         console.log(req.body);
+        const errors = validationResult(req);
+        //returns error array if input fails check
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
         /*console.log(req.headers);*/
         const questions = new QuestionForm({
             _id: mongoose.Types.ObjectId(),
@@ -377,6 +407,7 @@ router
             driving: req.body.driving,
             priority: req.body.priority
         });
+        
         //res.redirect(200, path)({
         //    res: "Message recieved. Check for a response later."
         //});
