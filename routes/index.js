@@ -2,9 +2,43 @@ import express from "express";
 import ContactForm from "../backend/models/formModel"
 import QuestionForm from "../backend/models/questionForm"
 import mongoose from "mongoose";
-
+import xss from 'xss-clean';
+import mongoSanitize from "express-mongo-sanitize";
 const router = express.Router();
+var errorMsg = "Cyberattack imminent";
+//mock data for contact pulldown, update to pull from db later
+function getContactSubjects(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
 
+        },
+        {
+            _id:2,
+            title: Title2
+
+        },
+        {
+            _id:3,
+            title: Title3
+
+        },
+        {
+            _id:4,
+            title: Title4
+
+        },
+        {
+            _id:5,
+            title: Title5
+
+        }
+
+    ]
+
+}
 router
     /* GET home page. */
 	.get('/', function(req, res, next) {
@@ -16,12 +50,20 @@ router
                 group: 'The whole class'
             });
 	})
+    .get('/indivCar', function(req, res, next) {
+        res.render('indivCar', 
+            { 
+                pageMainClass: 'indivCar',
+                title: 'View Car Details',
+            });
+    })
     .get('/contact', function(req, res, next) {
         res.render('contact', 
             { 
                 pageMainClass: 'contactUs',
                 title: 'Contact Us',
-                msg: 'Send Us Your Feedback:'
+                msg: 'Send Us Your Feedback:',
+                formSubjects: getContactSubjects()
             });
     })
     .get('/questionnaire', function(req, res, next) {
@@ -65,6 +107,10 @@ router
         //res.redirect(200, path)({
         //    res: "Message recieved. Check for a response later."
         //});
+        //if (Object.keys(contactMsg).length !== 7){
+        //    //throw "Cyber attack uh-oh";
+        //    throw new Error(errorMsg);
+        //}
         contactMsg.save()
         .then(result => {
             //res.redirect(200, '/path')({
@@ -75,6 +121,9 @@ router
             });
         })
         .catch(err => {
+            res.status(200).json({
+                errRes:[errorMsg]
+            });
             console.log(err);
         });
     })
