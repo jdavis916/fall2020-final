@@ -40,6 +40,222 @@ function getContactSubjects(){
     ]
 
 }
+function getBrand(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getModel(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getMinimum(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getMaximum(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getMileage(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getInteriorColor(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getExteriorColor(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getFuel(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
+    function getDoor(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: Title1
+        },
+        {
+            _id:2,
+            title: Title2
+        },
+        {
+            _id:3,
+            title: Title3
+        },
+        {
+            _id:4,
+            title: Title4
+        },
+        {
+            _id:5,
+            title: Title5
+        }
+    ]
 router
     /* GET home page. */
 	.get('/', function(req, res, next) {
@@ -52,8 +268,8 @@ router
             });
 	})
     .get('/indivCar', function(req, res, next) {
-        res.render('indivCar', 
-            { 
+        res.render('indivCar',
+            {
                 pageMainClass: 'indivCar',
                 title: 'View Car Details',
                 msg: "Here's your car."
@@ -82,8 +298,20 @@ router
                 pageMainClass: 'advSearch',
                 title: 'Advanced Search',
                 msg: 'Select filters to apply:'
+                brands: getBrand(),
+                models: getModel(),
+                minimum: getMinimum(),
+                maximum: getMaximun(),
+                mileage: getMileage(),
+                interiorColor: getInteriorColor(),
+                exteriorColor: getExteriorColor(),
+                fuel: getFuel(),
+                door: getdoor()
+
             });
     })
+
+
     .get('/carList', function(req, res, next) {
         res.render('carList', 
             { 
