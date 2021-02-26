@@ -297,7 +297,7 @@ router
             { 
                 pageMainClass: 'advSearch',
                 title: 'Advanced Search',
-                msg: 'Select filters to apply:'
+                msg: 'Select filters to apply:',
                 brands: getBrand(),
                 models: getModel(),
                 minimum: getMinimum(),
