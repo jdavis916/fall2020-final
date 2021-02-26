@@ -34,11 +34,8 @@ function getContactSubjects(){
         {
             _id:5,
             title: Title5
-
         }
-
-    ]
-
+    ];
 }
 function getBrand(){
     let subArr = [];
@@ -64,6 +61,7 @@ function getBrand(){
             title: Title5
         }
     ];
+}
 function getModel(){
     let subArr = [];
     subArr = [
@@ -88,6 +86,7 @@ function getModel(){
             title: Title5
         }
     ];
+}
 function getMinimum(){
     let subArr = [];
     subArr = [
@@ -112,6 +111,7 @@ function getMinimum(){
             title: Title5
         }
     ];
+}
 function getMaximum(){
     let subArr = [];
     subArr = [
@@ -136,6 +136,7 @@ function getMaximum(){
             title: Title5
         }
     ];
+}
 function getMileage(){
     let subArr = [];
     subArr = [
@@ -160,6 +161,7 @@ function getMileage(){
             title: Title5
         }
     ];
+}
 function getInteriorColor(){
     let subArr = [];
     subArr = [
@@ -184,6 +186,7 @@ function getInteriorColor(){
             title: Title5
         }
     ];
+}
 function getExteriorColor(){
     let subArr = [];
     subArr = [
@@ -208,6 +211,7 @@ function getExteriorColor(){
             title: Title5
         }
     ];
+}
 function getFuel(){
     let subArr = [];
     subArr = [
@@ -232,6 +236,7 @@ function getFuel(){
             title: Title5
         }
     ];
+}
 function getDoor(){
     let subArr = [];
     subArr = [
@@ -255,7 +260,8 @@ function getDoor(){
             _id:5,
             title: Title5
         }
-    ]
+    ];
+}
 router
     /* GET home page. */
 	.get('/', function(req, res, next) {
