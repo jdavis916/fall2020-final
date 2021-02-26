@@ -63,8 +63,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getModel(){
+    ];
+function getModel(){
     let subArr = [];
     subArr = [
         {
@@ -87,8 +87,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getMinimum(){
+    ];
+function getMinimum(){
     let subArr = [];
     subArr = [
         {
@@ -111,8 +111,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getMaximum(){
+    ];
+function getMaximum(){
     let subArr = [];
     subArr = [
         {
@@ -135,8 +135,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getMileage(){
+    ];
+function getMileage(){
     let subArr = [];
     subArr = [
         {
@@ -159,8 +159,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getInteriorColor(){
+    ];
+function getInteriorColor(){
     let subArr = [];
     subArr = [
         {
@@ -183,8 +183,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getExteriorColor(){
+    ];
+function getExteriorColor(){
     let subArr = [];
     subArr = [
         {
@@ -207,8 +207,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getFuel(){
+    ];
+function getFuel(){
     let subArr = [];
     subArr = [
         {
@@ -231,8 +231,8 @@ function getBrand(){
             _id:5,
             title: Title5
         }
-    ]
-    function getDoor(){
+    ];
+function getDoor(){
     let subArr = [];
     subArr = [
         {
