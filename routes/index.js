@@ -31,254 +31,274 @@ function getContactSubjects(){
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
 
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
 
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
 
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
 
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getBrand(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getModel(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getMinimum(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getMaximum(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getMileage(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getInteriorColor(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getExteriorColor(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getFuel(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 function getDoor(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: Title1
+            title: "Title1"
         },
         {
             _id:2,
-            title: Title2
+            title: "Title2"
         },
         {
             _id:3,
-            title: Title3
+            title: "Title3"
         },
         {
             _id:4,
-            title: Title4
+            title: "Title4"
         },
         {
             _id:5,
-            title: Title5
+            title: "Title5"
         }
     ];
+
+    return subArr;
 }
 router
     /* GET home page. */
@@ -325,12 +345,12 @@ router
                 brands: getBrand(),
                 models: getModel(),
                 minimum: getMinimum(),
-                maximum: getMaximun(),
+                maximum: getMaximum(),
                 mileage: getMileage(),
                 interiorColor: getInteriorColor(),
                 exteriorColor: getExteriorColor(),
                 fuel: getFuel(),
-                door: getdoor()
+                door: getDoor()
 
             });
     })
