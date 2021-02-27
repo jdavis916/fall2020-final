@@ -1,11 +1,11 @@
-<main class="{{contactUs}}">
+<main class="{{pgMainClass}}">
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
 		<form>
 			<select name="subject">
 				{{#each formSubject}}
 					<option value="{{this.id}}">{{this.title}}</option>
-				{{#each}}
+				{{/each}}
 			</select>
 		</form>	
 </main>
