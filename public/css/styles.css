@@ -11,6 +11,20 @@ a {
 	color: #F00;
 }
 */
-.container {
+
+/*
+.col-lg {
 	text-align: center;
+	border: 10px solid black;
+
+}
+*/
+.mt-n1 {
+ padding: 1rem;
+ 
+}
+
+.pad1 {
+ padding-top: 1rem;
+ padding-bottom: 1rem;
 }
