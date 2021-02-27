@@ -1,4 +1,50 @@
 <main class="{{pgMainClass}}">
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
+
+		<form action="/" method="POST">
+            <select name="priceSlider">
+                {{#each priceSlider}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+      
+            <select name="seatSlider">
+                {{#each seatSlider}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+       
+            <select name="carType">
+                {{#each carType}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+    
+            <select name="personality">
+                {{#each personality}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+     
+            <select name="objective">
+                {{#each objective}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+   
+            <select name="drivingNeeds">
+                {{#each drivingNeeds}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+     
+            <select name="attributes">
+                {{#each attributes}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+        </form>  
+
 </main>
+
