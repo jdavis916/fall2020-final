@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 export const questionSchema = new Schema({
-    price: String,
-    seats: String,
-    body_style: String,
+    priceSlider: String,
+    seatSlider: String,
+    carType: String,
     personality: String,
-    activity: String,
-    driving: String,
-    priority: String
+    objective: String,
+    drivingNeeds: String,
+    attributes: String
 });
  // 
 var questionModel = mongoose.model("surveys", questionSchema);

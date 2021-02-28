@@ -57,28 +57,30 @@ function getContactSubjects(){
 
     return subArr;
 }
+
+// mock data for advanced seach dropdown options 
 function getBrand(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "Nissan"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Ford"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Chevrolet"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "Toyota"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "Kia"
         }
     ];
 
@@ -89,23 +91,23 @@ function getModel(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "Car"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Truck"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Cross over"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "Van"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "SUV"
         }
     ];
 
@@ -116,23 +118,23 @@ function getMinimum(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "0"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "1,000"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "5,000"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "10,000"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "20,000"
         }
     ];
 
@@ -143,23 +145,23 @@ function getMaximum(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "10,000 or less"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "20,000 or less"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "30,000 or less"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "40,000 or less"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "50,000 and over"
         }
     ];
 
@@ -170,23 +172,23 @@ function getMileage(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "0"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "20,000 or less"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "50,000 or less"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "100,000 or less"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "150,000 or less"
         }
     ];
 
@@ -197,23 +199,23 @@ function getInteriorColor(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "?????"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Black"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Pewter"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "White"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "grey"
         }
     ];
 
@@ -224,23 +226,23 @@ function getExteriorColor(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "?????"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Black"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Pewter"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "White"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "grey"
         }
     ];
 
@@ -251,23 +253,23 @@ function getFuel(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "Gas"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Diesel"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Bio diesel"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "Electric"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "Hybrid"
         }
     ];
 
@@ -278,28 +280,218 @@ function getDoor(){
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "2"
         },
         {
             _id:2,
-            title: "Title2"
+            title: "4"
         },
         {
             _id:3,
-            title: "Title3"
+            title: "6"
         },
         {
             _id:4,
-            title: "Title4"
+            title: "8"
         },
         {
             _id:5,
-            title: "Title5"
+            title: "10+"
         }
     ];
 
     return subArr;
 }
+
+
+
+// questionaire mock Q's and A's
+function getQuestionOne(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: "10,000"
+        },
+        {
+            _id:2,
+            title: "20,000"
+        },
+        {
+            _id:3,
+            title: "30,000"
+        },
+        {
+            _id:4,
+            title: "40,000"
+        },
+        {
+            _id:5,
+            title: "50,000"
+        } // add in other options later
+    ];
+
+    return subArr;
+}
+function getQuestionTwo(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: "2"
+        },
+        {
+            _id:2,
+            title: "4"
+        },
+        {
+            _id:3,
+            title: "6"
+        },
+        {
+            _id:4,
+            title: "8"
+        },
+        {
+            _id:5,
+            title: "10+"
+        } // add in other options later
+    ];
+
+    return subArr;
+}
+function getQuestionThree(){
+    let subArr= [];
+    subArr = [
+        {
+            _id:1,
+            title: "Sport"
+        },
+        {
+            _id:2,
+            title: "Sedan"
+        },
+        {
+            _id:3,
+            title: "SUV"
+        },
+        {
+            _id:4,
+            title: "Truck"
+        },
+        {
+            _id:5,
+            title: "Hachback etc."
+        } // add in other options later
+    ];
+
+    return subArr;
+}
+function getQuestionFour(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: "Personality type"
+        },
+        {
+            _id:2,
+            title: "Chill"
+        },
+        {
+            _id:3,
+            title: "Assertive"
+        },
+        {
+            _id:4,
+            title: "Short-tempered"
+        },
+        {
+            _id:5,
+            title: "Compassionate"
+        } // add in other options later
+    ];
+
+    return subArr;
+}
+function getQuestionFive(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: "Family roadtrips and outgoing"
+        },
+        {
+            _id:2,
+            title: "Going to music festivals"
+        },
+        {
+            _id:3,
+            title: "Commuting to work"
+        },
+        {
+            _id:4,
+            title: "Date nights for two"
+        } 
+    ];
+
+    return subArr;
+}
+function getQuestionSix(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: "Getting from point A to point B"
+        },
+        {
+            _id:2,
+            title: "Going fast"
+        },
+        {
+            _id:3,
+            title: "Being safe"
+        },
+        {
+            _id:4,
+            title: "Looking good while doing it"
+        },
+        {
+            _id:5,
+            title: "Having the ability to drive with groups"
+        } // add in other options later
+    ];
+
+    return subArr;
+}
+function getQuestionSeven(){
+    let subArr = [];
+    subArr = [
+        {
+            _id:1,
+            title: "Longevity: Car durability, Gas mileage/ Fuel efficiency"
+        },
+        {
+            _id:2,
+            title: "Versatility: Off-road and work use"
+        },
+        {
+            _id:3,
+            title: "Exterior Design: Look and style purely to impress"
+        },
+        {
+            _id:4,
+            title: "Internal design: Spacious and compact"
+        },
+        {
+            _id:5,
+            title: "Brand name manufacturing: American or foriegn made"
+        } // add in other options later
+    ];
+
+    return subArr;
+}
+
 router
     /* GET home page. */
 	.get('/', function(req, res, next) {
@@ -333,7 +525,17 @@ router
             { 
                 pageMainClass: 'questionnaire',
                 title: 'Personality Questionnaire',
-                msg: 'Please answer honestly to ensure accurate results'  
+                msg: 'Please answer honestly to ensure accurate results', 
+                priceSlider: getQuestionOne(),
+                seatSlider: getQuestionTwo(),
+                carType: getQuestionThree(),
+                personality: getQuestionFour(),
+                objective: getQuestionFive(),
+                drivingNeeds: getQuestionSix(),
+                attributes: getQuestionSeven()
+
+
+
             });
     })
     .get('/advSearch', function(req, res, next) {
