@@ -2,6 +2,7 @@ import express from "express";
 import ContactForm from "../backend/models/formModel"
 import QuestionForm from "../backend/models/questionForm"
 import mongoose from "mongoose";
+import axios from 'axios';
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
 var errorMsg = "Prohibited characters detected in input";
@@ -503,6 +504,14 @@ router
                 group: 'The whole class'
             });
 	})
+    .get('/about', function(req, res, next) {
+        res.render('about',
+            {
+                pageMainClass: 'about',
+                title: 'About Us...',
+                msg: "Meet the team!"
+            });
+    })
     .get('/indivCar', function(req, res, next) {
         res.render('indivCar',
             {
