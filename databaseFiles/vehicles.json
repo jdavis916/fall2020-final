@@ -1,0 +1,1292 @@
+({
+  "_id": 1,
+  "make": "Chevrolet",
+  "model": "Silverado 1500 LT",
+  "year": 2015,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    16,
+    22
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 2,
+  "make": "Ford",
+  "model": "F-150 XLT",
+  "year": 2019,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    18,
+    23
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 3,
+  "make": "Chevrolet",
+  "model": "Avalanche 1500 LT",
+  "year": 2013,
+  "body_type": "truck",
+  "fuel": "flex",
+  "mpgCityHwy": [
+    15,
+    21
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 4,
+  "make": "Cadillac",
+  "model": "Escalade EXT",
+  "year": 2010,
+  "body_type": "truck",
+  "fuel": "flex",
+  "mpgCityHwy": [
+    13,
+    20
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 5,
+  "make": "Ford",
+  "model": "F-150 Raptor",
+  "year": 2010,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    15,
+    18
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 6,
+  "make": "Nissan",
+  "model": "Frontier SV",
+  "year": 2011,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    17,
+    22
+  ],
+  "seats": 5,
+  "doors": 2
+},{
+  "_id": 7,
+  "make": "Toyota",
+  "model": "Tacoma TRD Sport",
+  "year": 2018,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    18,
+    22
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 8,
+  "make": "GMC",
+  "model": "Sierra 1500 SLE",
+  "year": 2015,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    16,
+    22
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 9,
+  "make": "Toyota",
+  "model": "Tundra",
+  "year": 2016,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    13,
+    17
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 10,
+  "make": "GMC",
+  "model": "Sierra 2500HD AT4",
+  "year": 2020,
+  "body_type": "truck",
+  "fuel": "diesel",
+  "mpgCityHwy": [
+    16,
+    22
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 11,
+  "make": "GMC",
+  "model": "Canyon",
+  "year": 2017,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    22,
+    30
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 12,
+  "make": "Honda",
+  "model": "Ridgeline",
+  "year": 2021,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    18,
+    24
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 13,
+  "make": "Jeep",
+  "model": "Gladiator",
+  "year": 2020,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    17,
+    22
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 14,
+  "make": "Nissan",
+  "model": "Titan",
+  "year": 2019,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    15,
+    21
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 15,
+  "make": "Ram",
+  "model": "1500 SLT Big Horn",
+  "year": 2018,
+  "body_type": "truck",
+  "fuel": "flex",
+  "mpgCityHwy": [
+    16,
+    23
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 16,
+  "make": "Ram",
+  "model": "2500 Power Wagon",
+  "year": 2015,
+  "body_type": "truck",
+  "fuel": "flex",
+  "mpgCityHwy": [
+    11,
+    15
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 17,
+  "make": "Rivian",
+  "model": "R1T",
+  "year": 2022,
+  "body_type": "truck",
+  "fuel": "electric",
+  "mpgCityHwy": "400 miles/charge",
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 18,
+  "make": "Hyundai",
+  "model": "Sonata",
+  "year": 2014,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    24,
+    35
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 19,
+  "make": "Chevrolet",
+  "model": "Malibu",
+  "year": 2013,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    25,
+    37
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 20,
+  "make": "Nissan",
+  "model": "Altima",
+  "year": 2016,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    27,
+    39
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 21,
+  "make": "Tesla",
+  "model": "Model 3",
+  "year": 2020,
+  "body_type": "sedan",
+  "fuel": "electric",
+  "mpgCityHwy": "353 miles/charge",
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 22,
+  "make": "Chevrolet",
+  "model": "Sonic",
+  "year": 2020,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    26,
+    34
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 23,
+  "make": "Kia",
+  "model": "K5",
+  "year": 2021,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    29,
+    38
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 24,
+  "make": "Dodge",
+  "model": "Charger R/T",
+  "year": 2015,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    16,
+    25
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 25,
+  "make": "Subaru",
+  "model": "Legacy",
+  "year": 2013,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    24,
+    32
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 26,
+  "make": "Volvo",
+  "model": "S60",
+  "year": 2014,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    21,
+    30
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 27,
+  "make": "Audi",
+  "model": "A4",
+  "year": 2018,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    27,
+    37
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 28,
+  "make": "Genesis",
+  "model": "G80",
+  "year": 2021,
+  "body_type": "luxury sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    23,
+    32
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 29,
+  "make": "Mitsubishi",
+  "model": "Mirage G4",
+  "year": 2021,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    35,
+    41
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 30,
+  "make": "Kia",
+  "model": "Cadenza",
+  "year": 2018,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    20,
+    28
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 31,
+  "make": "Lexus",
+  "model": "ES",
+  "year": 2016,
+  "body_type": "luxury sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    40,
+    39
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 32,
+  "make": "Lexus",
+  "model": "IS",
+  "year": 2013,
+  "body_type": "luxury sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    21,
+    30
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 33,
+  "make": "Dodge",
+  "model": "Dart SXT",
+  "year": 2014,
+  "body_type": "sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    23,
+    35
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 34,
+  "make": "Cadillac",
+  "model": "ATS",
+  "year": 2019,
+  "body_type": "luxury sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    22,
+    30
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 35,
+  "make": "Hyundai",
+  "model": "Azera",
+  "year": 2017,
+  "body_type": "luxury sedan",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    20,
+    28
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 36,
+  "make": "Ford",
+  "model": "Focus",
+  "year": 2016,
+  "body_type": "compact",
+  "fuel": "flex",
+  "mpgCityHwy": [
+    30,
+    42
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 37,
+  "make": "Toyota",
+  "model": "Prius",
+  "year": 2014,
+  "body_type": "compact",
+  "fuel": "hybrid",
+  "mpgCityHwy": [
+    51,
+    48
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 38,
+  "make": "Honda",
+  "model": "Civic",
+  "year": 2016,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    31,
+    42
+  ],
+  "seats": 5,
+  "doors": 2
+},{
+  "_id": 39,
+  "make": "Mazda",
+  "model": "3",
+  "year": 2014,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    30,
+    41
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 40,
+  "make": "Volkswagen",
+  "model": "Golf",
+  "year": 2017,
+  "body_type": "compact",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    25,
+    36
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 41,
+  "make": "Kia",
+  "model": "Forte",
+  "year": 2015,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    26,
+    39
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 42,
+  "make": "Hyundai",
+  "model": "Elantra",
+  "year": 2014,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    28,
+    38
+  ],
+  "seats": 5,
+  "doors": 2
+},{
+  "_id": 43,
+  "make": "Nissan",
+  "model": "Sentra",
+  "year": 2017,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    29,
+    37
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 44,
+  "make": "Subaru",
+  "model": "Impreza",
+  "year": 2020,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    28,
+    36
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 45,
+  "make": "Chevrolet",
+  "model": "Cruze",
+  "year": 2019,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    31,
+    48
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 46,
+  "make": "Toyota",
+  "model": "Yaris",
+  "year": 2017,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    30,
+    36
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 47,
+  "make": "Kia",
+  "model": "Rio",
+  "year": 2019,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    28,
+    37
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 48,
+  "make": "Audi",
+  "model": "A3",
+  "year": 2020,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    27,
+    36
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 49,
+  "make": "MINI",
+  "model": "Cooper",
+  "year": 2017,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    28,
+    38
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 50,
+  "make": "Nissan",
+  "model": "Leaf",
+  "year": 2015,
+  "body_type": "compact",
+  "fuel": "hybrid",
+  "mpgCityHwy": [
+    126,
+    101,
+    "84 miles battery-only"
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 51,
+  "make": "Subaru",
+  "model": "WRX",
+  "year": 2021,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    20,
+    27
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 52,
+  "make": "Chevrolet",
+  "model": "Spark",
+  "year": 2016,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    31,
+    41
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 53,
+  "make": "Ford",
+  "model": "C-Max Hybrid",
+  "year": 2018,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    42,
+    38
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 54,
+  "make": "Chevrolet",
+  "model": "Cobalt",
+  "year": 2010,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    25,
+    37
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 55,
+  "make": "Mitsubishi",
+  "model": "i-MiEV",
+  "year": 2016,
+  "body_type": "compact",
+  "fuel": "hybrid",
+  "mpgCityHwy": [
+    126,
+    99,
+    "62 miles battery-only"
+  ],
+  "seats": 4,
+  "doors": 4
+},{
+  "_id": 56,
+  "make": "Cadillac",
+  "model": "CT4",
+  "year": 2021,
+  "body_type": "luxury compact",
+  "fuel": "hybrid",
+  "mpgCityHwy": [
+    23,
+    34
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 57,
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2019,
+  "body_type": "compact",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    30,
+    40
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 58,
+  "make": "Subaru",
+  "model": "Forester",
+  "year": 2015,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    24,
+    32
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 59,
+  "make": "Chevrolet",
+  "model": "Equinox",
+  "year": 2018,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    28,
+    39
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 60,
+  "make": "Chevrolet",
+  "model": "Suburban",
+  "year": 2012,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    22,
+    29
+  ],
+  "seats": 8,
+  "doors": 4
+},{
+  "_id": 61,
+  "make": "Hyundai",
+  "model": "Santa Fe",
+  "year": 2020,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    15,
+    21
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 62,
+  "make": "Honda",
+  "model": "CR-V",
+  "year": 2014,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    23,
+    31
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 63,
+  "make": "Ford",
+  "model": "Espedition",
+  "year": 2013,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    14,
+    20
+  ],
+  "seats": 8,
+  "doors": 4
+},{
+  "_id": 64,
+  "make": "GMC",
+  "model": "Acadia",
+  "year": 2017,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    21,
+    26
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 65,
+  "make": "Toyota",
+  "model": "Sienna",
+  "year": 2021,
+  "body_type": "suv",
+  "fuel": "hybrid",
+  "mpgCityHwy": [
+    36,
+    36
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 66,
+  "make": "Nissan",
+  "model": "Quest",
+  "year": 2016,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    20,
+    27
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 67,
+  "make": "Kia",
+  "model": "Sedona",
+  "year": 2019,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    18,
+    24
+  ],
+  "seats": 8,
+  "doors": 4
+},{
+  "_id": 68,
+  "make": "Cadillac",
+  "model": "Escalade",
+  "year": 2020,
+  "body_type": "luxury suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    14,
+    23
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 69,
+  "make": "Tesla",
+  "model": "Model X",
+  "year": 2017,
+  "body_type": "luxury suv",
+  "fuel": "electric",
+  "mpgCityHwy": "350 miles/charge",
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 70,
+  "make": "Ford",
+  "model": "Explorer",
+  "year": 2016,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    19,
+    28
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 71,
+  "make": "Toyota",
+  "model": "RAV4",
+  "year": 2018,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    23,
+    30
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 72,
+  "make": "Subaru",
+  "model": "Crosstrek",
+  "year": 2016,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    26,
+    34
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 73,
+  "make": "Lexus",
+  "model": "RX",
+  "year": 2019,
+  "body_type": "luxury suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    26,
+    34
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 74,
+  "make": "Dodge",
+  "model": "Journey",
+  "year": 2020,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    19,
+    25
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 75,
+  "make": "Jeep",
+  "model": "Cherokee",
+  "year": 2015,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    22,
+    31
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 76,
+  "make": "Jeep",
+  "model": "Renegade",
+  "year": 2016,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    24,
+    31
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 77,
+  "make": "Audi",
+  "model": "Q7",
+  "year": 2015,
+  "body_type": "luxury suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    19,
+    28
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 78,
+  "make": "Ford",
+  "model": "Edge",
+  "year": 2013,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    19,
+    28
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 79,
+  "make": "Mazda",
+  "model": "CX-9",
+  "year": 2018,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    22,
+    28
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 80,
+  "make": "Lexus",
+  "model": "NX",
+  "year": 2015,
+  "body_type": "compact suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    22,
+    28
+  ],
+  "seats": 5,
+  "doors": 4
+},{
+  "_id": 81,
+  "make": "Kia",
+  "model": "Telluride",
+  "year": 2021,
+  "body_type": "suv",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    20,
+    26
+  ],
+  "seats": 7,
+  "doors": 4
+},{
+  "_id": 82,
+  "make": "Chevrolet",
+  "model": "Corvette",
+  "year": 2020,
+  "body_type": "sport",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    15,
+    27
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 83,
+  "make": "Toyota",
+  "model": "Supra",
+  "year": 2020,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    24,
+    31
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 84,
+  "make": "Chevrolet",
+  "model": "Camaro",
+  "year": 2017,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    22,
+    31
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 85,
+  "make": "Lexus",
+  "model": "LC",
+  "year": 2019,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    22,
+    31
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 86,
+  "make": "Audi",
+  "model": "R8",
+  "year": 2015,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    13,
+    22
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 87,
+  "make": "Mazda",
+  "model": "MX-5 Miata",
+  "year": 2016,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    27,
+    36
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 88,
+  "make": "Pontiac",
+  "model": "Fiero",
+  "year": 1988,
+  "body_type": "sport",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    21,
+    28
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 89,
+  "make": "Nissan",
+  "model": "GT-R",
+  "year": 2017,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    21,
+    28
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 90,
+  "make": "Ford",
+  "model": "Mustang Shelby GT500",
+  "year": 2021,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    12,
+    18
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 91,
+  "make": "Dodge",
+  "model": "Challenger",
+  "year": 2012,
+  "body_type": "sport",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    18,
+    27
+  ],
+  "seats": 5,
+  "doors": 2
+},{
+  "_id": 92,
+  "make": "Nissan",
+  "model": "370Z",
+  "year": 2018,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    19,
+    26
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 93,
+  "make": "Subaru",
+  "model": "BRZ",
+  "year": 2016,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    25,
+    34
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 94,
+  "make": "Honda",
+  "model": "Civic Type R",
+  "year": 2019,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    22,
+    28
+  ],
+  "seats": 4,
+  "doors": 4
+},{
+  "_id": 95,
+  "make": "Volkswagen",
+  "model": "Golf R",
+  "year": 2019,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    23,
+    30
+  ],
+  "seats": 4,
+  "doors": 4
+},{
+  "_id": 96,
+  "make": "Hyundai",
+  "model": "Veloster",
+  "year": 2015,
+  "body_type": "sport",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    27,
+    36
+  ],
+  "seats": 4,
+  "doors": 2
+},{
+  "_id": 97,
+  "make": "Kia",
+  "model": "Stinger",
+  "year": 2021,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    22,
+    29
+  ],
+  "seats": 4,
+  "doors": 4
+},{
+  "_id": 98,
+  "make": "Kia",
+  "model": "Stinger",
+  "year": 2022,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    18,
+    27
+  ],
+  "seats": 4,
+  "doors": 4
+},{
+  "_id": 99,
+  "make": "Tesla",
+  "model": "Roadster",
+  "year": 2021,
+  "body_type": "sport",
+  "fuel": "electric",
+  "mpgCityHwy": [
+    "620 miles/charge"
+  ],
+  "seats": 2,
+  "doors": 2
+},{
+  "_id": 100,
+  "make": "Audi",
+  "model": "TT",
+  "year": 2013,
+  "body_type": "sport",
+  "fuel": "premium",
+  "mpgCityHwy": [
+    "620 miles/charge"
+  ],
+  "seats": 2,
+  "doors": 2
+})
