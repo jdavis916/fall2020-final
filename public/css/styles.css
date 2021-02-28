@@ -13,7 +13,29 @@ a {
 */
 
 
+/*
+.col-lg {
+	text-align: center;
+	border: 10px solid black;
 
+}
+*/
+
+/*For advance page */
+.mt-n1 {
+    padding: 1rem;
+
+}
+
+.pad1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+/*
+.pb-2 {
+    padding-bottom: ($spacer * .5) !important;
+    padding-right: ($spacer * .5) !important;
+}*/
 
 /*card images */
 .gr-1{
