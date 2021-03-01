@@ -76,9 +76,11 @@ function getContactSubjects(){
 }
 
 // mock data for advanced seach dropdown options 
-function getBrand(){
+/*async function getBrand(){
     let subArr = [];
-    subArr = [
+    return await db.collection('vehicles').distinct('make');
+}*/
+/*    subArr = [
         {
             _id:1,
             title: "Nissan"
@@ -101,9 +103,9 @@ function getBrand(){
         }
     ];
 
-    return subArr;
-}
-async function getBodyTypes(req,res,next){
+    return subArr;*/
+
+/*async function getBodyTypes(req,res,next){
     let subArr = [];
     return await db.collection('vehicles').distinct('body_type');
     //return subArr;
@@ -115,7 +117,7 @@ async function getBodyTypes(req,res,next){
             return res;
             
         })*/
-   }   
+   //}
 
 
     //subArr.then(function(){
@@ -234,6 +236,10 @@ function getMpg(){
             _id:5,
             title: "40 +"
         },
+        {
+            _id:6,
+            title: "electric"
+        }
     ];
 
     return subArr;
@@ -292,7 +298,7 @@ function getExteriorColor(){
 
     return subArr;
 }
-function getFuel(){
+/*function getFuel(){
     let subArr = [];
     subArr = [
         {
@@ -318,8 +324,8 @@ function getFuel(){
     ];
 
     return subArr;
-}
-function getDoor(){
+}*/
+/*function getDoor(){
     let subArr = [];
     subArr = [
         {
@@ -345,7 +351,7 @@ function getDoor(){
     ];
 
     return subArr;
-}
+}*/
 
 
 
@@ -592,36 +598,49 @@ router
     })
     .get('/advSearch', async function(req, res,) {
         var returnObj = {};
-        var bodyTypes;  ///*await*/ getBodyTypes();
-        console.log(bodyTypes);
-        try{
-            returnObj = {
-            pageMainClass: 'advSearch',
-            title: 'Advanced Search',
-            msg: 'Select filters to apply:',
-            brands: getBrand(),
-            models: await db.collection('vehicles').distinct('body_type'),
-            minimum: getMinimum(),
-            maximum: getMaximum(),
-            mpg: getMpg(),
-            interiorColor: getInteriorColor(),
-            exteriorColor: getExteriorColor(),
-            fuel: getFuel(),
-            door: getDoor()
+        var make = db.collection('vehicles').distinct('make');
+        var bodyTypes = db.collection('vehicles').distinct('body_type');
+        var fuel = db.collection('vehicles').distinct('fuel');
+        var seat = db.collection('vehicles').distinct('seats');
+        var door = db.collection('vehicles').distinct('doors');
+        //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
+        Promise.all([make, bodyTypes, fuel, seat, door]).then((values) =>{
+            console.log(bodyTypes);
+            console.log(values[1]);
+            console.log(fuel);
+            console.log(values[2]);
+            console.log(make);
+            console.log(values[0]);
+            try{
+                returnObj = {
+                pageMainClass: 'advSearch',
+                title: 'Advanced Search',
+                msg: 'Select filters to apply:',
+                brands: values[0],//await db.collection('vehicles').distinct('make'),
+                models: values[1], //await db.collection('vehicles').distinct('body_type'),
+                minimum: getMinimum(),
+                maximum: getMaximum(),
+                mpg: getMpg(),
+                interiorColor: getInteriorColor(),
+                exteriorColor: getExteriorColor(),
+                fuel: values[2],
+                door: values[4],
+                seat: values[3]
 
-        }
-            //bodyTypes = await db.collection('vehicles').find().toArray();
-            //bodyTypes = await db.collection('vehicles').distinct('body_type');
-            console.log(getBodyTypes());
-            //vehicleDb.distinct('body_type'
-            
-        }catch(error){
-            res.status(500).json({
-                error: error.toString()
-            });
+                }
+                //bodyTypes = await db.collection('vehicles').find().toArray();
+                //bodyTypes = await db.collection('vehicles').distinct('body_type');
+                //console.log(getBodyTypes());
+                //vehicleDb.distinct('body_type'
+                
+            }catch(error){
+                res.status(500).json({
+                    error: error.toString()
+                });
 
-        }
-        res.render('advSearch', returnObj);//res.json({bodyTypes});
+            }
+        res.render('advSearch', returnObj);
+        })//res.json({bodyTypes});
     })
 
     .get('/carList', function(req, res, next) {

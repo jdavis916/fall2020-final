@@ -5,7 +5,7 @@
 		<form action="/" method="POST">
             <select name="brands">
                 {{#each brands}}
-                    <option value="{{this.id}}">{{this.title}}</option>
+                    <option value="{{this}}">{{this}}</option>
                 {{/each}}
             </select>
       
@@ -16,20 +16,25 @@
             </select>
      
             <select name="mpg">
-                {{#each mileage}}
+                {{#each mpg}}
                     <option value="{{this.id}}">{{this.title}}</option>
                 {{/each}}
             </select>
       
             <select name="fuel">
                 {{#each fuel}}
-                    <option value="{{this.id}}">{{this.title}}</option>
+                    <option value="{{this}}">{{this}}</option>
                 {{/each}}
             </select>
 
             <select name="door">
                 {{#each door}}
-                    <option value="{{this.id}}">{{this.title}}</option>
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <select name="seat">
+                {{#each seat}}
+                    <option value="{{this}}">{{this}}</option>
                 {{/each}}
             </select>
         </form>  
