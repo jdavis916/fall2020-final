@@ -1,11 +1,27 @@
 import express from "express";
-import ContactForm from "../backend/models/formModel"
-import QuestionForm from "../backend/models/questionForm"
+import ContactForm from "../backend/models/formModel";
+import QuestionForm from "../backend/models/questionForm";
+import vehicleDb from "../backend/models/vehicleData";
 import mongoose from "mongoose";
-import axios from 'axios';
+//import axios from 'axios';
+//var vehicleSchema = 
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
 var errorMsg = "Prohibited characters detected in input";
+var vehicles = mongoose.model('vehicles');
+var db = mongoose.connection;
+//var collection = db.collection('vehicles');
+
+//vehicles.find({"make" : "John" }, { phone : 1, _id : 0 }).toArray(function (err, result) {
+//    if (err) {
+//        console.log(err);
+//    } else if (result.length) {
+//        console.log(result);
+//    } else {
+//        socket.emit("No documents found");
+//    };
+//});
+//var bodyTypes = [vehicles.findOne({body_type:'truck'}), vehicles.findOne({body_type:'suv'}),vehicles.findOne({body_type:'sedan'}),vehicles.findOne({body_type:'compact'}),vehicles.findOne({body_type:'sports'})];
 //variables storing express-validator arguments for .post
 //contact form
 var sanitizeArr = [
@@ -87,33 +103,60 @@ function getBrand(){
 
     return subArr;
 }
-function getModel(){
+async function getBodyTypes(req,res,next){
     let subArr = [];
-    subArr = [
-        {
-            _id:1,
-            title: "Car"
-        },
-        {
-            _id:2,
-            title: "Truck"
-        },
-        {
-            _id:3,
-            title: "Cross over"
-        },
-        {
-            _id:4,
-            title: "Van"
-        },
-        {
-            _id:5,
-            title: "SUV"
-        }
-    ];
+    return await db.collection('vehicles').distinct('body_type');
+    //return subArr;
+  //  async function getData(){
+        //subArr = db.collection('vehicles').find().distinct( "body_style" );
+       /* 
+        await vehicleDb.distinct('body_type',(err, res) => {
+            console.log(res);
+            return res;
+            
+        })*/
+   }   
 
-    return subArr;
-}
+
+    //subArr.then(function(){
+    //    console.log(subArr)
+    //});
+  /*  subArr = vehicles.find({body_type:'truck'},{body_type:'suv'},{body_type:'sedan'},{body_type:'compact'},{body_type:'sports'}).toArray(function (err, result) {
+        if (err) {
+            console.log(err);
+        } else if (result.length) {
+            return result;
+        } else {
+            socket.emit("No documents found");
+        };
+    });*/
+    //console.log(result);
+    //
+    //subArr = [
+    //    {
+    //        _id:1,
+    //        title: bodyTypes[0]
+    //    },
+    //    {
+    //        _id:2,
+    //        title: bodyTypes[1]
+    //    },
+    //    {
+    //        _id:5,
+    //        title: bodyTypes[2]
+    //    },
+    //    {
+    //        _id:6,
+    //        title: bodyTypes[3]
+    //    },
+    //    {
+    //        _id:7,
+    //        title: bodyTypes[4]
+    //    }
+    //];
+    //console.log(subArr);
+    //return subArr;
+
 function getMinimum(){
     let subArr = [];
     subArr = [
@@ -168,29 +211,29 @@ function getMaximum(){
 
     return subArr;
 }
-function getMileage(){
+function getMpg(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "0"
+            title: "5-10"
         },
         {
             _id:2,
-            title: "20,000 or less"
+            title: "10-20"
         },
         {
             _id:3,
-            title: "50,000 or less"
+            title: "20-30"
         },
         {
             _id:4,
-            title: "100,000 or less"
+            title: "30-40"
         },
         {
             _id:5,
-            title: "150,000 or less"
-        }
+            title: "40 +"
+        },
     ];
 
     return subArr;
@@ -547,25 +590,39 @@ router
 
             });
     })
-    .get('/advSearch', function(req, res, next) {
-        res.render('advSearch', 
-            { 
-                pageMainClass: 'advSearch',
-                title: 'Advanced Search',
-                msg: 'Select filters to apply:',
-                brands: getBrand(),
-                models: getModel(),
-                minimum: getMinimum(),
-                maximum: getMaximum(),
-                mileage: getMileage(),
-                interiorColor: getInteriorColor(),
-                exteriorColor: getExteriorColor(),
-                fuel: getFuel(),
-                door: getDoor()
+    .get('/advSearch', async function(req, res,) {
+        var returnObj = {};
+        var bodyTypes;  ///*await*/ getBodyTypes();
+        console.log(bodyTypes);
+        try{
+            returnObj = {
+            pageMainClass: 'advSearch',
+            title: 'Advanced Search',
+            msg: 'Select filters to apply:',
+            brands: getBrand(),
+            models: await db.collection('vehicles').distinct('body_type'),
+            minimum: getMinimum(),
+            maximum: getMaximum(),
+            mpg: getMpg(),
+            interiorColor: getInteriorColor(),
+            exteriorColor: getExteriorColor(),
+            fuel: getFuel(),
+            door: getDoor()
 
+        }
+            //bodyTypes = await db.collection('vehicles').find().toArray();
+            //bodyTypes = await db.collection('vehicles').distinct('body_type');
+            console.log(getBodyTypes());
+            //vehicleDb.distinct('body_type'
+            
+        }catch(error){
+            res.status(500).json({
+                error: error.toString()
             });
-    })
 
+        }
+        res.render('advSearch', returnObj);//res.json({bodyTypes});
+    })
 
     .get('/carList', function(req, res, next) {
         res.render('carList', 

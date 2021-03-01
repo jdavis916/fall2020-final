@@ -11,36 +11,12 @@
       
             <select name="models">
                 {{#each models}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-       
-            <select name="minimum">
-                {{#each minimum}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-    
-            <select name="maximum">
-                {{#each maximum}}
-                    <option value="{{this.id}}">{{this.title}}</option>
+                    <option value="{{this}}">{{this}}</option>
                 {{/each}}
             </select>
      
-            <select name="mileage">
+            <select name="mpg">
                 {{#each mileage}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-   
-            <select name="interiorColor">
-                {{#each interiorColor}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-     
-            <select name="exteriorColor">
-                {{#each exteriorColor}}
                     <option value="{{this.id}}">{{this.title}}</option>
                 {{/each}}
             </select>

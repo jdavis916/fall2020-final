@@ -17,7 +17,8 @@ var app = express();
 
 //database name
 var dbName = 'copFinal';
-
+var dbConnection = mongoose.connection;
+//db.on('error', console.error.bind(console, 'MongoDB connection error.'));
 //Loads the handlebars module
 const handlebars = require('express-handlebars');
 //sanitizes form data, will add next time

@@ -8,7 +8,7 @@ export const contactSchema = new Schema({
     firstName: String,
     lastName: String,
     email: String,
-    phone: String,
+    phone: Number,
     subject: String,
     msg : String
 });
