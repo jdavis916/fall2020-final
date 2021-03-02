@@ -3,6 +3,7 @@
 		<p>{{msg}}</p>
 
 <form action="/" method="POST">
+  <!--
             <select name="brands">
                 {{#each brands}}
                     <option value="{{this.id}}">{{this.title}}</option>
@@ -55,8 +56,10 @@
                 {{#each door}}
                     <option value="{{this.id}}">{{this.title}}</option>
                 {{/each}}
-            </select>
+            </select> -->
         </form>
+
+        
 <!-- /.container -->
  <div class="container">
 <!-- /.row -->
@@ -64,26 +67,35 @@
      <div class="col-md-3 bg-info">
 
 <!-- /.Drop down button -->
-     	<div class="dropdown">
+ <!--    	<div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Brand
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
+  </button> -->
+  <label>Brand</label>
+  <div aria-labelledby="dropdownMenuButton">
+   <!-- <a class="dropdown-item" href="#">a</a>
     <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
+    <a class="dropdown-item" href="#">c</a> -->
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="brands">
+          {{#each brands}}
+            <option value="{{this.id}}">{{this.title}}</option>
+          {{/each}}
+      </select>
   </div>
-	</div>
 </div>
+<!-- </div> -->
 
   <div class="col-md-2 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Model
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
+
+      <label>Models</label>
+      <div aria-labelledby="dropdownMenuButton">
+
+      <select name="models">
+          {{#each models}}
+            <option value="{{this.id}}">{{this.title}}</option>
+          {{/each}}
+            </select>
+
       </div>
     </div>
 
@@ -94,90 +106,82 @@
    <div class="row pad1">
      <div class="col-md-4 bg-info">
 
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
+      <label>mileage</label>
+      <div aria-labelledby="dropdownMenuButton">
+
+      <select name="mileage">
+        {{#each models}}
+          <option value="{{this.id}}">{{this.title}}</option>
+        {{/each}}
+      </select>
+
+      </div>
 </div>
 
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
+<div class="col-md-4 bg-warning"><!-- /.Drop down button -->
+
+      <label>fuel</label>
+      <div aria-labelledby="dropdownMenuButton">
+
+      <select name="fuel">
+        {{#each fuel}}
+          <option value="{{this.id}}">{{this.title}}</option>
+        {{/each}}
+      </select>
+
       </div>
+</div>
+</div>
+
+<!-- /.row -->
+<div class="row pad1">
+  <div class="col-md-4 bg-info">
+    <label>door</label>
+    <div aria-labelledby="dropdownMenuButton">
+      <select name="door">
+          {{#each door}}
+        <option value="{{this.id}}">{{this.title}}</option>
+          {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
+    <label>Blank</label>
+    <div aria-labelledby="dropdownMenuButton">
+      <select name="door">
+          {{#each door}}
+        <option value="{{this.id}}">{{this.title}}</option>
+          {{/each}}
+      </select>
     </div>
 
 </div>
 </div>
 
+
 <!-- /.row -->
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
 
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
+<div class="row pad1">
+  <div class="col-md-4 bg-info">
+    <label>blank</label>
+    <div aria-labelledby="dropdownMenuButton">
+      <select name="door">
+        {{#each door}}
+      <option value="{{this.id}}">{{this.title}}</option>
+        {{/each}}
+      </select>
     </div>
-
-</div>
-</div>
-
-<!-- /.row -->
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
-
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
   </div>
-  </div>
-</div>
 
   <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
+   <label>blank</label>
+    <div aria-labelledby="dropdownMenuButton">
+      <select name="door">
+          {{#each door}}
+        <option value="{{this.id}}">{{this.title}}</option>
+          {{/each}}
+      </select>
     </div>
 
 </div>
