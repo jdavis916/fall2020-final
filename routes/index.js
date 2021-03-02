@@ -10,19 +10,23 @@ const router = express.Router();
 var errorMsg = "Prohibited characters detected in input";
 var vehicles = mongoose.model('vehicles');
 var db = mongoose.connection;
+var carMake;
+var carModel;
+var carMpg;
+var carFuelType;
+var carDoors;
+var carSeats;
+var carSurvPrice;
+var carSurvSeat;
+var carSurvBody;
+var myPersonality;
+var myObjective;
+var myDriving;
+var myAttrib;
 //var collection = db.collection('vehicles');
-
-//vehicles.find({"make" : "John" }, { phone : 1, _id : 0 }).toArray(function (err, result) {
-//    if (err) {
-//        console.log(err);
-//    } else if (result.length) {
-//        console.log(result);
-//    } else {
-//        socket.emit("No documents found");
-//    };
-//});
-//var bodyTypes = [vehicles.findOne({body_type:'truck'}), vehicles.findOne({body_type:'suv'}),vehicles.findOne({body_type:'sedan'}),vehicles.findOne({body_type:'compact'}),vehicles.findOne({body_type:'sports'})];
-//variables storing express-validator arguments for .post
+/*var document = 'advSearch.hbs';
+var formElement = document.querySelector('#adv');
+var formData = new FormData(formElement);*/
 //contact form
 var sanitizeArr = [
     body('firstName').matches(/^[a-zA-Z0-9 ]*$/).trim(),
@@ -42,6 +46,29 @@ var sanitizeArr2 = [
     body('driving').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('priority').matches(/^[a-zA-Z0-9 ]*$/).trim()
 ];
+var sanitizeArr3 = [
+    body('brands').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('models').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('minimum').isNumeric([{no_symbols: true}]).trim(),
+    body('maximum').isNumeric([{no_symbols: true}]).trim(),
+    body('mpg').isNumeric([{no_symbols: true}]).trim(),
+    body('fuel').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('door').isNumeric([{no_symbols: true}]).trim(),
+    body('seat').isNumeric([{no_symbols: true}]).trim()
+];
+/*pageMainClass: 'advSearch',
+                title: 'Advanced Search',
+                msg: 'Select filters to apply:',
+                brands: values[0],//await db.collection('vehicles').distinct('make'),
+                models: values[1], //await db.collection('vehicles').distinct('body_type'),
+                minimum: getMinimum(),
+                maximum: getMaximum(),
+                mpg: getMpg(),
+                interiorColor: getInteriorColor(),
+                exteriorColor: getExteriorColor(),
+                fuel: values[2],
+                door: values[4],
+                seat: values[3]*/
 //mock data for contact pulldown, update to pull from db later
 function getContactSubjects(){
     let subArr = [];
@@ -361,55 +388,55 @@ function getQuestionOne(){
     subArr = [
         {
             _id:1,
-            title: "10,000"
+            title: 10000
         },
         {
             _id:2,
-            title: "20,000"
+            title: 20000
         },
         {
             _id:3,
-            title: "30,000"
+            title: 30000
         },
         {
             _id:4,
-            title: "40,000"
+            title: 40000
         },
         {
             _id:5,
-            title: "50,000"
+            title: 50000
         } // add in other options later
     ];
 
     return subArr;
-}
+};
 function getQuestionTwo(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "2"
+            title: 2
         },
         {
             _id:2,
-            title: "4"
+            title: 4
         },
         {
             _id:3,
-            title: "6"
+            title: 6
         },
         {
             _id:4,
-            title: "8"
+            title: 8
         },
         {
             _id:5,
-            title: "10+"
+            title: 10
         } // add in other options later
     ];
 
     return subArr;
-}
+};
 function getQuestionThree(){
     let subArr= [];
     subArr = [
@@ -436,34 +463,30 @@ function getQuestionThree(){
     ];
 
     return subArr;
-}
+};
 function getQuestionFour(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "Personality type"
-        },
-        {
-            _id:2,
             title: "Chill"
         },
         {
-            _id:3,
+            _id:2,
             title: "Assertive"
         },
         {
-            _id:4,
+            _id:3,
             title: "Short-tempered"
         },
         {
-            _id:5,
+            _id:4,
             title: "Compassionate"
         } // add in other options later
     ];
 
     return subArr;
-}
+};
 function getQuestionFive(){
     let subArr = [];
     subArr = [
@@ -486,34 +509,29 @@ function getQuestionFive(){
     ];
 
     return subArr;
-}
+};
 function getQuestionSix(){
     let subArr = [];
     subArr = [
         {
-            _id:1,
             title: "Getting from point A to point B"
         },
         {
-            _id:2,
             title: "Going fast"
         },
         {
-            _id:3,
             title: "Being safe"
         },
         {
-            _id:4,
             title: "Looking good while doing it"
         },
         {
-            _id:5,
             title: "Having the ability to drive with groups"
         } // add in other options later
     ];
 
     return subArr;
-}
+};
 function getQuestionSeven(){
     let subArr = [];
     subArr = [
@@ -540,7 +558,7 @@ function getQuestionSeven(){
     ];
 
     return subArr;
-}
+};
 
 router
     /* GET home page. */
@@ -584,12 +602,12 @@ router
                 pageMainClass: 'questionnaire',
                 title: 'Personality Questionnaire',
                 msg: 'Please answer honestly to ensure accurate results', 
-                priceSlider: getQuestionOne(),
-                seatSlider: getQuestionTwo(),
+                price: getQuestionOne(),
+                seat: getQuestionTwo(),
                 carType: getQuestionThree(),
                 personality: getQuestionFour(),
-                objective: getQuestionFive(),
-                drivingNeeds: getQuestionSix(),
+                activity: getQuestionFive(),
+                driving: getQuestionSix(),
                 attributes: getQuestionSeven()
 
 
@@ -605,12 +623,12 @@ router
         var door = db.collection('vehicles').distinct('doors');
         //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
         Promise.all([make, bodyTypes, fuel, seat, door]).then((values) =>{
-            console.log(bodyTypes);
+            /*console.log(bodyTypes);
             console.log(values[1]);
             console.log(fuel);
             console.log(values[2]);
             console.log(make);
-            console.log(values[0]);
+            console.log(values[0]);*/
             try{
                 returnObj = {
                 pageMainClass: 'advSearch',
@@ -627,12 +645,7 @@ router
                 door: values[4],
                 seat: values[3]
 
-                }
-                //bodyTypes = await db.collection('vehicles').find().toArray();
-                //bodyTypes = await db.collection('vehicles').distinct('body_type');
-                //console.log(getBodyTypes());
-                //vehicleDb.distinct('body_type'
-                
+                }   
             }catch(error){
                 res.status(500).json({
                     error: error.toString()
@@ -651,17 +664,39 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
-
-    /* POST user page. */
+    .post('/forms/adv', sanitizeArr3, (req,res,next) =>{
+        //console.log(req.body);
+        var carMake= req.body.brands;
+        var carModel= req.body.models;
+        var carMpg= req.body.mpg;
+        var carFuelType= req.body.fuel;
+        var carDoors= req.body.door;
+        var carSeats= req.body.seat;
+        //};
+        
+        /*.then(result => {
+            //res.redirect(200, '/path')({
+            //    //res: "Message recieved. Check for a response later."
+            //});
+            res.status(200).json({
+                docs:[questions]
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });*/
+    })
+    /* POST contact form. */
 	.post('/formModel', sanitizeArr,
         (req, res, next) =>{
-        console.log(req.body);
+        //console.log(req.body);
         const errors = validationResult(req);
         console.log(errors);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+        
         /*console.log(req.headers);*/
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
@@ -695,24 +730,34 @@ router
             console.log(err);
         });
     })
-    .post('/questionForm', sanitizeArr2,
+    //info from survey form
+    .post('/questionForm'/*, sanitizeArr2*/,
         (req, res, next) =>{
-        console.log(req.body);
+        //console.log(req.body);
         const errors = validationResult(req);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        /*console.log(req.headers);*/
+        console.log(req.body);
+        var carSurvPrice= req.body.price;
+        var carSurvSeat= req.body.seats;
+        var carSurvBody= req.body.carType;
+        var myPersonality = req.body.personality;
+        var myObjective= req.body.activity;
+        var myDriving= req.body.driving;
+        var myAttrib= req.body.priority;
+        
+        
         const questions = new QuestionForm({
             _id: mongoose.Types.ObjectId(),
             price: req.body.price,
-            seats: req.body.seats,
-            body_style: req.body.body_style,
+            seat: req.body.seat,
+            carType: req.body.carType,
             personality: req.body.personality,
             activity: req.body.activity,
             driving: req.body.driving,
-            priority: req.body.priority
+            attributes: req.body.attributes
         });
         
         //res.redirect(200, path)({
@@ -731,5 +776,4 @@ router
             console.log(err);
         });
     });
-
 module.exports = router;
