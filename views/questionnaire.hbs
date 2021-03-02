@@ -17,8 +17,54 @@
   <br>
   <div class="form-group form-check">
 
-  </div>
 
+</form>
+		<form action="/questionForm" method="POST">
+            <select name="price">
+                {{#each price}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+
+            <select name="seat">
+                {{#each seat}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+
+            <select name="carType">
+                {{#each carType}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+
+            <select name="personality">
+                {{#each personality}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+
+            <select name="activity">
+                {{#each activity}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+
+            <select name="driving">
+                {{#each driving}}
+                    <option value={{this.title}}>{{this.title}}</option>
+                {{/each}}
+            </select>
+
+            <select name="attributes">
+                {{#each attributes}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+            </select>
+            <input type="submit" value="Submit">
+        </form>  
+<!--
+<form>
   <div class="dropdown-menu">
   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
     Dropdown button
@@ -117,8 +163,6 @@
   <button type="submit" class="btn btn-primary">Submit</button>
   <br>
 
-</form>
-
-
+</form>-->
 </main>
 

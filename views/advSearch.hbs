@@ -2,8 +2,7 @@
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
 
-<form action="/" method="POST">
-  <!--
+<form action="/forms/adv" method="POST">
             <select name="brands">
                 {{#each brands}}
                     <option value="{{this}}">{{this}}</option>
@@ -18,7 +17,7 @@
 
             <select name="mpg">
                 {{#each mpg}}
-                    <option value="{{this.id}}">{{this.title}}</option>
+                    <option value="{{this.title}}">{{this.title}}</option>
                 {{/each}}
             </select>
 
@@ -37,10 +36,9 @@
                 {{#each seat}}
                     <option value="{{this}}">{{this}}</option>
                 {{/each}}
-            </select> -->
+            </select>
+            <input type="submit" value="Submit">
         </form>
-
-        
 <!-- /.container -->
  <div class="container">
 <!-- /.row -->

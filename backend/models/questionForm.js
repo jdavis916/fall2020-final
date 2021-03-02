@@ -6,9 +6,9 @@ export const questionSchema = new Schema({
     seat: String,
     carType: String,
     personality: String,
-    activity: Array,
+    activity: String,
     driving: String,
-    attributes: Array
+    attributes: String
 });
  // 
 var questionModel = mongoose.model("surveys", questionSchema);
