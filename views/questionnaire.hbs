@@ -1,50 +1,126 @@
-<main class="{{pgMainClass}}">
+
+<main class="{{pageMainClass}}">
 		<h1>{{title}}</h1>
+		<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <br>
+  <div class="form-group form-check">
+
+  </div>
+  
+  <div class="dropdown-menu">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Link 1</a>
+    <a class="dropdown-item" href="#">Link 2</a>
+    <a class="dropdown-item" href="#">Link 3</a>
+  </div>
+</div>
+  <br>
+  <h4>How Many Car Seats?</h4>
+  <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Select
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">2</a>
+    <a class="dropdown-item" href="#">4</a>
+    <a class="dropdown-item" href="#">6</a>
+    <a class="dropdown-item" href="#">8</a>
+
+  </div>
+</div>
+<br>
+<h4>Car Type</h4>
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Select
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Suv</a>
+    <a class="dropdown-item" href="#">Sedan</a>
+    <a class="dropdown-item" href="#">Truck</a>
+    <a class="dropdown-item" href="#">HatchBack</a>
+    <a class="dropdown-item" href="#">Convertible</a>
+    <a class="dropdown-item" href="#">CrossOver</a>
+    <a class="dropdown-item" href="#">Hybrid</a>
+    <a class="dropdown-item" href="#">Sport Car</a>
+    <a class="dropdown-item" href="#">Pickup Truck</a>
+    <a class="dropdown-item" href="#">Minivan</a>
+    <a class="dropdown-item" href="#">Luxury Car</a>
+    <a class="dropdown-item" href="#">Used Car</a>
+  </div>
+</div>
+<br>
+<h4>What is your Personality like?</h4>
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Select
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Chilled</a>
+    <a class="dropdown-item" href="#">Assertive</a>
+    <a class="dropdown-item" href="#">Short-Tempered</a>
+    <a class="dropdown-item" href="#">Compassionate</a>
+    <a class="dropdown-item" href="#">Eco Friendly</a>
+    <a class="dropdown-item" href="#">Family Oriented</a>
+    <a class="dropdown-item" href="#">Atonomous</a>
+    <a class="dropdown-item" href="#">Likes To Impress</a>
+    <a class="dropdown-item" href="#">Here To Get The Job Done</a>
+  </div>
+</div>
+<br>
+<h4>What do you find yourself doing the most?</h4>
+<br>
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Select 
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Family Road Trip</a>
+    <a class="dropdown-item" href="#">Outings</a>
+    <a class="dropdown-item" href="#">Music Festivals</a>
+    <a class="dropdown-item" href="#">Commuting To Work</a>
+    <a class="dropdown-item" href="#">Date Night For Two</a>
+  </div>
+</div>
+<br>
+<h4>For You Driving Is?</h4>
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Select
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Getting From Point A to Point B</a>
+    <a class="dropdown-item" href="#">Going Fast</a>
+    <a class="dropdown-item" href="#">Being Safe</a>
+    <a class="dropdown-item" href="#">Looking Good</a>
+    <a class="dropdown-item" href="#">Being Able To Drive With Groups</a>
+  </div>
+</div>
+
+<br>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
+  
+</form>
+		
+
+
 		<p>{{msg}}</p>
-
-		<form action="/" method="POST">
-            <select name="priceSlider">
-                {{#each priceSlider}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-      
-            <select name="seatSlider">
-                {{#each seatSlider}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-       
-            <select name="carType">
-                {{#each carType}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-    
-            <select name="personality">
-                {{#each personality}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-     
-            <select name="objective">
-                {{#each objective}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-   
-            <select name="drivingNeeds">
-                {{#each drivingNeeds}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-     
-            <select name="attributes">
-                {{#each attributes}}
-                    <option value="{{this.id}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-        </form>  
-
 </main>
-
