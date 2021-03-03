@@ -5,20 +5,19 @@
 	<!-- <h1>{{title}}</h1>
 		<p>Welcome to {{msg}}</p>
 	 <h3>{{group}} is having a great day so far</h3> -->
-	<!--
+	
 	<form action="/" method="POST">
 		<select name="Brand">
 			{{#each brand}}
-			<option value="{{this}}">{{this}}</option>
+			<option value="{{this.title}}">{{this.title}}</option>
 			{{/each}}
 		</select>
 
 		<select name="Model">
 			{{#each model}}
-			<option value="{{this}}">{{this}}</option>
+			<option value="{{this.title}}">{{this.title}}</option>
 			{{/each}}
 		</select>
--->
     <!-- dropdown button brand -->
 	 <div class="dropdown">
 	 	<button type="button" class="dropbtn" data-toggle="dropdown">Brand</button>
