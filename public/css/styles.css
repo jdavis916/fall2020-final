@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #0F0;
+  background-color: #FFFFFF;
 }
 /*
 a {
@@ -11,3 +11,91 @@ a {
 	color: #F00;
 }
 */
+/* For home page */
+
+/* dropdown buttons */
+body { background-image: url("stockcar (1).png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+.dropbtn {
+  background-color: #FC8C78;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-family: arial, sans-serif;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FC8C78;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #FFFFFF;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #FFFFFF;}
+
+/* about us paragraph text */
+.p1 {
+	text-align: center;
+	font: 20px Arial 
+
+}
+
+/* find your next match header text */
+.h3 {
+	text-align: center;
+	font: Arial, bold;
+
+}
+/* about us header text */
+.h2 {
+	text-align: center;
+	font: Arial, bold;
+
+}
+
+/* button */
+.button {
+	background-color: #FC8C78; 
+  border: none;
+  color: #FC8C78;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+	background-color: #FC8C78;
+	color: #000000;
+	border: none;
+}
+.button1:hover {
+	background-color: #FC8C78;
+	color: #000000;
+	}
