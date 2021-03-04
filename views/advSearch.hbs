@@ -17,7 +17,7 @@
 
             <select name="mpg">
                 {{#each mpg}}
-                    <option value="{{this.title}}">{{this.title}}</option>
+                    <option value="{{this}}">{{this}}</option>
                 {{/each}}
             </select>
 
@@ -72,9 +72,9 @@
       <label>Models</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select name="models">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="models">
           {{#each models}}
-            <option value="{{this.id}}">{{this.title}}</option>
+            <option value="{{this}}">{{this}}</option>
           {{/each}}
             </select>
 
@@ -91,9 +91,9 @@
       <label>mileage</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select name="mileage">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="mileage">
         {{#each models}}
-          <option value="{{this.id}}">{{this.title}}</option>
+          <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
 
@@ -105,9 +105,9 @@
       <label>fuel</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select name="fuel">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="fuel">
         {{#each fuel}}
-          <option value="{{this.id}}">{{this.title}}</option>
+          <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
 
@@ -120,20 +120,20 @@
   <div class="col-md-4 bg-info">
     <label>door</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select name="door">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="door">
           {{#each door}}
-        <option value="{{this.id}}">{{this.title}}</option>
+        <option value="{{this}}">{{this}}</option>
           {{/each}}
       </select>
     </div>
   </div>
 
   <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <label>Blank</label>
+    <label>Seats</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select name="door">
-          {{#each door}}
-        <option value="{{this.id}}">{{this.title}}</option>
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="seats">
+          {{#each seat}}
+        <option value="{{this}}">{{this}}</option>
           {{/each}}
       </select>
     </div>
@@ -144,30 +144,30 @@
 
 <!-- /.row -->
 
-<div class="row pad1">
+<!--<div class="row pad1">
   <div class="col-md-4 bg-info">
     <label>blank</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select name="door">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="door">
         {{#each door}}
-      <option value="{{this.id}}">{{this.title}}</option>
+      <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
     </div>
-  </div>
+  </div>-->
 
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
+  <!--<div class="col-md-4 bg-warning">
    <label>blank</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select name="door">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="door">
           {{#each door}}
-        <option value="{{this.id}}">{{this.title}}</option>
+        <option value="{{this}}">{{this}}</option>
           {{/each}}
       </select>
     </div>
 
 </div>
-</div>
+</div>-->
 
 <!-- /.row -->
    <div class="row pad1">
