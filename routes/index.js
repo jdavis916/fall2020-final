@@ -1,14 +1,31 @@
 import express from "express";
 import ContactForm from "../backend/models/formModel";
 import QuestionForm from "../backend/models/questionForm";
-import vehicleDb from "../backend/models/vehicleData";
+import vehicleModel from "../backend/models/vehicleData";
 import mongoose from "mongoose";
+const url = require('url'); 
 //import axios from 'axios';
 //var vehicleSchema = 
+const vehicleSchema = {
+    make: String,
+    model: String,
+    year: Number,
+    body_type: String,
+    fuel: String,
+    mpgCityHwy: {
+        String,
+        String
+    },
+    seats: String,
+    doors: String
+    
+};
+var result = {};
+var search;
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
-var errorMsg = "Prohibited characters detected in input";
-var vehicles = mongoose.model('vehicles');
+var errorMsg = "error";
+//var vehicles = mongoose.model('vehicles', vehicleSchema);
 var db = mongoose.connection;
 
 //contact form
@@ -365,8 +382,9 @@ router
         res.render('indivCar',
             {
                 pageMainClass: 'indivCar',
-                title: 'View Car Details',
-                msg: "Here's your car."
+                title: 'Results',
+                err: {Error},
+                res: 'Theres supposed to be a car here...'
             });
     })
     .get('/contact', function(req, res, next) {
@@ -404,7 +422,8 @@ router
         var seat = db.collection('vehicles').distinct('seats');
         var door = db.collection('vehicles').distinct('doors');
         //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
-        Promise.all([make, bodyTypes, fuel, seat, door]).then((values) =>{
+        Promise.all([make, bodyTypes, fuel, seat, door])
+        .then((values) =>{
             /*console.log(bodyTypes);
             console.log(values[1]);
             console.log(fuel);
@@ -444,37 +463,43 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
-    .post('/forms/adv', sanitizeArr3, (req,res,next) =>{
-        //console.log(req.body);
-        var carMake= req.body.brands;
-        var carModel= req.body.models;
-        var carMpg= (req.body.mpg).toString();
-        var carFuelType= req.body.fuel;
-        var carDoors= req.body.door;
-        var carSeats= req.body.seat;
-        //db.collection('vehicles').find({'make': carMake},{:},{:})
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
+    .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
+        try{
+            
+            //console.log(req.body);
+            //var result= db.collection('vehicles').find({'make': carMake,'body_style': carModel,'fuel': carFuelType,'doors': carDoors,'seats': carSeats});
+            //db.collection('vehicles').find({'make': carMake},{'body_style': carModel},{'fuel': carFuelType},{'doors': carDoors},{'seats': carSeats}, (err, res) =>{
+            var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models},{fuel: req.body.fuel},{doors: req.body.door},{seats: req.body.seat}).toArray();
+            
+            //var carResult = JSON.stringify(result);
+            console.log(result); 
+            console.log('--stage 2--');
+            var carResult = Object.values(result).map(Object.values);
+            console.log(carResult);
+            console.log('---result callback---');    
+                        //console.log(result);
+            var resultObject = { 
+                pageMainClass: 'indivCar',
+                title: 'Result',
+                response: carResult
+            
+            //res.redirect(200, '/indivCar');
+            };
+            res.render('indivCar', resultObject); 
+                
         }
-        var search = db.collection('vehicles').find({'make': carMake},{'body_style': carModel},{'fuel': carFuelType},{'doors': carDoors},{'seats': carSeats});
-        console.log(search);
-    }).then(result =>{
-        res.status(200).json({
-                docs:[contactMsg]
-            });
-        })
-        .catch(err => {
+        catch(error){
             res.status(500).json({
-                errRes:[errorMsg]
-            });
-            console.log(err);
-        })
+                error: error.toString()
+            })
+        }
+    })          
     /* POST contact form. */
     .post('/formModel', sanitizeArr,
         (req, res, next) =>{
         //console.log(req.body);
         const errors = validationResult(req);
-        console.log(errors);
+        //console.log(errors);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
@@ -526,7 +551,7 @@ router
         
         
         //setting up variables for the personality function
-        global.survValue = function(carSurv){
+        /*global.survValue = function(carSurv){
             //using form data to construct a query
             var priceCount;
             var bodyCount;
@@ -565,7 +590,7 @@ router
                     });
                     console.log(err);
                 })
-        } 
+        } */
         
         const questions = new QuestionForm({
             _id: mongoose.Types.ObjectId(),
