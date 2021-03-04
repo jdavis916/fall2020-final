@@ -1,7 +1,7 @@
 <main class="{{pageMainClass}}">
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
-
+{{!--
 <form action="/forms/adv" method="POST">
             <select name="brands">
                 {{#each brands}}
@@ -39,6 +39,7 @@
             </select>
             <input type="submit" value="Submit">
         </form>
+        --}}
 <!-- /.container -->
  <div class="container">
 <!-- /.row -->
@@ -56,9 +57,11 @@
     <a class="dropdown-item" href="#">b</a>
     <a class="dropdown-item" href="#">c</a> -->
       <select class="btn btn-secondary dropdown-toggle btn-sm" name="brands">
-          {{#each brands}}
-            <option value="{{this.id}}">{{this.title}}</option>
-          {{/each}}
+
+          <option value="0"></option>
+          <option value="1">Brand 1</option>
+          <option value="2">Brand 2</option>
+          <option value="3">Brand 3</option>
       </select>
   </div>
 </div>

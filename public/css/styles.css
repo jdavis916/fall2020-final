@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #FFFFFF;
 }
@@ -7,6 +6,30 @@ body {
 /*Header and footer*/
 .bgcolor {
     background-color: #17B5F1;
+}
+
+h1{
+    font-size: 32px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Responsive*/
+
+@media all and (min-width: 576px){
+    h1{
+        font-size: 48px;
+    }
+}
+
+
+footer p{
+    font-size: 12px;
+}
+
+main{
+    padding: 50px 0;
 }
 
 /*rating for the header*/
@@ -98,16 +121,12 @@ body { background-image: url("stockcar (1).png");
 }
 
 /* find your next match header text */
-.h3 {
-	text-align: center;
-	font: Arial, bold;
 
-}
 /* about us header text */
-.h2 {
+h2, h3 {
 	text-align: center;
-	font: Arial, bold;
-
+	font-family: Arial, sans-serif;
+    font-weight: 700;
 }
 
 /* button */
@@ -292,13 +311,13 @@ body { background-image: url("stockcar (1).png");
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-*{
+/**{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
   font-family: 'Josefin Sans', sans-serif;
-}
+}*/
 
 .wrapper{
  /*position: absolute;
@@ -355,16 +374,52 @@ body { background-image: url("stockcar (1).png");
 #error_message{
   margin-bottom: 20px;
   background: #fe8b8e;
-  padding: 0px;
+  padding: 0;
   text-align: center;
   font-size: 14px;
   transition: all 0.5s ease;
 }
 .wrapper h3{
-  text-align: absolute;
+
 }
 .wrapper h4{
-  text-align: center{
+  text-align: center;
+}
+
+.figWrapper{
+
+    padding-left: 50px;
+}
+.figWrapper figure{
+
+}
+.figWrapper figure figcaption{
+    margin-bottom: 10px;
+}
+
+/*Responsive*/
+@media all and (min-width: 420px) and (max-width: 767px) {
+    .contactUs article{
+        padding-left: 15%;
+    }
+
+}
+@media all and (min-width: 768px) {
+    .figWrapper{
+        height: 100%;
+        padding-left: 50px;
+        text-align: center;
+    }
+    .figWrapper figure{
+        margin: 0 auto;
+        font-size: 24px;
+        text-align: left;
+        max-width: 272px;
+        margin-top: 40%;
+    }
+    .figWrapper figure figcaption{
+        margin-bottom: 15px;
+    }
 }
 /*Questionnaire*/
 

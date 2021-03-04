@@ -1,56 +1,46 @@
 <main class="{{pageMainClass}}">
     <h1>{{title}}</h1>
 
+<article class="row">
+        <section class="col-12 col-md-6">
 
-<div class="wrapper">
-    <h1>ContactUs</h1>
-    <div>
-        <br>
-        <h3>Phone Number</h3>
-        <br>
-        <br>
-        <h4>1-888-8888</h4>
-        <br>
-        <br>
-        <h3>Email</h3>
-        <br>
-        <br>
-        <h4>CarMatch@gmail.com</h4>
-        <br>
-        <br>
-        <h3>Address</h3>
-        <br>
-        <br>
-        <h4>1234 Sesame St, CA, 90666, San Bruno</h4>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2>Send Us A Message</h2>
-    <div id="error_message"></div>
-    <form id="myform">
-        <div class=input_field
-            <input type="text" placeholder="Name" id="name">
-        </div>
-        <div class="input_field">
-            <input type="text" placeholder="Subject" id="Subject">
-        </div>
-        <div class="input_field">
-            <input type="text" placeholder="Phone" id="Phone">
-        </div>
-        <div class="input_field">
-            <input type="text" placeholder="Email" id="Email">
-        </div>
-        <div class="input_field">
-            <textarea id="Message" placeholder="Message" ></textarea>
-        </div>
-        <div class="btn">
-            <input type="Submit">
-        </div>
-    </form>
+            <div class="figWrapper">
+                <figure>
+                    <figcaption>Phone Number</figcaption>
+                    <figcaption>1-888-8888</figcaption>
+                    <figcaption>Email</figcaption>
+                    <figcaption>CarMatch@gmail.com</figcaption>
+                    <figcaption>Address</figcaption>
+                    <figcaption>1234 Sesame St, CA, 90666, San Bruno</figcaption>
+                </figure>
+
+            </div>
+        </section>
+        <section class="col-12 col-md-6">
+            <div class="wrapper">
+            <h2>Send Us A Message</h2>
+            <!--<div id="error_message"></div>-->
+            <form id="formContact" class="formContact" action="#" method="#">
+                <div class=input_field>
+                    <input type="text" placeholder="Name" id="name">
+                </div>
+                <div class="input_field">
+                    <input type="text" placeholder="Subject" id="Subject">
+                </div>
+                <div class="input_field">
+                    <input type="text" placeholder="Phone" id="Phone">
+                </div>
+                <div class="input_field">
+                    <input type="text" placeholder="Email" id="Email">
+                </div>
+                <div class="input_field">
+                    <textarea id="Message" placeholder="Message" ></textarea>
+                </div>
+                <div class="btn">
+                    <input type="Submit">
+                </div>
+            </form>
+        </section>
+    </article>
 </main>
 
