@@ -68,106 +68,173 @@
             <input type="submit" value="Submit">
         </form>
 
--->{{--}}
-<form>
- <h5>Thank you for choosing CarMatch to help you find your next car.In order to help us we will need you to take a small Questionnaire to give us a heads up on what exactly it is your looking for. Please answer the questions below the best you can and with the answers you give us will help determine wich car best fits you. If you have any questions feel free to to contact us or visit us in person at your nearest CarMatch and we will make sure that one of our represenitives can help you.</h5>
-  <br>
-  <br>
-  <br>
+-->{{--}}<form>
+    <div id="wrapper">
+  <h1>Find Your Dream Car Today!</h1>
+  <p>Take this questionnaire to see what best suits you!</p>
+  
+  <form id="quiz">
+    <!-- Question 1 -->
+    <h2>How Many Seats Would You Like In The Car?</h2>
+    <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
+    <!-- The value is which answer the choice corresponds to. -->
+    <label><input type="radio" name="q1" value="c1">
+      2
+    </label><br />
+    <label><input type="radio" name="q1" value="c2">
+      4
+    </label><br />
+    <label><input type="radio" name="q1" value="c3">
+      6
+    </label><br />
+    <label><input type="radio" name="q1" value="c4">
+      8
+    </label><br />
+    <br>
 
-  <h4>How Many Car Seats Would I Like?</h4>
-  <div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Select
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">2</a>
-    <a class="dropdown-item" href="#">4</a>
-    <a class="dropdown-item" href="#">6</a>
-    <a class="dropdown-item" href="#">8</a>
-  </div>
+    <!-- Question 2 -->
+    <h2>What Car Type Are You Looking For?</h2>
+    <br>
+    <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
+    <label><input type="radio" name="q2" value="c1">
+      Sedan
+    </label><br />
+    <label><input type="radio" name="q2" value="c2">
+      SUV
+    </label><br />
+    <label><input type="radio" name="q2" value="c3">
+      Truck
+    </label><br />
+    <label><input type="radio" name="q2" value="c4">
+      Hatchback
+    </label><br />
+    <label><input type="radio" name="q2" value="c5">
+      Convertible
+    </label><br />
+    <label><input type="radio" name="q2" value="c6">
+      CrossOver
+    </label><br />
+    <label><input type="radio" name="q2" value="c7">
+      Hybrid
+    </label><br />
+    <label><input type="radio" name="q2" value="c8">
+      Sports Car
+    </label><br />
+    <label><input type="radio" name="q2" value="c9">
+      PickUpTruck
+    </label><br />
+    <label><input type="radio" name="q2" value="c10">
+      MiniVan
+    </label><br />
+    <label><input type="radio" name="q2" value="c11">
+      Luxury Car
+    </label><br />
+    <label><input type="radio" name="q2" value="c12">
+      Used Car
+    </label><br />
+    <br>
+    
+    <!-- Question 3 -->
+    <h2>What Is Your Personality Like?</h2>
+    <br>
+    <!-- Choices for the third question -->
+    <label><input type="radio" name="q3" value="c1">
+      Chilled
+    </label><br />
+    <label><input type="radio" name="q3" value="c2">
+      Assertive
+    </label><br />
+    <label><input type="radio" name="q3" value="c3">
+      Short-Tempered
+    </label><br />
+    <label><input type="radio" name="q3" value="c4">
+      Compassionate
+    </label><br />
+    <label><input type="radio" name="q3" value="c5">
+      Eco Friendly
+    </label><br />
+    <label><input type="radio" name="q3" value="c6">
+      Family Oriented
+    </label><br />
+    <label><input type="radio" name="q3" value="c7">
+      Autonomous
+    </label><br />
+    <label><input type="radio" name="q3" value="c8">
+      Likes To Impress
+    </label><br />
+    <label><input type="radio" name="q3" value="c9">
+      Here to Get The Job Done
+    </label><br />
+    <br>
+    
+    <!-- Question 4 -->
+    <h2>What Do You Find Yourself Doing Most?</h2>
+    <br>
+    <!-- Choices for the fourth question -->
+    <label><input type="radio" name="q4" value="c1">
+      Family Road Trip & Outings
+    </label><br />
+    <label><input type="radio" name="q4" value="c2">
+      Music Festivals
+    </label><br />
+    <label><input type="radio" name="q4" value="c3">
+      Commuting To Work
+    </label><br />
+    <label><input type="radio" name="q4" value="c4">
+      Date Night For Two
+    </label><br />
+    <br>
+     <!-- Question 5 -->
+    <h2>How Would You Describe Driving?</h2>
+    <br>
+    <!-- Choices for the Fifth question -->
+    <label><input type="radio" name="q4" value="c1">
+      Getting From Point A To Point B
+    </label><br />
+    <label><input type="radio" name="q4" value="c2">
+      Going Fast
+    </label><br />
+    <label><input type="radio" name="q4" value="c3">
+      Being Safe
+    </label><br />
+    <label><input type="radio" name="q4" value="c4">
+      Looking Good
+    </label><br />
+    <label><input type="radio" name="q4" value="c5">
+      Being Able To Drive With Groups
+    </label><br />
+    <br>
+      <!-- Question 6 -->
+    <h2>What Is Most Imporant To You In Your Next Car? What Is Your First Priority You Have When Looking For A Car?</h2>
+    <br>
+    <!-- Choices for the Sixth question -->
+    <label><input type="radio" name="q4" value="c1">
+      Longevity: Car Durability, Gas Mileage/Fuel Efficency
+    </label><br />
+    <label><input type="radio" name="q4" value="c2">
+      Versatility: Off-Road And Work Usage 
+    </label><br />
+    <label><input type="radio" name="q4" value="c3">
+      Exterior Design: Look And Style Purely To Impress
+    </label><br />
+    <label><input type="radio" name="q4" value="c4">
+      Internal Design: Spacious Or Compact
+    </label><br />
+    <label><input type="radio" name="q4" value="c1">
+      Brand Name & Manufacurting: Americna Made Or Foreign
+    </label><br />
+    <br>
+    <button type="submit" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
+  <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
+  </form>
+  
+  
+  <div id="answer">Your result will show up here!</div>
 </div>
-<br>
-<br>
-<h4>The Car Type That Im Looking For Is?</h4>
-<div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Select
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Suv</a>
-    <a class="dropdown-item" href="#">Sedan</a>
-    <a class="dropdown-item" href="#">Truck</a>
-    <a class="dropdown-item" href="#">HatchBack</a>
-    <a class="dropdown-item" href="#">Convertible</a>
-    <a class="dropdown-item" href="#">CrossOver</a>
-    <a class="dropdown-item" href="#">Hybrid</a>
-    <a class="dropdown-item" href="#">Sport Car</a>
-    <a class="dropdown-item" href="#">Pickup Truck</a>
-    <a class="dropdown-item" href="#">Minivan</a>
-    <a class="dropdown-item" href="#">Luxury Car</a>
-    <a class="dropdown-item" href="#">Used Car</a>
-  </div>
-</div>
-<br>
-<br>
-<h4>What is your Personality like?</h4>
-<div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Select
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Chilled</a>
-    <a class="dropdown-item" href="#">Assertive</a>
-    <a class="dropdown-item" href="#">Short-Tempered</a>
-    <a class="dropdown-item" href="#">Compassionate</a>
-    <a class="dropdown-item" href="#">Eco Friendly</a>
-    <a class="dropdown-item" href="#">Family Oriented</a>
-    <a class="dropdown-item" href="#">Atonomous</a>
-    <a class="dropdown-item" href="#">Likes To Impress</a>
-    <a class="dropdown-item" href="#">Here To Get The Job Done</a>
-  </div>
-</div>
-<br>
-<br>
-<h4>What do you find yourself doing the most?</h4>
-<div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Select 
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Family Road Trip</a>
-    <a class="dropdown-item" href="#">Outings</a>
-    <a class="dropdown-item" href="#">Music Festivals</a>
-    <a class="dropdown-item" href="#">Commuting To Work</a>
-    <a class="dropdown-item" href="#">Date Night For Two</a>
-  </div>
-</div>
-<br>
-<br>
-<h4>I Like Describing Driving As?</h4>
-<div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Select
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Getting From Point A to Point B</a>
-    <a class="dropdown-item" href="#">Going Fast</a>
-    <a class="dropdown-item" href="#">Being Safe</a>
-    <a class="dropdown-item" href="#">Looking Good</a>
-    <a class="dropdown-item" href="#">Being Able To Drive With Groups</a>
-  </div>
-</div>
-<br>
 
 
-        <div>
-          <input type="submit" name="submit">
-        </div>
-        <br>
-        <br>
-        <br>
-        </form>
+
+          </form>
 		<p>{{msg}}</p>
 </main>
 
