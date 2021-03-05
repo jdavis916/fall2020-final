@@ -417,6 +417,7 @@ h2, h3 {
 	  font-size: 1.5rem;
 	  font-weight: 300;
 	  text-transform: uppercase;
+	  border-bottom: none;
 	}
 	.Gcard .txt p {
 	  font-size: 0.7rem;
@@ -476,10 +477,13 @@ h2, h3 {
     background: #00000054;
     box-shadow: 0px 11px #ff00006b, 1px 22px #66b78d
 }
-.about {
+.About {
     text-align: center;
     color: gray;
-    padding: 40px
+    padding: 70px;
+    background-color: antiquewhite;
+    border-radius: 190px;
+
 }
 
 .title {
@@ -488,7 +492,7 @@ h2, h3 {
 }
 
 .desc {
-    color: #eaeaea;
+    color: #212529;
     font-weight: 300;
     font-size: 1.1em;
     line-height: 1.45em;
@@ -555,7 +559,7 @@ h2, h3 {
     box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
     position: relative;
     transition: transform .4s;
-    margin-left:100px;
+    margin-left:155px;
 }
 
 .fas,
