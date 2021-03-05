@@ -6,41 +6,51 @@
 		<p>Welcome to {{msg}}</p>
 	 <h3>{{group}} is having a great day so far</h3> -->
 
-	<form action="/" method="POST">
+	<!--<form action="/" method="POST">
 		<select name="Brand">
 			{{#each brand}}
-			<option value="{{this.title}}">{{this.title}}</option>
+			<option value="{{this}}">{{this}}</option>
 			{{/each}}
 		</select>
 
 		<select name="Model">
 			{{#each model}}
-			<option value="{{this.title}}">{{this.title}}</option>
+			<option value="{{this}}">{{this}}</option>
 			{{/each}}
-		</select>
+		</select> -->
+
+
+
     <!-- dropdown button brand -->
-	 <div class="dropdown">
-	 	<button type="button" class="dropbtn" data-toggle="dropdown">Brand</button>
-	 	<div class="dropdown-content">
-	 	<a href="#">Ford</a>
-	 	<a href="#">Honda</a>
-	 	<a href="#">Volvo</a>
-	 	 </div>
-	</div>
-	<!-- dropdown button model -->
-	<div class="dropdown">
-	 	<button class="dropbtn" data-toggle="dropdown">Model</button>
-	 	<div class="dropdown-content">
-	 	<a href="#">2021</a>
-	 	<a href="#">2020</a>
-	 	<a href="#">2019</a>
-	 </div>
-	</div> 
-	<button type="submit" class="btn">Search</button>
+    <form action="/indivCar" method="POST">
+		<div class="dropdown">
+		 	<button type="button" class="dropbtn" data-toggle="dropdown">Brand</button>
+		 	<div aria-labelledby="dropdownMenuButton">
+		    	<select class="btn btn-secondary dropdown-toggle btn-sm" name="brands">
+		          {{#each brands}}
+		            <option value="{{this}}">{{this}}</option>
+		          {{/each}}
+		      	</select>
+		  	</div>
+		</div>
+		<!-- dropdown button model -->
+		<div class="dropdown">
+		 	<button class="dropbtn" data-toggle="dropdown">Model</button>
+		 	<div aria-labelledby="dropdownMenuButton">
+	      		<select class="btn btn-secondary dropdown-toggle btn-sm" name="models">
+		          {{#each models}}
+		            <option value="{{this}}">{{this}}</option>
+	          	  {{/each}}
+	            </select>
+	      	</div>
+		</div> 
+		<button type="submit" class="btn">Search</button>
+	</form>
 		<h3> Find your next match! </h3>
 		<!--- Button redirects to questionnaire -->
 		<button onclick="window.location.href='/questionnaire'">Take Questionnaire</button>
 		<!-- About Us Section -->
 		<h2> About Us </h2>
-		<p>CarMatch is a family company that loves to help people find the car of their dreams. We can help you find a car that fits you best in an easy and fast way.</p> 
+		<p>CarMatch is a family company that loves to help people find the car of their dreams. We can help you find a car that fits you best in an easy and fast way.</p>
+
 </main>

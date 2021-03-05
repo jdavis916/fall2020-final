@@ -3,9 +3,9 @@ import ContactForm from "../backend/models/formModel";
 import QuestionForm from "../backend/models/questionForm";
 import vehicleModel from "../backend/models/vehicleData";
 import mongoose from "mongoose";
+
 const url = require('url');
-//import axios from 'axios';
-//var vehicleSchema = 
+
 const vehicleSchema = {
     make: String,
     model: String,
@@ -20,12 +20,12 @@ const vehicleSchema = {
     doors: String
 
 };
+
 var result = {};
 var search;
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
 var errorMsg = "error";
-//var vehicles = mongoose.model('vehicles', vehicleSchema);
 var db = mongoose.connection;
 
 //contact form
@@ -58,7 +58,10 @@ var sanitizeArr3 = [
     body('door').isNumeric([{no_symbols: true}]).trim(),
     body('seat').isNumeric([{no_symbols: true}]).trim()
 ];
-//mock data for contact pulldown, update to pull from db later
+
+
+
+//mock data for contact pulldown
 function getContactSubjects(){
     let subArr = [];
     subArr = [
@@ -90,8 +93,6 @@ function getContactSubjects(){
 
     return subArr;
 }
-
-
 
 
 
@@ -155,9 +156,7 @@ function getModel(){
 
 
 
-// mock data for advanced seach dropdown options
-
-
+// mock data for advanced seach dropdown o
 function getMinimum(){
     let subArr = [];
     subArr = [
@@ -300,11 +299,7 @@ function getExteriorColor(){
 
 
 
-
-
-
-
-// questionaire mock Q's and A's .......... delete later once added to .post
+// questionaire mock Q's and A's 
 function getPriceSlider(){
     let subArr = [];
     subArr = [
@@ -491,19 +486,38 @@ function getAttributes(){
     return subArr;
 }
 
+
+
+
 router
     /* GET home page. */
-    .get('/', function(req, res, next) {
-        res.render('index', 
-            { 
+    .get('/', async function(req, res,) {
+        var returnObj = {};
+        var make = db.collection('vehicles').distinct('make');
+        var bodyTypes = db.collection('vehicles').distinct('body_type');
+      
+        Promise.all([make, bodyTypes])
+        .then((values) =>{
+            
+            try{
+                returnObj = {
                 pageMainClass: 'pageMainHome',
                 title: 'COP Final Project',
-                msg: 'fun time',
-                group: 'The whole class',
-                brand: getBrand(),
-                model: getModel()
-            });
-	})
+                msg: 'Select filters to apply:',
+                brands: values[0], 
+                models: values[1],
+                }
+            }catch(error){
+                res.status(500).json({
+                    error: error.toString()
+                });
+
+            }
+        res.render('index', returnObj);
+        })//res.json({bodyTypes});
+    })
+
+
     .get('/about', function(req, res, next) {
         res.render('about',
             {
@@ -543,9 +557,6 @@ router
                 objective: getObjective(),
                 drivingNeeds: getDrivingNeeds(),
                 attributes: getAttributes()
-
-
-
             });
     })
     .get('/advSearch', async function(req, res,) {
@@ -588,7 +599,6 @@ router
         res.render('advSearch', returnObj);
         })//res.json({bodyTypes});
     })
-
     .get('/carList', function(req, res, next) {
         res.render('carList', 
             { 
@@ -597,12 +607,34 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
+
+
+
+
+
+
+
+    .post('/index', /*sanitizeArr3,*/async (req,res) => {
+        try{
+            var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models}).toArray();
+            console.log(result);
+            var carResult = Object.values(result).map(Object.values);
+            var resultObject = {
+                pageMainClass: 'pageMainHome',
+                title: 'Result',
+                response: carResult
+            };
+            res.render('Home Search', resultObject);
+
+        }
+        catch(error){
+            res.status(500).json({
+                error: error.toString()
+            })
+        }
+    })
     .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
         try{
-
-            //console.log(req.body);
-            //var result= db.collection('vehicles').find({'make': carMake,'body_style': carModel,'fuel': carFuelType,'doors': carDoors,'seats': carSeats});
-            //db.collection('vehicles').find({'make': carMake},{'body_style': carModel},{'fuel': carFuelType},{'doors': carDoors},{'seats': carSeats}, (err, res) =>{
             var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models},{fuel: req.body.fuel},{doors: req.body.door},{seats: req.body.seat}).toArray();
 
             //var carResult = JSON.stringify(result);
@@ -628,18 +660,14 @@ router
             })
         }
     })
-    /* POST contact form. */
     .post('/formModel', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);
-        //console.log(errors);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-
-        /*console.log(req.headers);*/
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
             firstName: req.body.firstName,
@@ -674,7 +702,6 @@ router
     })
     //info from survey form
     .post('/questionForm',(req, res, next) =>{
-
         //var carSurv = {};
         const errors = validationResult(req);
         //returns error array if input fails check
@@ -756,6 +783,4 @@ router
             console.log(err);
         })
     });
-
-//console.log(getQuestionFour().subArr[1].Title)
 module.exports = router;
