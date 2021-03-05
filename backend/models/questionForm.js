@@ -6,7 +6,10 @@ export const questionSchema = new Schema({
     seat: String,
     carType: String,
     personality: String,
-    activity: String,
+    activity: {
+    	String,
+    	String
+    },
     driving: String,
     attributes: String
 });

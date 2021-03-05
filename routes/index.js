@@ -1,17 +1,32 @@
 import express from "express";
 import ContactForm from "../backend/models/formModel";
 import QuestionForm from "../backend/models/questionForm";
-import vehicleDb from "../backend/models/vehicleData";
+import vehicleModel from "../backend/models/vehicleData";
 import mongoose from "mongoose";
+const url = require('url');
 //import axios from 'axios';
 //var vehicleSchema = 
+const vehicleSchema = {
+    make: String,
+    model: String,
+    year: Number,
+    body_type: String,
+    fuel: String,
+    mpgCityHwy: {
+        String,
+        String
+    },
+    seats: String,
+    doors: String
+
+};
+var result = {};
+var search;
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
-var errorMsg = "Prohibited characters detected in input";
-var vehicles = mongoose.model('vehicles');
+var errorMsg = "error";
+//var vehicles = mongoose.model('vehicles', vehicleSchema);
 var db = mongoose.connection;
-//var collection = db.collection('vehicles');
-
 
 //contact form
 var sanitizeArr = [
@@ -32,38 +47,44 @@ var sanitizeArr2 = [
     body('driving').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('priority').matches(/^[a-zA-Z0-9 ]*$/).trim()
 ];
-
-
-
-
-
+//advSearch form data sanitization
+var sanitizeArr3 = [
+    body('brands').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('models').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('minimum').isNumeric([{no_symbols: true}]).trim(),
+    body('maximum').isNumeric([{no_symbols: true}]).trim(),
+    body('mpg').isNumeric([{no_symbols: true}]).trim(),
+    body('fuel').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('door').isNumeric([{no_symbols: true}]).trim(),
+    body('seat').isNumeric([{no_symbols: true}]).trim()
+];
 //mock data for contact pulldown, update to pull from db later
 function getContactSubjects(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "Site Satisfaction"
 
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Business Inquiry"
 
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Suggestions"
 
         },
         {
             _id:4,
-            title: "Title4"
+            title: "Bug/Error reporting"
 
         },
         {
             _id:5,
-            title: "Title5"
+            title: "Other comments or concerns"
         }
     ];
 
@@ -74,7 +95,7 @@ function getContactSubjects(){
 
 
 
-// mock data for home page 
+// mock data for home page
 function getBrand(){
     let subArr = [];
     subArr = [
@@ -134,7 +155,7 @@ function getModel(){
 
 
 
-// mock data for advanced seach dropdown options 
+// mock data for advanced seach dropdown options
 
 
 function getMinimum(){
@@ -196,23 +217,23 @@ function getMpg(){
     subArr = [
         {
             _id:1,
-            title: "5-10"
+            title: "10"
         },
         {
             _id:2,
-            title: "10-20"
+            title: "20"
         },
         {
             _id:3,
-            title: "20-30"
+            title: "30"
         },
         {
             _id:4,
-            title: "30-40"
+            title: "40"
         },
         {
             _id:5,
-            title: "40 +"
+            title: "50 and above"
         },
         {
             _id:6,
@@ -324,15 +345,15 @@ function getSeatSlider(){
         },
         {
             _id:3,
-            title: "6"
+            title: "5"
         },
         {
             _id:4,
-            title: "8"
+            title: "7"
         },
         {
             _id:5,
-            title: "10+"
+            title: "8"
         } // add in other options later
     ];
 
@@ -359,7 +380,7 @@ function getCarType(){
         },
         {
             _id:5,
-            title: "Hachback etc."
+            title: "Compact"
         } // add in other options later
     ];
 
@@ -472,7 +493,7 @@ function getAttributes(){
 
 router
     /* GET home page. */
-	.get('/', function(req, res, next) {
+    .get('/', function(req, res, next) {
         res.render('index', 
             { 
                 pageMainClass: 'pageMainHome',
@@ -495,8 +516,9 @@ router
         res.render('indivCar',
             {
                 pageMainClass: 'indivCar',
-                title: 'View Car Details',
-                msg: "Here's your car."
+                title: 'Results',
+                err: {Error},
+                res: 'Theres supposed to be a car here...'
             });
     })
     .get('/contact', function(req, res, next) {
@@ -534,13 +556,14 @@ router
         var seat = db.collection('vehicles').distinct('seats');
         var door = db.collection('vehicles').distinct('doors');
         //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
-        Promise.all([make, bodyTypes, fuel, seat, door]).then((values) =>{
-            console.log(bodyTypes);
+        Promise.all([make, bodyTypes, fuel, seat, door])
+        .then((values) =>{
+            /*console.log(bodyTypes);
             console.log(values[1]);
             console.log(fuel);
             console.log(values[2]);
             console.log(make);
-            console.log(values[0]);
+            console.log(values[0]);*/
             try{
                 returnObj = {
                 pageMainClass: 'advSearch',
@@ -551,15 +574,11 @@ router
                 minimum: getMinimum(),
                 maximum: getMaximum(),
                 mpg: getMpg(),
-                interiorColor: getInteriorColor(),
-                exteriorColor: getExteriorColor(),
                 fuel: values[2],
                 door: values[4],
                 seat: values[3]
 
                 }
-                
-                
             }catch(error){
                 res.status(500).json({
                     error: error.toString()
@@ -578,17 +597,48 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
+    .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
+        try{
 
-    /* POST user page. */
-	.post('/formModel', sanitizeArr,
+            //console.log(req.body);
+            //var result= db.collection('vehicles').find({'make': carMake,'body_style': carModel,'fuel': carFuelType,'doors': carDoors,'seats': carSeats});
+            //db.collection('vehicles').find({'make': carMake},{'body_style': carModel},{'fuel': carFuelType},{'doors': carDoors},{'seats': carSeats}, (err, res) =>{
+            var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models},{fuel: req.body.fuel},{doors: req.body.door},{seats: req.body.seat}).toArray();
+
+            //var carResult = JSON.stringify(result);
+            console.log(result);
+            console.log('--stage 2--');
+            var carResult = Object.values(result).map(Object.values);
+            console.log(carResult);
+            console.log('---result callback---');
+                        //console.log(result);
+            var resultObject = {
+                pageMainClass: 'indivCar',
+                title: 'Result',
+                response: carResult
+
+            //res.redirect(200, '/indivCar');
+            };
+            res.render('indivCar', resultObject);
+
+        }
+        catch(error){
+            res.status(500).json({
+                error: error.toString()
+            })
+        }
+    })
+    /* POST contact form. */
+    .post('/formModel', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);
-        console.log(errors);
+        //console.log(errors);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+
         /*console.log(req.headers);*/
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
@@ -622,15 +672,60 @@ router
             console.log(err);
         });
     })
-    .post('/questionForm', sanitizeArr2,
-        (req, res, next) =>{
-        console.log(req.body);
+    //info from survey form
+    .post('/questionForm',(req, res, next) =>{
+
+        //var carSurv = {};
         const errors = validationResult(req);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        /*console.log(req.headers);*/
+        //console.log(req.body);
+
+
+        //setting up variables for the personality function
+        /*global.survValue = function(carSurv){
+            //using form data to construct a query
+            var priceCount;
+            var bodyCount;
+            //personality function will be completed later
+            var carScore;
+            var bodyLower = (req.body.carType).toLowerCase();
+            if ((req.body.price <= 50000 )){
+                priceCount = req.body.price/10000;
+            }else if((req.body.price <= 50000 && )) {
+                priceCount = 6;
+                bodyLower = 'luxury' + (req.body.carType).toLowerCase();
+            };
+            if ((req.body.personality ===  )){
+            } else if{
+            } else if{
+
+            } else if{
+
+            } else if{
+
+            };
+
+            async (function(req,res,err){
+                var resCar = db.collection('vehicles').findById(6);
+                //var resCar = db.collection('vehicles').find({'key': valueVariable},{:});
+                Promise(resCar);
+            })
+                .then(result => {
+                    res.status(200).json({
+                        docs:[resCar]
+                    })
+                })
+                .catch(err => {
+                    res.status(500).json({
+                    errRes:[errorMsg]
+                    });
+                    console.log(err);
+                })
+        } */
+
         const questions = new QuestionForm({
             _id: mongoose.Types.ObjectId(),
             price: req.body.price,
@@ -639,35 +734,28 @@ router
             personality: req.body.personality,
             activity: req.body.activity,
             driving: req.body.driving,
-            priority: req.body.priority
+            attributes: req.body.attributes
         })
-
-
-   // advanced seach post for form
-    .post('/forms/adv', (req,res,next) =>{
-        var carMake= req.body.brands;
-        var carModel= req.body.models;
-        var carMpg= req.body.mpg;
-        var carFuelType= req.body.fuel;
-        var carDoors= req.body.door;
-        var carSeats= req.body.seat;
-        var search= db.collection('vehicles').find({'make': carMake}, {'body_type': carModel}, {'mpgCityHwy': carMpg}, {'fuel': carFuelType},  {'doors': carDoors}, {'seats': carSeats});
-        console.log(search);
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
-        })
-    .then(result =>{
-        res.status(200).json({
-                docs:[search]
-            });
+        console.log(carSurv);
+        //res.redirect(200, path)({
+        //    res: "Message recieved. Check for a response later."
+        //});
+        questions.save()
+        .then(result => {
+            //res.redirect(200, '/path')({
+            //    //res: "Message recieved. Check for a response later."
+            //});
+            res.status(200).json({
+                docs:[questions]
+            })
         })
     .catch(err => {
         res.status(500).json({
                 errRes:[errorMsg]
             });
             console.log(err);
-        });
-    })
+        })
+    });
+
+//console.log(getQuestionFour().subArr[1].Title)
 module.exports = router;
