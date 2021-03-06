@@ -614,18 +614,17 @@ router
 
 
 
-    .post('/index', /*sanitizeArr3,*/async (req,res) => {
+    .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
         try{
-            var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models}).toArray();
-            console.log(result);
-            var carResult = Object.values(result).map(Object.values);
-            var resultObject = {
-                pageMainClass: 'pageMainHome',
-                title: 'Result',
-                response: carResult
+            var result = {
+                make: req.body.brands,
+                body_type: req.body.models
             };
-            res.render('Home Search', resultObject);
-
+            db.collection('vehicles').find(result).toArray(function(err,resp){
+                res.render('indivCar', {
+                    response: resp
+                });
+            });
         }
         catch(error){
             res.status(500).json({
