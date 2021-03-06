@@ -1,32 +1,21 @@
 <main class="{{pageMainClass}}">
+	<h3>{{prompt}}</h3>
+	{{#each response}}
+		<div><em>{{this.make}} | {{this.body_type}} | {{this.fuel}} | {{this.doors}} Doors | {{this.seats}} Seats</em></div><br/>
+	{{/each}}
+	
 	<!-- <div style="background-image: url ('http://imageonthefly.autodatadirect.com/images/?height=220&img=USD00BMC012A021001.png&AUTOTRIM=2);">
 	</div> -->
 	<!-- <img src="http://imageonthefly.autodatadirect.com/images/?height=220&img=USD00BMC012A021001.png&AUTOTRIM=2" alt="stock car 1" width="auto" height="auto"> -->
-	<!-- <h1>{{title}}</h1>
-		<p>Welcome to {{msg}}</p>
-	 <h3>{{group}} is having a great day so far</h3> -->
-
-	<!--<form action="/" method="POST">
-		<select name="Brand">
-			{{#each brand}}
-			<option value="{{this}}">{{this}}</option>
-			{{/each}}
-		</select>
-
-		<select name="Model">
-			{{#each model}}
-			<option value="{{this}}">{{this}}</option>
-			{{/each}}
-		</select> -->
-
-
 
     <!-- dropdown button brand -->
     <form action="/indivCar" method="POST">
 		<div class="dropdown">
-		 	<button type="button" class="dropbtn" data-toggle="dropdown">Brand</button>
+			<!-- needs label instead of buttons-->
+		 <!--<button type="button" class="dropbtn" data-toggle="dropdown">Brand</button>-->
 		 	<div aria-labelledby="dropdownMenuButton">
 		    	<select class="btn btn-secondary dropdown-toggle btn-sm" name="brands">
+		    	  <option value=""></option>
 		          {{#each brands}}
 		            <option value="{{this}}">{{this}}</option>
 		          {{/each}}
@@ -35,9 +24,12 @@
 		</div>
 		<!-- dropdown button model -->
 		<div class="dropdown">
-		 	<button class="dropbtn" data-toggle="dropdown">Model</button>
+
+			<!-- needs label instead of buttons-->
+		 	<!--<button class="dropbtn" data-toggle="dropdown">Model</button>-->
 		 	<div aria-labelledby="dropdownMenuButton">
 	      		<select class="btn btn-secondary dropdown-toggle btn-sm" name="models">
+	      		  <option value=""></option>
 		          {{#each models}}
 		            <option value="{{this}}">{{this}}</option>
 	          	  {{/each}}

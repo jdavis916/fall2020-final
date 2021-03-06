@@ -1,6 +1,7 @@
 <main class="{{pageMainClass}}">
-		<h1>{{title}}</h1>
-		{{#each response}}
-		<div><em>'Result:'{{this}}</em></div><br/>
-		{{/each}}
+	<h1>{{title}}</h1>
+	{{#each response}}
+		<div><em>{{this.make}} | {{this.body_type}} | {{this.fuel}} | {{this.doors}} Doors | {{this.seats}} Seats</em></div><br/>
+	{{/each}}
+	
 </main>
