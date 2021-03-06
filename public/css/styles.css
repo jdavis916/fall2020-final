@@ -618,6 +618,10 @@ h2, h3 {
   box-shadow: 4px 4px 2px rgba(254,236,164,1);
 }
 
+h1{
+  padding-bottom: 50px;
+}
+
 .wrapper h2{
   text-align: center;
   margin-bottom: 20px;
@@ -641,20 +645,20 @@ h2, h3 {
   resize: none;
   height: 80px;
 }
-
-.wrapper .btn input[type="submit"]{
-  border: 0px;
-  margin-top: 15px;
-  padding: 10px;
+.formContact{
   text-align: center;
-  width: 100%;
-  background: #FC8c78;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+}
+.contactSubmit{
+  padding: 4px 8px;
+  text-align: center;
+}
+.contactSubmit input{
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
+  background-color: #FC8C78;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
 }
 
 #error_message{
@@ -673,8 +677,10 @@ h2, h3 {
 }
 
 .figWrapper{
-
-    padding-left: 50px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
 }
 .figWrapper figure{
 
@@ -694,20 +700,27 @@ h2, h3 {
     .figWrapper{
         height: 100%;
         padding-left: 50px;
-        text-align: center;
+        padding-top: 50px;
+        text-align: right;
+
     }
     .figWrapper figure{
         margin: 0 auto;
-        font-size: 24px;
-        text-align: left;
-        max-width: 345px;
-        margin-top: 25%;
+        font-size: 18px;
+        text-align: right; 
+        max-width: 340px;
+        margin-top: 165px;
+        margin-bottom: 50px;
     }
     .figWrapper figure figcaption{
         margin-bottom: 15px;
     }
 }
 /*Questionnaire*/
+
+.questionnaire h1{
+  padding-bottom: 50px;
+}
 
 .questionnaire h2 {
   margin: 5px 0;
@@ -728,7 +741,7 @@ h2, h3 {
   margin: 20px 0;
   color: white;
   border: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   border-bottom: 3px solid #333;
 }
 .questionnaire #submit {
@@ -742,3 +755,4 @@ h2, h3 {
   background: #eee;
   padding: 10px;
 }
+
