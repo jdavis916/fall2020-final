@@ -1,6 +1,7 @@
 <main class="{{pageMainClass}}">
 		<h1>{{title}}</h1>
 		{{#each response}}
-		<div><em>'Result:'{{this}}</em></div><br/>
+		<div>Result: {{this.make}} | {{this.model}} | {{this.body_type}}
+            </div><br/>
 		{{/each}}
 </main>

@@ -490,7 +490,11 @@ function getAttributes(){
 
     return subArr;
 }
-
+function removeEmpty(obj) {
+    return Object.entries(obj)
+        .filter(([_, v]) => v != '')
+        .reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {});
+}
 router
     /* GET home page. */
     .get('/', function(req, res, next) {
@@ -599,28 +603,25 @@ router
     })
     .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
         try{
-
-            //console.log(req.body);
-            //var result= db.collection('vehicles').find({'make': carMake,'body_style': carModel,'fuel': carFuelType,'doors': carDoors,'seats': carSeats});
-            //db.collection('vehicles').find({'make': carMake},{'body_style': carModel},{'fuel': carFuelType},{'doors': carDoors},{'seats': carSeats}, (err, res) =>{
-            var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models},{fuel: req.body.fuel},{doors: req.body.door},{seats: req.body.seat}).toArray();
-
-            //var carResult = JSON.stringify(result);
-            console.log(result);
-            console.log('--stage 2--');
-            var carResult = Object.values(result).map(Object.values);
-            console.log(carResult);
-            console.log('---result callback---');
-                        //console.log(result);
-            var resultObject = {
-                pageMainClass: 'indivCar',
-                title: 'Result',
-                response: carResult
-
-            //res.redirect(200, '/indivCar');
+            var arr1 = {
+                make: req.body.brands,
+                body_type: req.body.models,
+                fuel: req.body.fuel,
+                doors: req.body.door,
+                seats: req.body.seat
             };
-            res.render('indivCar', resultObject);
 
+            var carArray = removeEmpty(arr1);
+            console.log(arr1);
+            console.log(carArray);
+            db.collection('vehicles').find(carArray).toArray(function(err, resp){
+                console.log(resp);
+
+                res.render('indivCar', {
+                    response : resp
+                });
+
+            });
         }
         catch(error){
             res.status(500).json({
