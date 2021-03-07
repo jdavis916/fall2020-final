@@ -44,7 +44,6 @@ app.engine('hbs', handlebars({
 	extname: 'hbs', 
 	defaultLayout: 'main'
 }));
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

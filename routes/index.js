@@ -3,9 +3,9 @@ import ContactForm from "../backend/models/formModel";
 import QuestionForm from "../backend/models/questionForm";
 import vehicleModel from "../backend/models/vehicleData";
 import mongoose from "mongoose";
-
 const url = require('url');
-
+//import axios from 'axios';
+//var vehicleSchema =
 const vehicleSchema = {
     make: String,
     model: String,
@@ -51,15 +51,11 @@ var sanitizeArr2 = [
 var sanitizeArr3 = [
     body('brands').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('models').matches(/^[a-zA-Z0-9 ]*$/).trim(),
-    body('minimum').isNumeric([{no_symbols: true}]).trim(),
-    body('maximum').isNumeric([{no_symbols: true}]).trim(),
-    body('mpg').isNumeric([{no_symbols: true}]).trim(),
+    //body('mpg').isNumeric([{no_symbols: true}]).trim(),
     body('fuel').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('door').isNumeric([{no_symbols: true}]).trim(),
     body('seat').isNumeric([{no_symbols: true}]).trim()
 ];
-
-
 
 //mock data for contact pulldown
 function getContactSubjects(){
@@ -94,8 +90,6 @@ function getContactSubjects(){
     return subArr;
 }
 
-
-
 // mock data for home page
 function getBrand(){
     let subArr = [];
@@ -124,6 +118,7 @@ function getBrand(){
 
     return subArr;
 }
+
 function getModel(){
     let subArr = [];
     subArr = [
@@ -151,10 +146,6 @@ function getModel(){
 
     return subArr;
 }
-
-
-
-
 
 // mock data for advanced seach dropdown o
 function getMinimum(){
@@ -211,6 +202,7 @@ function getMaximum(){
 
     return subArr;
 }
+
 function getMpg(){
     let subArr = [];
     subArr = [
@@ -242,6 +234,7 @@ function getMpg(){
 
     return subArr;
 }
+
 function getInteriorColor(){
     let subArr = [];
     subArr = [
@@ -269,6 +262,7 @@ function getInteriorColor(){
 
     return subArr;
 }
+
 function getExteriorColor(){
     let subArr = [];
     subArr = [
@@ -296,7 +290,6 @@ function getExteriorColor(){
 
     return subArr;
 }
-
 
 
 // questionaire mock Q's and A's 
@@ -327,6 +320,7 @@ function getPriceSlider(){
 
     return subArr;
 }
+
 function getSeatSlider(){
     let subArr = [];
     subArr = [
@@ -484,18 +478,22 @@ function getAttributes(){
     ];
 
     return subArr;
+};
+function removeEmpty(obj) {
+    return Object.entries(obj)
+        .filter(([_, v]) => v != '')
+        .reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {});
 }
-
-
-
 
 router
     /* GET home page. */
-    .get('/', async function(req, res,) {
+
+    .get('/', async function(req, res, next) {
         var returnObj = {};
         var make = db.collection('vehicles').distinct('make');
         var bodyTypes = db.collection('vehicles').distinct('body_type');
-      
+
+        //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
         Promise.all([make, bodyTypes])
         .then((values) =>{
             
@@ -503,8 +501,8 @@ router
                 returnObj = {
                 pageMainClass: 'pageMainHome',
                 title: 'COP Final Project',
-                msg: 'Select filters to apply:',
-                brands: values[0], 
+
+                brands: values[0],
                 models: values[1],
                 }
             }catch(error){
@@ -516,8 +514,6 @@ router
         res.render('index', returnObj);
         })//res.json({bodyTypes});
     })
-
-
     .get('/about', function(req, res, next) {
         res.render('about',
             {
@@ -599,6 +595,7 @@ router
         res.render('advSearch', returnObj);
         })//res.json({bodyTypes});
     })
+
     .get('/carList', function(req, res, next) {
         res.render('carList', 
             { 
@@ -607,66 +604,85 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
-
-
-
-
-
-
-
-    .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
+    .post('/indivCar', sanitizeArr3, async (req,res) => {
         try{
-            var result = {
+            var pics = [''];
+            var promptMsg = '';
+            var arr1 = {
                 make: req.body.brands,
-                body_type: req.body.models
+                body_type: req.body.models,
+                fuel: req.body.fuel,
+                doors: (req.body.door > 0) ? parseInt(req.body.door) : "",
+                seats: (req.body.seats > 0) ? parseInt(req.body.seats) : ""
             };
-            db.collection('vehicles').find(result).toArray(function(err,resp){
+            console.log(arr1);
+            if((req.body.models === 'truck')){
+                pics = ['sierra2020.png', 'f1502015.png', 'rivianR1t2022.png'];
+            }else if((req.body.models === 'suv' || req.body.models === 'luxury suv')){
+                pics = ['fordExpedition2013.png', 'modelX2017.png', 'escalade2020.png'];
+            }else if((req.body.models === 'sport')){
+                pics = ['corvette2020.png', 'civicTypeR2019.png', 'teslaRoadster2021.png'];
+            }else if((req.body.models === 'sedan' || req.body.models === 'luxury sedan')){
+                pics = ['sonic2019.png', 'audiA42018.png', 'sonata2014.png'];
+            }else if((req.body.models === 'compact' || req.body.models === 'luxury comact')){
+                pics = ['miniCooper2017.png', 'prius2014.png', 'ct42021.png'];
+            };
+            console.log(pics);
+            var rand = Math.floor(Math.random() * 3)
+            //var randPic = pics[rand];
+            var promptMsg = '';
+            var carArray = removeEmpty(arr1);
+            console.log(carArray);
+            var picRaw = pics[rand];
+            var picInput = "'" + picRaw + "'";
+            var i = 0;
+            console.log(picInput);
+            /*pics = ['miniCooper2017.jpg', 'prius2014.jpg', 'ct42021.jpg'];
+            picInput = pics[0];*/
+            db.collection('vehicles').find(carArray).toArray(function(err, resp){
+                console.log(resp);
+                //console.log(randPic);
+                if(resp.length===0){
+
+                    promptMsg = 'No exact results.';
+                } else {
+
+                    let len = resp.length;
+                    for(i = 0; i < len ; i++){
+                        let rand = Math.floor(Math.random() * 3);
+                        resp[i].pic = pics[rand];
+
+                    }
+                }
+                console.log(resp);
                 res.render('indivCar', {
-                    response: resp
+                    title: 'Results',
+                    response : resp,
+                    prompt: promptMsg,
+                    /*picture: picInput*/
+
                 });
+            console.log(res.render);
             });
-        }
-        catch(error){
+        }catch(error){
             res.status(500).json({
                 error: error.toString()
             })
         }
     })
-    .post('/indivCar', /*sanitizeArr3,*/async (req,res) => {
-        try{
-            var result = await db.collection('vehicles').find({make: req.body.brands},{body_type: req.body.models},{fuel: req.body.fuel},{doors: req.body.door},{seats: req.body.seat}).toArray();
 
-            //var carResult = JSON.stringify(result);
-            console.log(result);
-            console.log('--stage 2--');
-            var carResult = Object.values(result).map(Object.values);
-            console.log(carResult);
-            console.log('---result callback---');
-                        //console.log(result);
-            var resultObject = {
-                pageMainClass: 'indivCar',
-                title: 'Result',
-                response: carResult
-
-            //res.redirect(200, '/indivCar');
-            };
-            res.render('indivCar', resultObject);
-
-        }
-        catch(error){
-            res.status(500).json({
-                error: error.toString()
-            })
-        }
-    })
+    /* POST contact form. */
     .post('/formModel', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);
+        //console.log(errors);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+
+        /*console.log(req.headers);*/
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
             firstName: req.body.firstName,
@@ -701,6 +717,7 @@ router
     })
     //info from survey form
     .post('/questionForm',(req, res, next) =>{
+
         //var carSurv = {};
         const errors = validationResult(req);
         //returns error array if input fails check
@@ -711,46 +728,6 @@ router
 
 
         //setting up variables for the personality function
-        /*global.survValue = function(carSurv){
-            //using form data to construct a query
-            var priceCount;
-            var bodyCount;
-            //personality function will be completed later
-            var carScore;
-            var bodyLower = (req.body.carType).toLowerCase();
-            if ((req.body.price <= 50000 )){
-                priceCount = req.body.price/10000;
-            }else if((req.body.price <= 50000 && )) {
-                priceCount = 6;
-                bodyLower = 'luxury' + (req.body.carType).toLowerCase();
-            };
-            if ((req.body.personality ===  )){
-            } else if{
-            } else if{
-
-            } else if{
-
-            } else if{
-
-            };
-
-            async (function(req,res,err){
-                var resCar = db.collection('vehicles').findById(6);
-                //var resCar = db.collection('vehicles').find({'key': valueVariable},{:});
-                Promise(resCar);
-            })
-                .then(result => {
-                    res.status(200).json({
-                        docs:[resCar]
-                    })
-                })
-                .catch(err => {
-                    res.status(500).json({
-                    errRes:[errorMsg]
-                    });
-                    console.log(err);
-                })
-        } */
 
         const questions = new QuestionForm({
             _id: mongoose.Types.ObjectId(),
@@ -782,4 +759,6 @@ router
             console.log(err);
         })
     });
+
+//console.log(getQuestionFour().subArr[1].Title)
 module.exports = router;
