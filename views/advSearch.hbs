@@ -2,19 +2,19 @@
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
 
+    <form action='/indivCar' method='POST'>
 <!-- /.container -->
-<form action='/indivCar' method='POST'>
- <div class="container">
+ <div class="container bgcolor">
 <!-- /.row -->
    <div class="row pad1">
-     <div class="col-md-3 bg-info">
+     <div class="col-md-4">
 
 
-  <label>Brand</label>
+  <label class="colortext">Brand</label>
   <div aria-labelledby="dropdownMenuButton">
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="brands">
-      		<option value=""></option>
-          {{#each brands}}
+     <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="brands">
+         <option value=""></option>
+         {{#each brands}}
             <option value="{{this}}">{{this}}</option>
           {{/each}}
       </select>
@@ -22,14 +22,14 @@
 </div>
 <!-- </div> -->
 
-  <div class="col-md-2 bg-warning"><!-- /.Drop down button -->
+  <div class="col-md-4"><!-- /.Drop down button -->
 
-      <label>Models</label>
+      <label class="colortext">Models</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="models">
-      		<option value=""></option>
-          {{#each models}}
+     <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="models">
+         <option value=""></option>
+         {{#each models}}
             <option value="{{this}}">{{this}}</option>
           {{/each}}
             </select>
@@ -38,33 +38,33 @@
     </div>
 
 </div>
-</div>
+
 
 <!-- /.row -->
    <div class="row pad1">
      <div class="col-md-4 bg-info">
 
-      <label>mpg</label>
+      <label class="colortext">mpg</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="mpg">
-      	<option value=""></option>
-        {{#each mpg}}
-          <option value="{{this._id}}">{{this.title}}</option>
-        {{/each}}
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="mpg">
+          <option value=""></option>
+          {{#each mpg}}
+            <option value="{{this._id}}">{{this.title}}</option>
+          {{/each}}
       </select>
 
       </div>
 </div>
 
-<div class="col-md-4 bg-warning"><!-- /.Drop down button -->
+<div class="col-md-4"><!-- /.Drop down button -->
 
-      <label>fuel</label>
+      <label class="colortext">fuel</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="fuel">
-      	<option value=""></option>
-        {{#each fuel}}
+     <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="fuel">
+         <option value=""></option>
+         {{#each fuel}}
           <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
@@ -74,12 +74,12 @@
 </div>
 
 <!-- /.row -->
-<div class="row pad1">
-  <div class="col-md-4 bg-info">
-    <label>door</label>
+<div class="row">
+  <div class="col-md-4">
+    <label class="colortext">doors</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="door">
-      	<option value=""></option>
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="brands">
+          <option value=""></option>
           {{#each door}}
         <option value="{{this}}">{{this}}</option>
           {{/each}}
@@ -87,11 +87,11 @@
     </div>
   </div>
 
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <label>Seats</label>
+  <div class="col-md-4"><!-- /.Drop down button -->
+    <label class="colortext">seats</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="seats">
-      	<option value=""></option>
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="seats">
+          <option value=""></option>
           {{#each seat}}
         <option value="{{this}}">{{this}}</option>
           {{/each}}
@@ -101,68 +101,14 @@
 </div>
 </div>
 
-<!-- /.row -->
+     <!-- /.row submit button -->
    <div class="row pad1">
-     <div class="col-md-4 bg-info">
+	   <div class="col-md-4">
 
-
-<!--
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
+      <a class="nav-link" href="/carList"><input class="btn mt-n1" type="submit" value="Submit" id='rcorners2'></a>
+     </div>
+   </div>
 </div>
-
-  <div class="col-md-4 bg-warning">
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>
-
-
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
-
-
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning">
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>-->
 
      <!-- /.row submit button -->
    <div class="row">

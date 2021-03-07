@@ -164,29 +164,56 @@ h2, h3 {
 
 	/*For advance page */
 	.mt-n1 {
-	    padding: 1rem;
+
+      background-color: #FC8C78;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
 
 	}
+
+  .container {
+    padding-bottom: 60px;
+  }
 
 	.pad1 {
-	    padding-top: 1rem;
-	    padding-bottom: 1rem;
+	    padding-top: 10rem;
 	}
-	/*
-	.pb-2 {
-	    padding-bottom: ($spacer * .5) !important;
-	    padding-right: ($spacer * .5) !important;
-	}*/
 
+  .colortext {
+    padding-top: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+  }
+
+  .btn-outline{
+
+border: 2px;
+   width: 200px;
+  height: 50px;
+  }
+
+  #rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #FC8C78;
+  width: 150px;
+  height: 55px;
+}
+/*
+.col-md-4 {
+  flex: 0 0 15.333333%;
+}*/
 /*Car Results*/
 .carResults figure {
 
 }
 
 .carResults figure img {
-  width: 100%;
-  height: auto;
-  min-width: 160px;
+    width: 100%;
+    height: auto;
+    min-width: 160px;
 }
 
 
@@ -523,7 +550,7 @@ h2, h3 {
 
     display: flex;
 
-    padding: 10px;
+    padding: -1px;
     justify-content: center
 }
 
