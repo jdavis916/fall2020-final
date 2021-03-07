@@ -3,6 +3,7 @@
 		<p>{{msg}}</p>
 
 <!-- /.container -->
+<form action='/indivCar' method='POST'>
  <div class="container">
 <!-- /.row -->
    <div class="row pad1">
@@ -12,6 +13,7 @@
   <label>Brand</label>
   <div aria-labelledby="dropdownMenuButton">
       <select class="btn btn-secondary dropdown-toggle btn-sm" name="brands">
+      		<option value=""></option>
           {{#each brands}}
             <option value="{{this}}">{{this}}</option>
           {{/each}}
@@ -26,6 +28,7 @@
       <div aria-labelledby="dropdownMenuButton">
 
       <select class="btn btn-secondary dropdown-toggle btn-sm" name="models">
+      		<option value=""></option>
           {{#each models}}
             <option value="{{this}}">{{this}}</option>
           {{/each}}
@@ -41,10 +44,11 @@
    <div class="row pad1">
      <div class="col-md-4 bg-info">
 
-      <label>mileage</label>
+      <label>mpg</label>
       <div aria-labelledby="dropdownMenuButton">
 
-      <select class="btn btn-secondary dropdown-toggle btn-sm" name="mileage">
+      <select class="btn btn-secondary dropdown-toggle btn-sm" name="mpg">
+      	<option value=""></option>
         {{#each mpg}}
           <option value="{{this._id}}">{{this.title}}</option>
         {{/each}}
@@ -59,6 +63,7 @@
       <div aria-labelledby="dropdownMenuButton">
 
       <select class="btn btn-secondary dropdown-toggle btn-sm" name="fuel">
+      	<option value=""></option>
         {{#each fuel}}
           <option value="{{this}}">{{this}}</option>
         {{/each}}
@@ -74,6 +79,7 @@
     <label>door</label>
     <div aria-labelledby="dropdownMenuButton">
       <select class="btn btn-secondary dropdown-toggle btn-sm" name="door">
+      	<option value=""></option>
           {{#each door}}
         <option value="{{this}}">{{this}}</option>
           {{/each}}
@@ -85,6 +91,7 @@
     <label>Seats</label>
     <div aria-labelledby="dropdownMenuButton">
       <select class="btn btn-secondary dropdown-toggle btn-sm" name="seats">
+      	<option value=""></option>
           {{#each seat}}
         <option value="{{this}}">{{this}}</option>
           {{/each}}
@@ -159,9 +166,10 @@
      <!-- /.row submit button -->
    <div class="row">
 	   <div class="col-md-4 bg-danger mt-n1">
-      <a class="nav-link" href="/carList"><input class="btn btn-primary" type="submit" value="Submit"></a>
+      {{!-- <a class="nav-link" href="/indivCar"> --}}<input class="btn btn-primary" type="submit" value="Submit">{{!-- </a> --}}
      </div>
    </div>
 
  </div>
+</form>
 </main>

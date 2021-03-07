@@ -178,6 +178,17 @@ h2, h3 {
 	    padding-right: ($spacer * .5) !important;
 	}*/
 
+/*Car Results*/
+.carResults figure {
+
+}
+
+.carResults figure img {
+  width: 100%;
+  height: auto;
+  min-width: 160px;
+}
+
 
  /*CarViewPag*/
 

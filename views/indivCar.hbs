@@ -1,6 +1,19 @@
 <main class="{{pageMainClass}}">
-		<h1>{{title}}</h1>
+	<h1>{{title}}</h1>
+	<h3>{{prompt}}</h3>
+	<article class="container">
+	<div class="row carResults">
 		{{#each response}}
-		<div><em>'Result:'{{this}}</em></div><br/>
+		<figure class="col-4">
+			<section>
+				<img src="/img/{{pic}}"/>
+			</section>
+			<figcaption>	
+				{{this.year}} {{this.make}} {{this.model}} | {{this.body_type}} | {{this.fuel}} | {{this.doors}} | {{this.seats}}
+			</figcaption>
+		</figure>
 		{{/each}}
+	</div>
+	</article>
+
 </main>
