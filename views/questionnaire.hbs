@@ -1,5 +1,4 @@
 <main class="{{pageMainClass}}">
-		<h1>{{title}}</h1>
     {{!--<!--
 		<form>
           <div class="form-group">
@@ -71,7 +70,7 @@
 -->{{--}}<form>
     <div id="wrapper">
   <h1>Find Your Dream Car Today!</h1>
-  <p>Take this questionnaire to see what best suits you!</p>
+  <h5>Personality Questionnaire</h5>
   
   <form id="quiz">
     <!-- Question 1 -->
@@ -94,7 +93,6 @@
 
     <!-- Question 2 -->
     <h2>What Car Type Are You Looking For?</h2>
-    <br>
     <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
     <label><input type="radio" name="q2" value="c1">
       Sedan
@@ -136,7 +134,6 @@
     
     <!-- Question 3 -->
     <h2>What Is Your Personality Like?</h2>
-    <br>
     <!-- Choices for the third question -->
     <label><input type="radio" name="q3" value="c1">
       Chilled
@@ -169,7 +166,6 @@
     
     <!-- Question 4 -->
     <h2>What Do You Find Yourself Doing Most?</h2>
-    <br>
     <!-- Choices for the fourth question -->
     <label><input type="radio" name="q4" value="c1">
       Family Road Trip & Outings
@@ -186,7 +182,6 @@
     <br>
      <!-- Question 5 -->
     <h2>How Would You Describe Driving?</h2>
-    <br>
     <!-- Choices for the Fifth question -->
     <label><input type="radio" name="q4" value="c1">
       Getting From Point A To Point B
@@ -206,7 +201,6 @@
     <br>
       <!-- Question 6 -->
     <h2>What Is Most Imporant To You In Your Next Car? What Is Your First Priority You Have When Looking For A Car?</h2>
-    <br>
     <!-- Choices for the Sixth question -->
     <label><input type="radio" name="q4" value="c1">
       Longevity: Car Durability, Gas Mileage/Fuel Efficency
@@ -223,18 +217,16 @@
     <label><input type="radio" name="q4" value="c1">
       Brand Name & Manufacurting: Americna Made Or Foreign
     </label><br />
-    <br>
     <button type="submit" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
   <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
   </form>
   
   
-  <div id="answer">Your result will show up here!</div>
+  <div id="answer">Someone will be with you shortly with your results.</div>
+  <p>Please Answer Honestly To Ensure Accurate Reults.</p>
 </div>
 
 
-
-          </form>
-		<p>{{msg}}</p>
+     </form>
 </main>
 
