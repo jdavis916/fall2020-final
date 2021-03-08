@@ -102,13 +102,6 @@ a {
       min-height:200px;
   }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none;
-    }
-  }
-
   .pad2 {
     padding-bottom: 15rem;
   }
@@ -608,11 +601,6 @@ border: 2px;
     margin: 0 auto
 }
 
-@media (max-width: 630px) {
-    .title {
-        font-size: 18px
-    }
-}
 
 .row {
 
@@ -622,11 +610,7 @@ border: 2px;
     justify-content: center
 }
 
-@media (max-width: 494px) {
-    .row {
-        flex-direction: column
-    }
-}
+
 
 .abtCard{
 	border-radius: 18px;
@@ -692,8 +676,9 @@ border: 2px;
     box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
     position: relative;
     transition: transform .4s;
-    margin-left:160px;
+    margin-left:135px;
     background-color: #FFAB4A;
+    align-self: center;
 }
 
 .fas,
@@ -840,21 +825,6 @@ background: #FC8c78;
     margin-bottom: 10px;
 }
 
-/*Responsive*/
-@media all and (min-width: 420px) and (max-width: 767px) {
-    .contactUs article{
-        padding-left: 15%;
-    }
-
-}
-@media all and (min-width: 768px) {
-    .figWrapper{
-        ;
-        padding-top: 50px;
-        text-align: center;
-        /*padding-top: 50px;
-        text-align: right;*/
-    }
     .figWrapper figure{
         margin: 0 auto;
         font-size: 18px;
@@ -937,3 +907,68 @@ background: #FC8c78;
 .menu li:hover {
     background-color: #0099cc;
 }
+
+/*Responsive design controls*/
+  /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+    	.abtContainer{
+    		
+    	}
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+    	.abtContainer{
+    		display: flex;
+    		flex-direction: column;
+    	}
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+/*Responsive*/
+	@media all and (min-width: 420px) and (max-width: 767px) {
+    .contactUs article{
+        padding-left: 15%;
+    }
+
+}
+	@media all and (min-width: 768px) {
+    .figWrapper{
+        ;
+        padding-top: 50px;
+        text-align: center;
+        /*padding-top: 50px;
+        text-align: right;*/
+    }
+}
+	@media (max-width: 494px) {
+    .row {
+        flex-direction: column
+    }
+}
+	@media (max-width: 630px) {
+    .title {
+        font-size: 18px
+    }
+}
+
+	/* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+  }
