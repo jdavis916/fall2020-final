@@ -864,4 +864,14 @@ background: #FC8c78;
   padding: 10px;
   text-align: center;
 }
-
+.personalityText{
+  text-align: center;
+  font-weight: bold;
+  padding: 40px;
+  
+}
+.carInfoWrapper{
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
