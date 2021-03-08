@@ -258,8 +258,8 @@ border: 2px;
 
 }
 .carImageWrapper{
-    overflow: hidden;
-    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
 }
 
  /*CarViewPag*/
@@ -936,7 +936,7 @@ padding-top: 10px;
   font-weight: bold;
   position: relative;
   margin: auto;
-  width: 400px;
+  width: 600px;
   padding-bottom: 40px;
 }
 .personalityText{
@@ -952,10 +952,9 @@ padding-top: 10px;
     text-align: center;
     font-weight: bold;
     position: relative;
-    margin: auto;
-    width: 400px;
+    margin: 0;
+    width: 600px;
 }
-
 .menu ul {
     list-style-type: none;
     margin: 0;

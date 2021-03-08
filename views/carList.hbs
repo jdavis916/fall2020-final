@@ -6,19 +6,17 @@
         {{#each response}}
         <div class="resultText">
         <figure class="col-sm-6 col-md-4">
-          <section class="carImageWrapper">
-
-            {{!-- couldn't load photo, will try to fix later --}}
-            {{!-- <img src="/img/{{{pic}}}" alt="{{this.model}} pic"/> --}}
-          </section>
+          {{!-- <section class="carImageWrapper">
+            <img src="/img/{{{pic}}}" alt="{{this.model}} pic"/>
+          </section> --}}
           <figcaption>
                     <div class="carInfoWrapper" style="font-size: 24px;">
-                         <span>{{this.year}}</span> |
-                         <span>{{this.make}}</span> |
+                         <span>{{this.year}}</span>
+                         <span>{{this.make}}</span>
                          <span>{{this.model}}</span> |
                          <span>{{this.body_type}}</span> |
                          <span>{{this.fuel}}</span> |
-                         <span>{{this.mpgCityHwy}}</span> |
+                         <span>MPG (city/highway): {{this.mpgCityHwy}}</span> |
                          <span>{{this.doors}} Doors</span> |
                          <span>{{this.seats}} Seats</span>
                     </div>
