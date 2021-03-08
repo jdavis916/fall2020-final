@@ -10,11 +10,11 @@ body {
 .txtCenter{
     text-align: center;
 }
-h1{
+main h1{
 	font-family: sans-serif;
     font-size: 32px;
     border-bottom: 4px solid #FC8C78;
-    margin-bottom: 30px;
+    margin: 40px 0;
     text-align: center;
 }
 
@@ -26,14 +26,16 @@ h1{
     }
 }
 
-
+footer{
+    margin-top: 70px;
+}
 footer p{
     font-size: 12px;
 }
 
-main{
+/*main{
     padding: 30px ;
-}
+}*/
 
 /*rating for the header*/
 
@@ -128,7 +130,7 @@ a {
   position: absolute;
   background-color: #FC8C78;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -465,9 +467,9 @@ border: 2px;
 	}
 
 	/*card transition speed control*/
-	* {
+	/** {
 	  transition: 0.5s;
-	}
+	}*/
 	/*column controls and hover functionality */
 	.h-100 {
 	  height: 100vh !important;
@@ -632,18 +634,41 @@ border: 2px;
 
 .abtCard{
 	border-radius: 18px;
-  background: white;
-  box-shadow: 5px 5px 15px rgb(220, 218, 218);
-  font-family: roboto;
-  text-align: center;
-  transition: 0.5s ease;
-  cursor: pointer;
-  margin:30px;
+    background: white;
+    box-shadow: 5px 5px 15px rgb(220, 218, 218);
+    font-family: roboto, sans-serif;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+   /* margin:30px;*/
   /*inline-size:fit-content;*/
 
 }
+/* Responsive */
+@media all and (max-width: 767px){
+    .pageMainAbout figure:not(:first-of-type) .abtCard{
+        margin-top: 20px;
+    }
+}
+
+/* ----------------------  */
+
+.abtCard .abtInnerWrapper{
+}
+/*.Abtcard {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px
+}*/
 .cardImgContainer{
 	padding-top: 20px;
+    text-align: center;
 }
 
 .goal{
@@ -651,11 +676,11 @@ border: 2px;
 	background-image: url("../../assets/tesla.png");
 }
 
-.abtContainer{
+/*.abtContainer{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-}
+}*/
 .meetTheTeam{
 	padding: 30px;
 	font-style: oblique;
@@ -677,25 +702,19 @@ border: 2px;
     border-bottom-left-radius: 20px;
 }
 
-.Abtcard {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px
-}
+
 
 .card_img {
     width: 80px;
     height: 80px;
+    display: inline-block;
     border-radius: 50%;
     box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
     position: relative;
     transition: transform .4s;
-    margin-left:150px;
+    /*margin-left:150px;*/
     background-color: #FFAB4A;
-    align-self: center;
+    /*align-self: center;*/
 }
 
 #userIcon{
@@ -773,12 +792,13 @@ border: 2px;
   top: 80%;
   left: 80%;
   transform: translate(-50%,-50%);*/
-  max-width: 350px;
+  /*max-width: 350px;*/
   width: 100%;
   background: #17B5F1;
   padding: 50px;
   border-radius: 5px;
-  box-shadow: 4px 4px 2px rgba(254,236,164,1);
+  /*box-shadow: 4px 4px 2px rgba(254,236,164,1);*/
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -864,7 +884,7 @@ padding-top: 10px;
 /*Responsive*/
 @media all and (min-width: 420px) and (max-width: 767px) {
     .contactUs article{
-        padding-left: 15%;
+        /*padding-left: 15%;*/
     }
 
 }
@@ -893,7 +913,7 @@ padding-top: 10px;
 	font-size: xx-large;
 }
 
-.Contactcard{
+.contactCard{
 	background-image: url("../../assets/gmc.png");
 	background-repeat: no-repeat;
 	  background-color: #33b5e5;
@@ -903,50 +923,63 @@ padding-top: 10px;
 	  font-size: 14px;
 	  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-
-/*
-.col-12 {
-
-    padding: 40px;
+.contactCard .figWrapper figure{
+    max-width: initial;
+    text-align: left;
+    margin-top: 40px;
 }
-*/
+
+
+/*Responsive*/
+@media all and (min-width: 576px){
+    .contactCard .figWrapper figure{
+        padding: 0 20px;
+        margin-top: 0;
+    }
+}
+
+/*----------*/
 
 .caption{
-	font-variant-caps: all-small-caps;
-	font-size: xxx-large;
+    font-size: 24px;
+/*	font-variant-caps: all-small-caps;
+	font-size: xxx-large;*/
     font-weight: 500;
 }
-
+.caption i{
+    margin-right: 5px;
+}
 /*.col-auto{
 	padding: 40px;
 }*/
 /*Questionnaire*/
 
-.questionnaire h1{
-  padding-bottom: 50px;
-}
 
-.questionnaire h2 {
+/*.questionnaire h1{
+  padding-bottom: 50px;
+}*/
+/*.questionnaire h2 {
+    text-align: center;
+    padding: 20px 0;
+}*/
+.questionnaire h3 {
   margin: 5px 0;
   text-align: left;
 }
 
-.questionnaire h5 {
-  text-align: center;
-  padding-bottom: 10px;
-}
+
 .questionnaire p{
   text-align: center;
   padding-top: 10px;
 }
 
-.questionnaire #wrapper {
+/*.questionnaire {
   width: 600px;
   margin: 0 auto;
-  background: #f6ebe6;
+  background: #F6EBE6;
   padding: 10px 15px;
   border-radius: 10px;
-}
+}*/
 .questionnaire input {
   margin: 5px 10px;
 }
@@ -997,7 +1030,10 @@ padding-top: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-#quiz{
+.quizWrapper{
+    max-width: initial;
+}
+.quiz{
     background-image: url("../../assets/horizon.jpg");
     background-attachment: fixed;
     background-size: cover;
@@ -1036,7 +1072,7 @@ padding-top: 10px;
 /*Responsive*/
 	@media all and (min-width: 420px) and (max-width: 767px) {
     .contactUs article{
-        padding-left: 15%;
+        /*padding-left: 15%;*/
     }
 
 }

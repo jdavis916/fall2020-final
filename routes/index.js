@@ -502,7 +502,7 @@ router
     .get('/about', function(req, res, next) {
         res.render('about',
             {
-                pageMainClass: 'about',
+                pageMainClass: 'pageMainAbout',
                 title: 'About Us...',
                 msg: "Meet the team!"
             });
