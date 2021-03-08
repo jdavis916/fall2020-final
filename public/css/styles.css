@@ -84,13 +84,13 @@ a {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
+
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
+
   .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
@@ -100,7 +100,7 @@ a {
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
     .carousel-caption {
-      display: none; 
+      display: none;
     }
   }
 
@@ -776,11 +776,12 @@ background: #FC8c78;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 50px;*/
-    font-size: 24px;
+    font-size: 18px;
 }
 .figWrapper figure{
   padding-top: 25px;
-  text-align: right;
+  text-align: center;
+  padding-right: 60px;
 }
 .figWrapper figure figcaption{
     margin-bottom: 10px;
@@ -796,18 +797,19 @@ background: #FC8c78;
 @media all and (min-width: 768px) {
     .figWrapper{
         ;
-        padding-left: 50px;
+        padding-top: 50px;
         text-align: center;
         /*padding-top: 50px;
         text-align: right;*/
     }
     .figWrapper figure{
         margin: 0 auto;
-        font-size: 20px;
-        text-align: right;
-        padding-top: 40%;
-        max-width: 345px;
-        margin-top: 50px;
+        font-size: 18px;
+        text-align: center;
+        padding-right: 103px;
+        padding-top: 22%;
+        max-width: 365px;
+        margin-top: 50px%;
     }
     .figWrapper figure figcaption{
         margin-bottom: 15px;
