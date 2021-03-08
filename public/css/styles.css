@@ -68,7 +68,10 @@ a {
 	color: #F00;
 }
 */
-/* For home page */
+
+
+
+/* For HOMEPAGE */
 
 /* dropdown buttons */
 /*body { background-image: url("stockcar (1).png");
@@ -76,6 +79,34 @@ a {
   background-attachment: fixed;
   background-position: top;
 }*/
+/*Carosel */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+
+  .pad2 {
+    padding-bottom: 15rem;
+  }
 
 .dropbtn {
   background-color: #FC8C78;
@@ -673,9 +704,6 @@ border: 2px;
   box-shadow: 4px 4px 2px rgba(254,236,164,1);
 }
 
-h1{
-  padding-bottom: 50px;
-}
 
 .wrapper h2{
   text-align: center;
