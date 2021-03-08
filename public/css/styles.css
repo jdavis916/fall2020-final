@@ -159,7 +159,7 @@ h2, h3 {
 }
 
 /* button */
-#button {
+.button {
 	background-color: #FC8C78;
   border: none;
   color: #000000;
@@ -173,12 +173,12 @@ h2, h3 {
   position: center;
 }
 
-#button {
+.button1 {
 	background-color: #FC8C78;
 	color: #000000;
 	border: none;
 }
-#button:hover {
+.button1:hover {
 	background-color: #FC8C78;
 	color: #000000;
 	}
@@ -602,15 +602,11 @@ border: 2px;
     margin: 0 auto
 }
 
-
-.row {
-
-    display: flex;
-
-    padding: -1px;
-    justify-content: center
+@media (max-width: 630px) {
+    .title {
+        font-size: 18px
+    }
 }
-
 
 
 .abtCard{
@@ -622,7 +618,7 @@ border: 2px;
   transition: 0.5s ease;
   cursor: pointer;
   margin:30px;
-  inline-size:fit-content;
+  /*inline-size:fit-content;*/
 
 }
 .cardImgContainer{
@@ -677,11 +673,14 @@ border: 2px;
     box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
     position: relative;
     transition: transform .4s;
-    margin-left:135px;
+    margin-left:150px;
     background-color: #FFAB4A;
     align-self: center;
 }
 
+#userIcon{
+	color: aliceblue;
+}
 .fas,
 .fab {
     display: inline-block;
@@ -815,27 +814,72 @@ padding-top: 10px;
     font-size: 18px;
 }
 .figWrapper figure{
-  padding-top: 25px;
+
   text-align: center;
-  padding-right: 60px;
+
 }
 .figWrapper figure figcaption{
     margin-bottom: 10px;
 }
 
+/*Responsive*/
+@media all and (min-width: 420px) and (max-width: 767px) {
+    .contactUs article{
+        padding-left: 15%;
+    }
+
+}
+@media all and (min-width: 768px) {
+    .figWrapper{
+        ;
+        padding-top: 50px;
+        text-align: center;
+        /*padding-top: 50px;
+        text-align: right;*/
+    }
     .figWrapper figure{
         margin: 0 auto;
         font-size: 18px;
         text-align: center;
-        padding-right: 103px;
-        padding-top: 22%;
+
         max-width: 365px;
-        margin-top: 50px;
+
     }
     .figWrapper figure figcaption{
         margin-bottom: 15px;
     }
+}
+.icons{
+	color: white;
+	font-size: xx-large;
+}
 
+.Contactcard{
+	background-image: url("../../assets/gmc.png");
+	background-repeat: no-repeat;
+	  background-color: #33b5e5;
+	 background-blend-mode: soft-light;
+	  color: #ffffff;
+	  text-align: center;
+	  font-size: 14px;
+	  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.col-12 {
+
+    padding: 40px;
+}
+
+.caption{
+	font-size: xx-large;
+	font-variant-caps: all-small-caps;
+	font-size: xxx-large;
+    font-weight: 500;
+}
+
+.col-auto{
+	padding: 40px;
+}
 /*Questionnaire*/
 
 .questionnaire h1{
