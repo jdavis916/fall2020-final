@@ -9,8 +9,9 @@ body {
 }
 
 h1{
+	font-family: sans-serif;
     font-size: 32px;
-    border-bottom: 1px solid #000;
+    border-bottom: 4px solid #FC8C78;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -59,6 +60,10 @@ main{
     color: #f2b600
 }
 
+
+p{
+	font-family: Arial, sans-serif;
+}
 
 /*
 a {
@@ -271,13 +276,14 @@ border: 2px;
   grid-template-areas: "image" "text" "stats";
   border-radius: 18px;
   background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 5px 15px rgba(165 162 162 / 90%);
   font-family: roboto;
   text-align: center;
   transition: 0.5s ease;
   cursor: pointer;
   margin:30px;
   inline-size:fit-content;
+
 }
 .card-image {
   grid-area: image;
@@ -292,7 +298,7 @@ border: 2px;
   margin: 25px;
 }
 .card-text .date {
-  color: rgb(255, 7, 110);
+  color: #FC8C78;
   font-size:13px;
 }
 .card-text p {
@@ -311,7 +317,7 @@ border: 2px;
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: rgb(255, 7, 110);
+  background: #FC8C78;
 }
 .card-stats .stat {
   padding:10px;
@@ -348,14 +354,14 @@ border: 2px;
   background-size: cover;
 }
 .card-text.card2 .date {
-  color: rgb(255, 77, 7);
+  color:  #FFAB4A;
 }
 .card-stats.card2 .border {
   border-left: 1px solid rgb(185, 67, 20);
   border-right: 1px solid rgb(185, 67, 20);
 }
 .card-stats.card2 {
-  background: rgb(255, 77, 7);
+  background:  #FFAB4A;
 }
 /*card3*/
 .card-image.card3 {
@@ -363,14 +369,14 @@ border: 2px;
   background-size: cover;
 }
 .card-text.card3 .date {
-  color: rgb(0, 189, 63);
+  color:  #17B5F1;
 }
 .card-stats.card3 .border {
   border-left: 1px solid rgb(14, 122, 50);
   border-right: 1px solid rgb(14, 122, 50);
 }
 .card-stats.card3 {
-  background: rgb(0, 189, 63);
+  background: #17B5F1;
 }
 
 
@@ -550,22 +556,40 @@ border: 2px;
 	  color: white;
 	  z-index: 0;
 	}
+
+	.msg{
+
+		font-size: x-large;
+		padding: 10px;
+	}
 /*About page*/
 .menu {
     width: 44px;
     position: relative;
     top: -10px;
     height: 3px;
-    background: #00000054;
-    box-shadow: 0px 11px #ff00006b, 1px 22px #66b78d
 }
 .aboutTxt {
     text-align: center;
     color: gray;
     padding: 70px;
-    background-color: antiquewhite;
+
     border-radius: 190px;
 
+}
+
+#goal{
+	padding: 60px;
+	background-image: url("../../assets/tesla.png");
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .title {
@@ -607,13 +631,22 @@ border: 2px;
 .abtCard{
 	border-radius: 18px;
   background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 5px 15px rgba(220, 218, 218);
   font-family: roboto;
   text-align: center;
   transition: 0.5s ease;
   cursor: pointer;
   margin:30px;
   inline-size:fit-content;
+
+}
+.cardImgContainer{
+	padding-top: 20px;
+}
+
+.goal{
+	border-bottom: none;
+	background-image: url("../../assets/tesla.png");
 }
 
 .abtContainer{
@@ -621,10 +654,28 @@ border: 2px;
 	flex-direction: row;
 	justify-content: center;
 }
+.meetTheTeam{
+	padding: 30px;
+	font-style: oblique;
+}
 .infoTxt{
 	padding: 40px;
-	color: #FFAB4A;
+
+	font-size: x-large;
 }
+.abtTxt{
+	text-align: center;
+	font-size: x-large;
+	font-weight: bolder;
+	padding: 30px;
+	padding-top: 30px;
+
+}
+.TheCompany{
+	border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
 .Abtcard {
     display: flex;
     text-align: center;
@@ -641,7 +692,8 @@ border: 2px;
     box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
     position: relative;
     transition: transform .4s;
-    margin-left:155px;
+    margin-left:160px;
+    background-color: #FFAB4A;
 }
 
 .fas,
@@ -661,6 +713,7 @@ border: 2px;
     transition: color .2s;
     border-bottom: inset;
     font-family: sans-serif;
+    padding: 20px;
 }
 
 .Abtcard:hover .card_title {
@@ -867,3 +920,20 @@ background: #FC8c78;
   text-align: center;
 }
 
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+    background-color: #0099cc;
+}
