@@ -692,10 +692,13 @@ border: 2px;
     box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
     position: relative;
     transition: transform .4s;
-    margin-left:160px;
+    margin-left:150px;
     background-color: #FFAB4A;
 }
 
+#userIcon{
+	color: aliceblue;
+}
 .fas,
 .fab {
     display: inline-block;
@@ -832,9 +835,9 @@ background: #FC8c78;
     font-size: 18px;
 }
 .figWrapper figure{
-  padding-top: 25px;
+  
   text-align: center;
-  padding-right: 60px;
+ 
 }
 .figWrapper figure figcaption{
     margin-bottom: 10px;
@@ -859,14 +862,44 @@ background: #FC8c78;
         margin: 0 auto;
         font-size: 18px;
         text-align: center;
-        padding-right: 103px;
-        padding-top: 22%;
+        
         max-width: 365px;
-        margin-top: 50px%;
+       
     }
     .figWrapper figure figcaption{
         margin-bottom: 15px;
     }
+}
+.icons{
+	color: white;
+	font-size: xx-large;
+}
+
+.Contactcard{
+	background-image: url("../../assets/gmc.png");
+	background-repeat: no-repeat;
+	  background-color: #33b5e5;
+	 background-blend-mode: soft-light;
+	  color: #ffffff;
+	  text-align: center;
+	  font-size: 14px;
+	  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.col-12 {
+    
+    padding: 40px;
+}
+
+.caption{
+	font-size: xx-large;
+	font-variant-caps: all-small-caps;
+	font-size: xxx-large;
+    font-weight: 500;
+}
+
+.col-auto{
+	padding: 40px;
 }
 /*Questionnaire*/
 
