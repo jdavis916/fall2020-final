@@ -12,10 +12,10 @@ const vehicleSchema = {
     year: Number,
     body_type: String,
     fuel: String,
-    mpgCityHwy: {
+    mpgCityHwy: [
         String,
         String
-    },
+    ],
     seats: String,
     doors: String
 

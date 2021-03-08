@@ -1,172 +1,173 @@
 <main class="{{pageMainClass}}">
 		<h1>{{title}}</h1>
   <article class="container">
-  <div class="row carResults">
-  <p class="personalityText">{{resMsg}}</p>
-    {{#each response}}
-    <figure class="col-sm-6 col-md-4">
-      <section class="carImageWrapper">
+      <div class="row carResults">
+      <p class="personalityText">{{resMsg}}</p>
+        {{#each response}}
+        <figure class="col-sm-6 col-md-4">
+          <section class="carImageWrapper">
 
-        {{!-- couldn't load photo, will try to fix later --}}
-        {{!-- <img src="/img/{{{pic}}}" alt="{{this.model}} pic"/> --}}
-      </section>
-      <figcaption>
-                <div class="carInfoWrapper">
-                     <span>{{this.year}}</span> |
-                     <span>{{this.make}}</span> |
-                     <span>{{this.model}}</span> |
-                     <span>{{this.body_type}}</span> |
-                     <span>{{this.fuel}}</span> |
-                     <span>{{this.mpgCityHwy}}</span> |
-                     <span>{{this.doors}} Doors</span> |
-                     <span>{{this.seats}} Seats</span>
-                </div>
+            {{!-- couldn't load photo, will try to fix later --}}
+            {{!-- <img src="/img/{{{pic}}}" alt="{{this.model}} pic"/> --}}
+          </section>
+          <figcaption>
+                    <div class="carInfoWrapper">
+                         <span>{{this.year}}</span> |
+                         <span>{{this.make}}</span> |
+                         <span>{{this.model}}</span> |
+                         <span>{{this.body_type}}</span> |
+                         <span>{{this.fuel}}</span> |
+                         <span>{{this.mpgCityHwy}}</span> |
+                         <span>{{this.doors}} Doors</span> |
+                         <span>{{this.seats}} Seats</span>
+                    </div>
 
-      </figcaption>
-    </figure>
+          </figcaption>
+        </figure>
 
-    {{/each}}
-  </div>
+        {{/each}}
+      </div>
   </article>
-<!--    <div class="featured">
-        <h2>Featured selection</h2>-->
-	<div class="container">
-  <h3>{{prompt}}</h3>
-  <p>{{msg}}</p>
-	<div class="card">
-      <div class="card-image"></div>
-      <div class="card-text">
-        <span class="date">SUV</span>
-        <h2> Chevy Tahoe</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
-      </div>
-        <div class="card-stats">
-    <div class="stat">
-      <div class="value">YEAR</div>
-      <div class="type">2021</div>
-    </div>
-    <div class="stat border">
-      <div class="value">MILAGE</div>
-      <div class="type">300,000</div>
-    </div>
-    <div class="stat">
-      <div class="value">MRSP</div>
-      <div class="type">49,000</div>
-    </div>
-  </div>
-    </div>
-    <div class="card">
-      <div class="card-image card2"></div>
-      <div class="card-text card2">
-        <span class="date">SUV</span>
-        <h2>Chevy Tahoe</h2>
-        <p>Adipisicing elit. Ducimus, repudiandae corrupti amet temporibus omnis provident illum maxime quod. Lorem ipsum dolor</p>
-      </div>
-      <div class="card-stats card2">
+    <div class="featured">
+        <h2>Featured selection</h2>
+        <div class="container">
+            <h3>{{prompt}}</h3>
+            <p>{{msg}}</p>
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-text">
+            <span class="date">SUV</span>
+            <h2> Chevy Tahoe</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
+          </div>
+            <div class="card-stats">
         <div class="stat">
-      <div class="value">YEAR</div>
-      <div class="type">2021</div>
-    </div>
-    <div class="stat border">
-      <div class="value">MILAGE</div>
-      <div class="type">300,000</div>
-    </div>
-    <div class="stat">
-      <div class="value">MRSP</div>
-      <div class="type">49,000</div>
+          <div class="value">YEAR</div>
+          <div class="type">2021</div>
+        </div>
+        <div class="stat border">
+          <div class="value">MILAGE</div>
+          <div class="type">300,000</div>
+        </div>
+        <div class="stat">
+          <div class="value">MRSP</div>
+          <div class="type">49,000</div>
         </div>
       </div>
-    </div>
-    <div class="card">
-        <div class="card-image card3"></div>
-        <div class="card-text card3">
-          <span class="date">SUV</span>
-          <h2>Chevy Tahoe</h2>
-          <p>Repudiandae corrupti amet temporibus omnis provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
         </div>
-        <div class="card-stats card3">
-          <div class="stat">
-      <div class="value">YEAR</div>
-      <div class="type">2021</div>
+        <div class="card">
+          <div class="card-image card2"></div>
+          <div class="card-text card2">
+            <span class="date">SUV</span>
+            <h2>Chevy Tahoe</h2>
+            <p>Adipisicing elit. Ducimus, repudiandae corrupti amet temporibus omnis provident illum maxime quod. Lorem ipsum dolor</p>
+          </div>
+          <div class="card-stats card2">
+            <div class="stat">
+          <div class="value">YEAR</div>
+          <div class="type">2021</div>
+        </div>
+        <div class="stat border">
+          <div class="value">MILAGE</div>
+          <div class="type">300,000</div>
+        </div>
+        <div class="stat">
+          <div class="value">MRSP</div>
+          <div class="type">49,000</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-image card3"></div>
+            <div class="card-text card3">
+              <span class="date">SUV</span>
+              <h2>Chevy Tahoe</h2>
+              <p>Repudiandae corrupti amet temporibus omnis provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
+            </div>
+            <div class="card-stats card3">
+              <div class="stat">
+          <div class="value">YEAR</div>
+          <div class="type">2021</div>
+        </div>
+        <div class="stat border">
+          <div class="value">MILAGE</div>
+          <div class="type">300,000</div>
+        </div>
+        <div class="stat">
+          <div class="value">MRSP</div>
+          <div class="type">49,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="stat border">
-      <div class="value">MILAGE</div>
-      <div class="type">300,000</div>
-    </div>
-    <div class="stat">
-      <div class="value">MRSP</div>
-      <div class="type">49,000</div>
+    <div class="container h-100">
+        <div class="byType">
+
+			</div>
+            <h2>Shop By Type</h2>
+                <!--row-->
+              <div class="row align-middle">
+                <div class="col-md-6 col-lg-4 column">
+                  <div class="Gcard used">
+                    <div class="txt">
+                      <h1>USED CARS</h1>
+                      <p>2010 Honda Accord, 2000 Toyota Camry , 2003 Chevrolet Malibu, 2010 Ford Fusion, 2012 Hyundai Sonata</p>
+                    </div>
+                    <a href="#">view list</a>
+                    <div class="ico-card">
+                        <i class="fa fa-empire"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4 column">
+                  <div class="Gcard luxury">
+                    <div class="txt">
+                      <h1>LUXURY</h1>
+                      <p>2021 ES Lexus, 2021 Ford Mustang, 2018 A8 Audi, 2020 Cadillac CT4, 2021 Genesis G70</p>
+                    </div>
+                    <a href="#">VIEW LIST</a>
+                    <div class="ico-card">
+                    <i class="fa fa-empire"></i>
+                  </div>
+                  </div>
+                </div>
+        <div class="col-md-6 col-lg-4 column">
+          <div class="Gcard allTerrain">
+            <div class="txt">
+              <h1>All terrain </h1>
+              <p>2020 Ford F250, 2020 RAM 1500, 2021 Toyota Tundra, 2020 GMC Sierra 1500, 2020 Nissan Titan</p>
+            </div>
+            <a href="#">view list</a>
+            <div class="ico-card">
+            <i class="fa fa-empire"></i>
+          </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 column">
+          <div class="Gcard suv">
+            <div class="txt">
+              <h1>suv's</h1>
+              <p>2021 Chevy Tahoe, 2021 Cadillac Escalade, 2021 Toyota Highlander, 2020 GMC Yukon, 2021 Mazda CX9</p>
+            </div>
+            <a href="#">view list</a>
+          <div class="ico-card">
+            <i class="fa fa-empire"></i>
+          </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 column">
+          <div class="Gcard hybrids">
+            <div class="txt">
+              <h1>hybrids</h1>
+              <p>2020 Kia Niro, 2021 BMW 330E 2020 2021 Hyundai Sonata, 2021 Toyota Prius, 2019 Tesla Model 3</p>
+            </div>
+              <a href="#">view list</a>
+              <div class="ico-card">
+                <i class="fa fa-empire"></i>
+              </div>
           </div>
         </div>
       </div>
-</div>
-</div>
-		<div class="container h-100">
-			<div class="byType">
-
-			</div>
-  <div class="row align-middle">
-  	<h2>Shop By Type</h2>
-    <div class="col-md-6 col-lg-4 column">
-      <div class="Gcard used">
-        <div class="txt">
-          <h1>USED CARS</h1>
-          <p>2010 Honda Accord, 2000 Toyota Camry , 2003 Chevrolet Malibu, 2010 Ford Fusion, 2012 Hyundai Sonata</p>
-        </div>
-        <a href="#">view list</a>
-        <div class="ico-card">
-        <i class="fa fa-empire"></i>
-      </div>
-      </div>
     </div>
-  <div class="col-md-6 col-lg-4 column">
-      <div class="Gcard luxury">
-        <div class="txt">
-          <h1>LUXURY</h1>
-          <p>2021 ES Lexus, 2021 Ford Mustang, 2018 A8 Audi, 2020 Cadillac CT4, 2021 Genesis G70</p>
-        </div>
-        <a href="#">VIEW LIST</a>
-        <div class="ico-card">
-        <i class="fa fa-empire"></i>
-      </div>
-      </div>
-    </div>
-<div class="col-md-6 col-lg-4 column">
-      <div class="Gcard allTerrain">
-        <div class="txt">
-          <h1>All terrain </h1>
-          <p>2020 Ford F250, 2020 RAM 1500, 2021 Toyota Tundra, 2020 GMC Sierra 1500, 2020 Nissan Titan</p>
-        </div>
-        <a href="#">view list</a>
-        <div class="ico-card">
-        <i class="fa fa-empire"></i>
-      </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4 column">
-      <div class="Gcard suv">
-        <div class="txt">
-          <h1>suv's</h1>
-          <p>2021 Chevy Tahoe, 2021 Cadillac Escalade, 2021 Toyota Highlander, 2020 GMC Yukon, 2021 Mazda CX9</p>
-        </div>
-        <a href="#">view list</a>
-      <div class="ico-card">
-        <i class="fa fa-empire"></i>
-      </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4 column">
-      <div class="Gcard hybrids">
-        <div class="txt">
-          <h1>hybrids</h1>
-          <p>2020 Kia Niro, 2021 BMW 330E 2020 2021 Hyundai Sonata, 2021 Toyota Prius, 2019 Tesla Model 3</p>
-        </div>
-        <a href="#">view list</a>
-      <div class="ico-card">
-        <i class="fa fa-empire"></i>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
 </main>

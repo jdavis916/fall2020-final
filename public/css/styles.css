@@ -720,7 +720,7 @@ border: 2px;
 
 	/*Contact Page*/
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+/*@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');*/
 
 /**{
   margin: 0;
@@ -788,16 +788,13 @@ border: 2px;
 text-align: center;
 padding-top: 10px;
 }
-#btn{
-font-size: 24px;
-background: #FC8c78;
+.btnClass{
+    font-size: 24px;
+    background: #FC8C78;
 }
-
-
-
-#error_message{
+.error_message{
   margin-bottom: 20px;
-  background: #fe8b8e;
+  background: #FE8B8E;
   padding: 0;
   text-align: center;
   font-size: 14px;
@@ -878,15 +875,15 @@ background: #FC8c78;
   border-radius: 8px;
   border-bottom: 3px solid #333;
 }
-.questionnaire #submit {
+.questionnaire .btnSubmit {
   background: #17B5F1;
 }
-.questionnaire #reset {
+.questionnaire .btnReset {
   background: #FC8C78
 }
-.questionnaire #answer {
-  border: 1px dashed #ccc;
-  background: #eee;
+.questionnaire .answer {
+  border: 1px dashed #CCC;
+  background: #EEE;
   padding: 10px;
   text-align: center;
 }
