@@ -162,7 +162,7 @@ h2, h3 {
 	}
 	*/
 
-	/*For advance page */
+	/*Advance Search */
 	.mt-n1 {
 
       background-color: #FC8C78;
@@ -172,12 +172,16 @@ h2, h3 {
 
 	}
 
-  .container {
-    padding-bottom: 60px;
-  }
+    .formAdvSearch{
+        text-align: center;
+    }
+    .formAdvSearch .formWrapper {
+      padding-bottom: 60px;
+      background-color: #17B5F1;
+    }
 
 	.pad1 {
-	    padding-top: 10rem;
+	    padding-top: 40px;
 	}
 
   .colortext {
@@ -195,7 +199,7 @@ border: 2px;
   height: 50px;
   }
 
-  #rcorners2 {
+  .btnSearchSubmit {
   border-radius: 25px;
   border: 2px solid #FC8C78;
   width: 150px;
@@ -205,6 +209,7 @@ border: 2px;
 .col-md-4 {
   flex: 0 0 15.333333%;
 }*/
+
 /*Car Results*/
 .carResults figure {
 
@@ -216,6 +221,14 @@ border: 2px;
     min-width: 160px;
 }
 
+.carResults figure figcaption{
+    margin-top: 5px;
+
+}
+.carImageWrapper{
+    overflow: hidden;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+}
 
  /*CarViewPag*/
 

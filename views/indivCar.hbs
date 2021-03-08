@@ -4,12 +4,20 @@
 	<article class="container">
 	<div class="row carResults">
 		{{#each response}}
-		<figure class="col-4">
-			<section>
-				<img src="/img/{{pic}}"/>
+		<figure class="col-sm-6 col-md-4">
+			<section class="carImageWrapper">
+				<img src="/img/{{pic}}" alt="{{this.model}} pic"/>
 			</section>
 			<figcaption>
-				{{this.year}} {{this.make}} {{this.model}} | {{this.body_type}} | {{this.fuel}} | {{this.doors}} | {{this.seats}}
+                <div class="carInfoWrapper">
+                     <span>{{this.year}}</span> |
+                     <span>{{this.make}}</span> |
+                     <span>{{this.model}}</span> |
+                     <span>{{this.body_type}}</span> |
+                     <span>{{this.fuel}}</span> |
+                     <span>{{this.doors}}</span> |
+                     <span>{{this.seats}}</span>
+                </div>
 			</figcaption>
 		</figure>
 		{{/each}}

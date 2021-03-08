@@ -2,9 +2,9 @@
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
 
-    <form action='/indivCar' method='POST'>
+    <form action='/indivCar' method='POST' class="formAdvSearch">
 <!-- /.container -->
- <div class="container bgcolor">
+ <div class="container formWrapper bgcolor">
 <!-- /.row -->
    <div class="row pad1">
      <div class="col-md-4">
@@ -42,7 +42,7 @@
 
 <!-- /.row -->
    <div class="row pad1">
-     <div class="col-md-4 bg-info">
+     <div class="col-md-4">
 
       <label class="colortext">mpg</label>
       <div aria-labelledby="dropdownMenuButton">
@@ -78,7 +78,7 @@
   <div class="col-md-4">
     <label class="colortext">doors</label>
     <div aria-labelledby="dropdownMenuButton">
-      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="brands">
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="doors">
           <option value=""></option>
           {{#each door}}
         <option value="{{this}}">{{this}}</option>
@@ -105,17 +105,10 @@
    <div class="row pad1">
 	   <div class="col-md-4">
 
-      <a class="nav-link" href="/carList"><input class="btn mt-n1" type="submit" value="Submit" id='rcorners2'></a>
+      <a class="nav-link" href="/carList"><input class="btn mt-n1 btnSearchSubmit" type="submit" value="Submit"></a>
      </div>
    </div>
 </div>
-
-     <!-- /.row submit button -->
-   <div class="row">
-	   <div class="col-md-4 bg-danger mt-n1">
-      {{!-- <a class="nav-link" href="/indivCar"> --}}<input class="btn btn-primary" type="submit" value="Submit">{{!-- </a> --}}
-     </div>
-   </div>
 
  </div>
 </form>
