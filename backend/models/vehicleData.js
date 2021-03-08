@@ -10,7 +10,10 @@ export const vehicleSchema = new Schema({
 	year: Number,
 	body_type: String,
 	fuel: String,
-	mpgCityHwy: Array,
+	mpgCityHwy: {
+		String,
+		String
+	},
 	seats: Number,
 	doors: Number
     

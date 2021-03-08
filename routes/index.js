@@ -1,32 +1,33 @@
 import express from "express";
 import ContactForm from "../backend/models/formModel";
 import QuestionForm from "../backend/models/questionForm";
-import vehicleDb from "../backend/models/vehicleData";
+import vehicleModel from "../backend/models/vehicleData";
 import mongoose from "mongoose";
+const url = require('url');
 //import axios from 'axios';
-//var vehicleSchema = 
+//var vehicleSchema =
+const vehicleSchema = {
+    make: String,
+    model: String,
+    year: Number,
+    body_type: String,
+    fuel: String,
+    mpgCityHwy: [
+        String,
+        String
+    ],
+    seats: String,
+    doors: String
+
+};
+
+var result = {};
+var search;
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
-var errorMsg = "Prohibited characters detected in input";
-var vehicles = mongoose.model('vehicles');
+var errorMsg = "error";
 var db = mongoose.connection;
-var carMake;
-var carModel;
-var carMpg;
-var carFuelType;
-var carDoors;
-var carSeats;
-var carSurvPrice;
-var carSurvSeat;
-var carSurvBody;
-var myPersonality;
-var myObjective;
-var myDriving;
-var myAttrib;
-//var collection = db.collection('vehicles');
-/*var document = 'advSearch.hbs';
-var formElement = document.querySelector('#adv');
-var formData = new FormData(formElement);*/
+
 //contact form
 var sanitizeArr = [
     body('firstName').matches(/^[a-zA-Z0-9 ]*$/).trim(),
@@ -46,83 +47,68 @@ var sanitizeArr2 = [
     body('driving').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('priority').matches(/^[a-zA-Z0-9 ]*$/).trim()
 ];
+//advSearch form data sanitization
 var sanitizeArr3 = [
     body('brands').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('models').matches(/^[a-zA-Z0-9 ]*$/).trim(),
-    body('minimum').isNumeric([{no_symbols: true}]).trim(),
-    body('maximum').isNumeric([{no_symbols: true}]).trim(),
-    body('mpg').isNumeric([{no_symbols: true}]).trim(),
+    //body('mpg').isNumeric([{no_symbols: true}]).trim(),
     body('fuel').matches(/^[a-zA-Z0-9 ]*$/).trim(),
     body('door').isNumeric([{no_symbols: true}]).trim(),
     body('seat').isNumeric([{no_symbols: true}]).trim()
 ];
-/*pageMainClass: 'advSearch',
-                title: 'Advanced Search',
-                msg: 'Select filters to apply:',
-                brands: values[0],//await db.collection('vehicles').distinct('make'),
-                models: values[1], //await db.collection('vehicles').distinct('body_type'),
-                minimum: getMinimum(),
-                maximum: getMaximum(),
-                mpg: getMpg(),
-                interiorColor: getInteriorColor(),
-                exteriorColor: getExteriorColor(),
-                fuel: values[2],
-                door: values[4],
-                seat: values[3]*/
-//mock data for contact pulldown, update to pull from db later
+
+//mock data for contact pulldown
 function getContactSubjects(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "Title1"
+            title: "Site Satisfaction"
 
         },
         {
             _id:2,
-            title: "Title2"
+            title: "Business Inquiry"
 
         },
         {
             _id:3,
-            title: "Title3"
+            title: "Suggestions"
 
         },
         {
             _id:4,
-            title: "Title4"
+            title: "Bug/Error reporting"
 
         },
         {
             _id:5,
-            title: "Title5"
+            title: "Other comments or concerns"
         }
     ];
 
     return subArr;
 }
 
-// mock data for advanced seach dropdown options 
-/*async function getBrand(){
+// mock data for home page
+function getBrand(){
     let subArr = [];
-    return await db.collection('vehicles').distinct('make');
-}*/
-/*    subArr = [
+    subArr = [
         {
             _id:1,
-            title: "Nissan"
-        },
-        {
-            _id:2,
             title: "Ford"
         },
         {
+            _id:2,
+            title: "Chevy"
+        },
+        {
             _id:3,
-            title: "Chevrolet"
+            title: "Toyota"
         },
         {
             _id:4,
-            title: "Toyota"
+            title: "Lexus"
         },
         {
             _id:5,
@@ -130,62 +116,38 @@ function getContactSubjects(){
         }
     ];
 
-    return subArr;*/
+    return subArr;
+}
 
-/*async function getBodyTypes(req,res,next){
+function getModel(){
     let subArr = [];
-    return await db.collection('vehicles').distinct('body_type');
-    //return subArr;
-  //  async function getData(){
-        //subArr = db.collection('vehicles').find().distinct( "body_style" );
-       /* 
-        await vehicleDb.distinct('body_type',(err, res) => {
-            console.log(res);
-            return res;
-            
-        })*/
-   //}
+    subArr = [
+        {
+            _id:1,
+            title: "Car"
+        },
+        {
+            _id:2,
+            title: "Truck"
+        },
+        {
+            _id:3,
+            title: "Van"
+        },
+        {
+            _id:4,
+            title: "Sedan"
+        },
+        {
+            _id:5,
+            title: "Hatchback"
+        }
+    ];
 
+    return subArr;
+}
 
-    //subArr.then(function(){
-    //    console.log(subArr)
-    //});
-  /*  subArr = vehicles.find({body_type:'truck'},{body_type:'suv'},{body_type:'sedan'},{body_type:'compact'},{body_type:'sports'}).toArray(function (err, result) {
-        if (err) {
-            console.log(err);
-        } else if (result.length) {
-            return result;
-        } else {
-            socket.emit("No documents found");
-        };
-    });*/
-    //console.log(result);
-    //
-    //subArr = [
-    //    {
-    //        _id:1,
-    //        title: bodyTypes[0]
-    //    },
-    //    {
-    //        _id:2,
-    //        title: bodyTypes[1]
-    //    },
-    //    {
-    //        _id:5,
-    //        title: bodyTypes[2]
-    //    },
-    //    {
-    //        _id:6,
-    //        title: bodyTypes[3]
-    //    },
-    //    {
-    //        _id:7,
-    //        title: bodyTypes[4]
-    //    }
-    //];
-    //console.log(subArr);
-    //return subArr;
-
+// mock data for advanced seach dropdown o
 function getMinimum(){
     let subArr = [];
     subArr = [
@@ -240,28 +202,29 @@ function getMaximum(){
 
     return subArr;
 }
+
 function getMpg(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "5-10"
+            title: "10"
         },
         {
             _id:2,
-            title: "10-20"
+            title: "20"
         },
         {
             _id:3,
-            title: "20-30"
+            title: "30"
         },
         {
             _id:4,
-            title: "30-40"
+            title: "40"
         },
         {
             _id:5,
-            title: "40 +"
+            title: "50 and above"
         },
         {
             _id:6,
@@ -271,6 +234,7 @@ function getMpg(){
 
     return subArr;
 }
+
 function getInteriorColor(){
     let subArr = [];
     subArr = [
@@ -298,6 +262,7 @@ function getInteriorColor(){
 
     return subArr;
 }
+
 function getExteriorColor(){
     let subArr = [];
     subArr = [
@@ -325,34 +290,38 @@ function getExteriorColor(){
 
     return subArr;
 }
-/*function getFuel(){
+
+
+// questionaire mock Q's and A's 
+function getPriceSlider(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "Gas"
+            title: "10,000"
         },
         {
             _id:2,
-            title: "Diesel"
+            title: "20,000"
         },
         {
             _id:3,
-            title: "Bio diesel"
+            title: "30,000"
         },
         {
             _id:4,
-            title: "Electric"
+            title: "40,000"
         },
         {
             _id:5,
-            title: "Hybrid"
-        }
+            title: "50,000"
+        } // add in other options later
     ];
 
     return subArr;
-}*/
-/*function getDoor(){
+}
+
+function getSeatSlider(){
     let subArr = [];
     subArr = [
         {
@@ -365,79 +334,21 @@ function getExteriorColor(){
         },
         {
             _id:3,
-            title: "6"
+            title: "5"
         },
         {
             _id:4,
+            title: "7"
+        },
+        {
+            _id:5,
             title: "8"
-        },
-        {
-            _id:5,
-            title: "10+"
-        }
-    ];
-
-    return subArr;
-}*/
-
-
-
-// questionaire mock Q's and A's
-function getQuestionOne(){
-    let subArr = [];
-    subArr = [
-        {
-            _id:1,
-            title: 10000
-        },
-        {
-            _id:2,
-            title: 20000
-        },
-        {
-            _id:3,
-            title: 30000
-        },
-        {
-            _id:4,
-            title: 40000
-        },
-        {
-            _id:5,
-            title: 50000
         } // add in other options later
     ];
 
     return subArr;
-};
-function getQuestionTwo(){
-    let subArr = [];
-    subArr = [
-        {
-            _id:1,
-            title: 2
-        },
-        {
-            _id:2,
-            title: 4
-        },
-        {
-            _id:3,
-            title: 6
-        },
-        {
-            _id:4,
-            title: 8
-        },
-        {
-            _id:5,
-            title: 10
-        } // add in other options later
-    ];
-
-    return subArr;
-};
-function getQuestionThree(){
+}
+function getCarType(){
     let subArr= [];
     subArr = [
         {
@@ -458,36 +369,40 @@ function getQuestionThree(){
         },
         {
             _id:5,
-            title: "Hachback etc."
+            title: "Compact"
         } // add in other options later
     ];
 
     return subArr;
-};
-function getQuestionFour(){
+}
+function getPersonalityType(){
     let subArr = [];
     subArr = [
         {
             _id:1,
-            title: "Chill"
+            title: "Personality type"
         },
         {
             _id:2,
-            title: "Assertive"
+            title: "Chill"
         },
         {
             _id:3,
-            title: "Short-tempered"
+            title: "Assertive"
         },
         {
             _id:4,
+            title: "Short-tempered"
+        },
+        {
+            _id:5,
             title: "Compassionate"
         } // add in other options later
     ];
 
     return subArr;
-};
-function getQuestionFive(){
+}
+function getObjective(){
     let subArr = [];
     subArr = [
         {
@@ -509,30 +424,35 @@ function getQuestionFive(){
     ];
 
     return subArr;
-};
-function getQuestionSix(){
+}
+function getDrivingNeeds(){
     let subArr = [];
     subArr = [
         {
+            _id:1,
             title: "Getting from point A to point B"
         },
         {
+            _id:2,
             title: "Going fast"
         },
         {
+            _id:3,
             title: "Being safe"
         },
         {
+            _id:4,
             title: "Looking good while doing it"
         },
         {
+            _id:5,
             title: "Having the ability to drive with groups"
         } // add in other options later
     ];
 
     return subArr;
-};
-function getQuestionSeven(){
+}
+function getAttributes(){
     let subArr = [];
     subArr = [
         {
@@ -559,18 +479,41 @@ function getQuestionSeven(){
 
     return subArr;
 };
+function removeEmpty(obj) {
+    return Object.entries(obj)
+        .filter(([_, v]) => v != '')
+        .reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {});
+}
 
 router
     /* GET home page. */
-	.get('/', function(req, res, next) {
-        res.render('index', 
-            { 
-                pageMainClass: 'pgMainHome',
+
+    .get('/', async function(req, res, next) {
+        var returnObj = {};
+        var make = db.collection('vehicles').distinct('make');
+        var bodyTypes = db.collection('vehicles').distinct('body_type');
+
+        //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
+        Promise.all([make, bodyTypes])
+        .then((values) =>{
+            
+            try{
+                returnObj = {
+                pageMainClass: 'pageMainHome',
                 title: 'COP Final Project',
-                msg: 'fun time',
-                group: 'The whole class'
-            });
-	})
+
+                brands: values[0],
+                models: values[1],
+                }
+            }catch(error){
+                res.status(500).json({
+                    error: error.toString()
+                });
+
+            }
+        res.render('index', returnObj);
+        })//res.json({bodyTypes});
+    })
     .get('/about', function(req, res, next) {
         res.render('about',
             {
@@ -583,8 +526,9 @@ router
         res.render('indivCar',
             {
                 pageMainClass: 'indivCar',
-                title: 'View Car Details',
-                msg: "Here's your car."
+                title: 'Results',
+                err: {Error},
+                res: 'Theres supposed to be a car here...'
             });
     })
     .get('/contact', function(req, res, next) {
@@ -602,16 +546,13 @@ router
                 pageMainClass: 'questionnaire',
                 title: 'Personality Questionnaire',
                 msg: 'Please answer honestly to ensure accurate results', 
-                price: getQuestionOne(),
-                seat: getQuestionTwo(),
-                carType: getQuestionThree(),
-                personality: getQuestionFour(),
-                activity: getQuestionFive(),
-                driving: getQuestionSix(),
-                attributes: getQuestionSeven()
-
-
-
+                priceSlider: getPriceSlider(),
+                seatSlider: getSeatSlider(),
+                carType: getCarType(),
+                personality: getPersonalityType(),
+                objective: getObjective(),
+                drivingNeeds: getDrivingNeeds(),
+                attributes: getAttributes()
             });
     })
     .get('/advSearch', async function(req, res,) {
@@ -622,7 +563,8 @@ router
         var seat = db.collection('vehicles').distinct('seats');
         var door = db.collection('vehicles').distinct('doors');
         //var mpg = db.collection('vehicles').distinct('mpgCityHwy');
-        Promise.all([make, bodyTypes, fuel, seat, door]).then((values) =>{
+        Promise.all([make, bodyTypes, fuel, seat, door])
+        .then((values) =>{
             /*console.log(bodyTypes);
             console.log(values[1]);
             console.log(fuel);
@@ -639,13 +581,11 @@ router
                 minimum: getMinimum(),
                 maximum: getMaximum(),
                 mpg: getMpg(),
-                interiorColor: getInteriorColor(),
-                exteriorColor: getExteriorColor(),
                 fuel: values[2],
                 door: values[4],
                 seat: values[3]
 
-                }   
+                }
             }catch(error){
                 res.status(500).json({
                     error: error.toString()
@@ -664,39 +604,84 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
-    .post('/forms/adv', sanitizeArr3, (req,res,next) =>{
-        //console.log(req.body);
-        var carMake= req.body.brands;
-        var carModel= req.body.models;
-        var carMpg= req.body.mpg;
-        var carFuelType= req.body.fuel;
-        var carDoors= req.body.door;
-        var carSeats= req.body.seat;
-        //};
-        
-        /*.then(result => {
-            //res.redirect(200, '/path')({
-            //    //res: "Message recieved. Check for a response later."
-            //});
-            res.status(200).json({
-                docs:[questions]
+    .post('/indivCar', sanitizeArr3, async (req,res) => {
+        try{
+            var pics = [''];
+            var promptMsg = '';
+            var arr1 = {
+                make: req.body.brands,
+                body_type: req.body.models,
+                fuel: req.body.fuel,
+                doors: (req.body.door > 0) ? parseInt(req.body.door) : "",
+                seats: (req.body.seats > 0) ? parseInt(req.body.seats) : ""
+            };
+            console.log(arr1);
+            if((req.body.models === 'truck')){
+                pics = ['sierra2020.png', 'f1502015.png', 'rivianR1t2022.png'];
+            }else if((req.body.models === 'suv' || req.body.models === 'luxury suv')){
+                pics = ['fordExpedition2013.png', 'modelX2017.png', 'escalade2020.png'];
+            }else if((req.body.models === 'sport')){
+                pics = ['corvette2020.png', 'civicTypeR2019.png', 'teslaRoadster2021.png'];
+            }else if((req.body.models === 'sedan' || req.body.models === 'luxury sedan')){
+                pics = ['sonic2019.png', 'audiA42018.png', 'sonata2014.png'];
+            }else if((req.body.models === 'compact' || req.body.models === 'luxury comact')){
+                pics = ['miniCooper2017.png', 'prius2014.png', 'ct42021.png'];
+            };
+            console.log(pics);
+            var rand = Math.floor(Math.random() * 3)
+            //var randPic = pics[rand];
+            var promptMsg = '';
+            var carArray = removeEmpty(arr1);
+            console.log(carArray);
+            var picRaw = pics[rand];
+            var picInput = "'" + picRaw + "'";
+            var i = 0;
+            console.log(picInput);
+            /*pics = ['miniCooper2017.jpg', 'prius2014.jpg', 'ct42021.jpg'];
+            picInput = pics[0];*/
+            db.collection('vehicles').find(carArray).toArray(function(err, resp){
+                console.log(resp);
+                //console.log(randPic);
+                if(resp.length===0){
+
+                    promptMsg = 'No exact results.';
+                } else {
+
+                    let len = resp.length;
+                    for(i = 0; i < len ; i++){
+                        let rand = Math.floor(Math.random() * 3);
+                        resp[i].pic = pics[rand];
+
+                    }
+                }
+                console.log(resp);
+                res.render('indivCar', {
+                    title: 'Results',
+                    response : resp,
+                    prompt: promptMsg,
+                    /*picture: picInput*/
+
+                });
+            console.log(res.render);
             });
-        })
-        .catch(err => {
-            console.log(err);
-        });*/
+        }catch(error){
+            res.status(500).json({
+                error: error.toString()
+            })
+        }
     })
+
     /* POST contact form. */
-	.post('/formModel', sanitizeArr,
+    .post('/formModel', sanitizeArr,
         (req, res, next) =>{
-        //console.log(req.body);
+        console.log(req.body);
         const errors = validationResult(req);
-        console.log(errors);
+        //console.log(errors);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        
+
         /*console.log(req.headers);*/
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
@@ -731,35 +716,30 @@ router
         });
     })
     //info from survey form
-    .post('/questionForm'/*, sanitizeArr2*/,
-        (req, res, next) =>{
-        //console.log(req.body);
+    .post('/questionForm',(req, res, next) =>{
+
+        //var carSurv = {};
         const errors = validationResult(req);
         //returns error array if input fails check
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        console.log(req.body);
-        var carSurvPrice= req.body.price;
-        var carSurvSeat= req.body.seats;
-        var carSurvBody= req.body.carType;
-        var myPersonality = req.body.personality;
-        var myObjective= req.body.activity;
-        var myDriving= req.body.driving;
-        var myAttrib= req.body.priority;
-        
-        
+        //console.log(req.body);
+
+
+        //setting up variables for the personality function
+
         const questions = new QuestionForm({
             _id: mongoose.Types.ObjectId(),
             price: req.body.price,
-            seat: req.body.seat,
-            carType: req.body.carType,
+            seats: req.body.seats,
+            body_style: req.body.body_style,
             personality: req.body.personality,
             activity: req.body.activity,
             driving: req.body.driving,
             attributes: req.body.attributes
-        });
-        
+        })
+        console.log(carSurv);
         //res.redirect(200, path)({
         //    res: "Message recieved. Check for a response later."
         //});
@@ -770,10 +750,15 @@ router
             //});
             res.status(200).json({
                 docs:[questions]
-            });
+            })
         })
-        .catch(err => {
+    .catch(err => {
+        res.status(500).json({
+                errRes:[errorMsg]
+            });
             console.log(err);
-        });
+        })
     });
+
+//console.log(getQuestionFour().subArr[1].Title)
 module.exports = router;

@@ -1,8 +1,64 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #0F0;
+  background-color: #FFFFFF;
 }
+
+/*Header and footer*/
+.bgcolor {
+    background-color: #17B5F1;
+}
+
+h1{
+    font-size: 32px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Responsive*/
+
+@media all and (min-width: 576px){
+    h1{
+        font-size: 48px;
+    }
+}
+
+
+footer p{
+    font-size: 12px;
+}
+
+main{
+    padding: 50px 0;
+}
+
+/*rating for the header*/
+
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    padding: 20px
+}
+
+.star-rating input[type=radio] {
+    display: none
+}
+
+.star-rating label {
+    color: #bbb;
+    font-size: 18px;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+    color: #f2b600
+}
+
 
 /*
 a {
@@ -14,182 +70,798 @@ a {
 */
 
 
-/*
-.col-lg {
-	text-align: center;
-	border: 10px solid black;
 
-}
-*/
+/* For HOMEPAGE */
 
-/*For advance page */
-.mt-n1 {
-    padding: 1rem;
-
-}
-
-.pad1 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-/*
-.pb-2 {
-    padding-bottom: ($spacer * .5) !important;
-    padding-right: ($spacer * .5) !important;
+/* dropdown buttons */
+/*body { background-image: url("stockcar (1).png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
 }*/
+/*Carosel */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
 
-/*card images*/
-.used {
-  background-image: url("http://www.clickheretesting.com/BestChevrolet/research/2021/tahoe/images/mlp-img-top.jpg");
-}
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
 
-.luxury {
-  background-image: url("https://s1.cdn.autoevolution.com/images/news/2021-bmw-330e-plug-in-costs-3800-more-than-330i-142190-7.jpg");
-}
+  .pad2 {
+    padding-bottom: 15rem;
+  }
 
-.allTerrain {
-  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
-}
-
-.suv {
-  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
-}
-
-.hybrids {
-  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
-}
-
-/*card transition speed control*/
-* {
-  transition: 0.5s;
-}
-/*column controls and hover functionality */
-.h-100 {
-  height: 100vh !important;
-}
-
-.align-middle {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.column {
-  margin-top: 3rem;
-  padding-left: 3rem;
-}
-.column:hover {
-  padding-left: 0;
-}
-.column:hover .card .txt {
-  margin-left: 1rem;
-}
-.column:hover .card .txt h1,
-.column:hover .card .txt p {
-  color: white;
-  opacity: 1;
-}
-.column:hover a {
-  color: white;
-}
-.column:hover a:after {
-  width: 10%;
-}
-
-/*card & txt positioning*/
-.card {
-  min-height: 170px;
-  margin: 0;
-  padding: 1.7rem 1.2rem;
-  border: none;
-  border-radius: 0;
+.dropbtn {
+  background-color: #FC8C78;
   color: black;
-  letter-spacing: 0.05rem;
-  font-family: "Oswald", sans-serif;
-  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+  padding: 16px;
+  font-size: 16px;
+  font-family: arial, sans-serif;
+  border: none;
 }
-.card .txt {
-  margin-left: -3rem;
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FC8C78;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-.card .txt h1 {
-  font-size: 1.5rem;
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #FFFFFF;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #FFFFFF;}
+
+/* about us paragraph text */
+.p1 {
+	text-align: center;
+	font: 20px Arial
+
+}
+
+/* find your next match header text */
+
+/* about us header text */
+h2, h3 {
+	text-align: center;
+	font-family: Arial, sans-serif;
+    font-weight: 700;
+}
+
+/* button */
+.button {
+	background-color: #FC8C78;
+  border: none;
+  color: #FC8C78;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+	background-color: #FC8C78;
+	color: #000000;
+	border: none;
+}
+.button1:hover {
+	background-color: #FC8C78;
+	color: #000000;
+	}
+
+
+	/*
+	.col-lg {
+		text-align: center;
+		border: 10px solid black;
+
+	}
+	*/
+
+	/*Advance Search */
+	.mt-n1 {
+
+      background-color: #FC8C78;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+
+	}
+
+    .formAdvSearch{
+        text-align: center;
+    }
+    .formAdvSearch .formWrapper {
+      padding-bottom: 60px;
+      background-color: #17B5F1;
+    }
+
+	.pad1 {
+	    padding-top: 40px;
+	}
+
+  .colortext {
+    padding-top: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+  }
+
+  .btn-outline{
+
+border: 2px;
+   width: 200px;
+  height: 50px;
+  }
+
+  .btnSearchSubmit {
+  border-radius: 25px;
+  border: 2px solid #FC8C78;
+  width: 150px;
+  height: 55px;
+}
+/*
+.col-md-4 {
+  flex: 0 0 15.333333%;
+}*/
+
+/*Car Results*/
+.carResults figure {
+
+}
+
+.carResults figure img {
+    width: 100%;
+    height: auto;
+    min-width: 160px;
+}
+
+.carResults figure figcaption{
+    margin-top: 5px;
+
+}
+.carImageWrapper{
+    overflow: hidden;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+}
+
+ /*CarViewPag*/
+
+	/*---FeaturedCars---*/
+.card {
+  display: inline-grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: "image" "text" "stats";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: roboto;
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  inline-size:fit-content;
+}
+.card-image {
+  grid-area: image;
+  background: url("http://www.clickheretesting.com/BestChevrolet/research/2021/tahoe/images/mlp-img-top.jpg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+.card-text .date {
+  color: rgb(255, 7, 110);
+  font-size:13px;
+}
+.card-text p {
+  color: grey;
+  font-size:15px;
+  font-weight: 300;
+}
+.card-text h2 {
+  margin-top:0px;
+  font-size:28px;
+}
+.card-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(255, 7, 110);
+}
+.card-stats .stat {
+  padding:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+.card-stats .border {
+  border-left: 1px solid rgb(172, 26, 87);
+  border-right: 1px solid rgb(172, 26, 87);
+}
+.card-stats .value{
+  font-size:22px;
+  font-weight: 500;
+}
+.card-stats .value sup{
+  font-size:12px;
+}
+.card-stats .type{
+  font-size:11px;
   font-weight: 300;
   text-transform: uppercase;
 }
-.card .txt p {
-  font-size: 0.7rem;
-  font-family: "Open Sans", sans-serif;
-  letter-spacing: 0rem;
-  margin-top: 33px;
-  opacity: 0;
-  color: white;
-}
-.card a {
-  z-index: 3;
-  font-size: 0.7rem;
-  color: black;
-  margin-left: 1rem;
-  position: relative;
-  bottom: -0.5rem;
-  text-transform: uppercase;
-}
-.card a:after {
-  content: "";
-  display: inline-block;
-  height: 0.5em;
-  width: 0;
-  margin-right: -100%;
-  margin-left: 10px;
-  border-top: 1px solid white;
-  transition: 0.5s;
+.card:hover {
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 
-/*card favicon*/
-.card .ico-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+/*card2*/
+.card-image.card2 {
+   background: url("http://www.clickheretesting.com/BestChevrolet/research/2021/tahoe/images/mlp-img-top.jpg");
+  background-size: cover;
+}
+.card-text.card2 .date {
+  color: rgb(255, 77, 7);
+}
+.card-stats.card2 .border {
+  border-left: 1px solid rgb(185, 67, 20);
+  border-right: 1px solid rgb(185, 67, 20);
+}
+.card-stats.card2 {
+  background: rgb(255, 77, 7);
+}
+/*card3*/
+.card-image.card3 {
+   background: url("http://www.clickheretesting.com/BestChevrolet/research/2021/tahoe/images/mlp-img-top.jpg");
+  background-size: cover;
+}
+.card-text.card3 .date {
+  color: rgb(0, 189, 63);
+}
+.card-stats.card3 .border {
+  border-left: 1px solid rgb(14, 122, 50);
+  border-right: 1px solid rgb(14, 122, 50);
+}
+.card-stats.card3 {
+  background: rgb(0, 189, 63);
+}
+
+
+/*-----CarsByType----*
+	/*card images*/
+	.used {
+	  background-image: url("http://www.clickheretesting.com/BestChevrolet/research/2021/tahoe/images/mlp-img-top.jpg");
+	  min-height: 170px;
+	  margin: 0;
+	  padding: 1.7rem 1.2rem;
+	  border: none;
+	  border-radius: 0;
+	  color: black;
+	  letter-spacing: 0.05rem;
+	  font-family: "Oswald", sans-serif;
+	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+	}
+
+	.luxury {
+	  min-height: 170px;
+	  margin: 0;
+	  padding: 1.7rem 1.2rem;
+	  border: none;
+	  border-radius: 0;
+	  color: black;
+	  letter-spacing: 0.05rem;
+	  font-family: "Oswald", sans-serif;
+	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+	  background-image: url("https://s1.cdn.autoevolution.com/images/news/2021-bmw-330e-plug-in-costs-3800-more-than-330i-142190-7.jpg");
+	}
+
+	.allTerrain {
+	  min-height: 170px;
+	  margin: 0;
+	  padding: 1.7rem 1.2rem;
+	  border: none;
+	  border-radius: 0;
+	  color: black;
+	  letter-spacing: 0.05rem;
+	  font-family: "Oswald", sans-serif;
+	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
+	}
+
+	.suv {
+	 min-height: 170px;
+	  margin: 0;
+	  padding: 1.7rem 1.2rem;
+	  border: none;
+	  border-radius: 0;
+	  color: black;
+	  letter-spacing: 0.05rem;
+	  font-family: "Oswald", sans-serif;
+	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
+	}
+
+	.hybrids {
+	  min-height: 170px;
+	  margin: 0;
+	  padding: 1.7rem 1.2rem;
+	  border: none;
+	  border-radius: 0;
+	  color: black;
+	  letter-spacing: 0.05rem;
+	  font-family: "Oswald", sans-serif;
+	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
+	}
+
+	/*card transition speed control*/
+	* {
+	  transition: 0.5s;
+	}
+	/*column controls and hover functionality */
+	.h-100 {
+	  height: 100vh !important;
+	}
+
+	.align-middle {
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+
+	.column {
+	  margin-top: 3rem;
+	  padding-left: 3rem;
+	}
+	.column:hover {
+	  padding-left: 0;
+	}
+	.column:hover .Gcard .txt {
+	  margin-left: 1rem;
+	}
+	.column:hover .Gcard .txt h1,
+	.column:hover .Gcard .txt p {
+	  color: black;
+	  opacity: 1;
+	}
+	.column:hover a {
+	  color: white;
+	}
+	.column:hover a:after {
+	  width: 10%;
+	}
+
+	/*card & txt positioning*/
+	.Gcard {
+	  min-height: 170px;
+	  margin: 0;
+	  padding: 1.7rem 1.2rem;
+	  border: none;
+	  border-radius: 0;
+	  color: black;
+	  letter-spacing: 0.05rem;
+	  font-family: "Oswald", sans-serif;
+	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+
+	}
+	.Gcard .txt {
+	  margin-left: -3rem;
+	  z-index: 1;
+	}
+	.Gcard .txt h1 {
+	  font-size: 1.5rem;
+	  font-weight: 300;
+	  text-transform: uppercase;
+	  border-bottom: none;
+	}
+	.Gcard .txt p {
+	  font-size: 0.7rem;
+	  font-family: "Open Sans", sans-serif;
+	  letter-spacing: 0rem;
+	  margin-top: 33px;
+	  opacity: 0;
+	  color: white;
+	}
+	.Gcard a {
+	  z-index: 3;
+	  font-size: 0.7rem;
+	  color: black;
+	  margin-left: 1rem;
+	  position: relative;
+	  bottom: -0.5rem;
+	  text-transform: uppercase;
+	}
+	.Gcard a:after {
+	  content: "";
+	  display: inline-block;
+	  height: 0.5em;
+	  width: 0;
+	  margin-right: -100%;
+	  margin-left: 10px;
+	  border-top: 1px solid white;
+	  transition: 0.5s;
+	}
+
+	/*card favicon*/
+	.Gcard .ico-card {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: hidden;
+	}
+	.Gcard i {
+	  position: relative;
+	  right: -50%;
+	  top: 60%;
+	  font-size: 12rem;
+	  line-height: 0;
+	  opacity: 0.2;
+	  color: white;
+	  z-index: 0;
+	}
+/*About page*/
+.menu {
+    width: 44px;
+    position: relative;
+    top: -10px;
+    height: 3px;
+    background: #00000054;
+    box-shadow: 0px 11px #ff00006b, 1px 22px #66b78d
+}
+.aboutTxt {
+    text-align: center;
+    color: gray;
+    padding: 70px;
+    background-color: antiquewhite;
+    border-radius: 190px;
+
+}
+
+.title {
+    font-size: 22px;
+    color: #2c2c2c
+}
+
+.desc {
+    color: #212529;
+    font-weight: 300;
+    font-size: 1.1em;
+    line-height: 1.45em;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    width: 70%;
+    margin: 0 auto
+}
+
+@media (max-width: 630px) {
+    .title {
+        font-size: 18px
+    }
+}
+
+.row {
+
+    display: flex;
+
+    padding: -1px;
+    justify-content: center
+}
+
+@media (max-width: 494px) {
+    .row {
+        flex-direction: column
+    }
+}
+
+.abtCard{
+	border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: roboto;
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  inline-size:fit-content;
+}
+
+.abtContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.infoTxt{
+	padding: 40px;
+	color: #FFAB4A;
+}
+.Abtcard {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px
+}
+
+.card_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
+    position: relative;
+    transition: transform .4s;
+    margin-left:155px;
+}
+
+.fas,
+.fab {
+    display: inline-block;
+    position: absolute;
+    color: #63b563;
+    transform: translate(-52%, 75%);
+    font-size: 40px
+}
+
+.card_title {
+    font-size: 20px;
+    margin: 12px;
+    font-weight: bold;
+    color: #17B5F1;
+    transition: color .2s;
+    border-bottom: inset;
+    font-family: sans-serif;
+}
+
+.Abtcard:hover .card_title {
+    color: #4bd482
+}
+
+.Abtcard:hover .card_img {
+    transform: translate(0px, -10px)
+}
+
+.card_body {
+    color: #8c9490;
+    font-size: 16px;
+    padding: 0 5px;
+    line-height: 1.5;
+    word-spacing: 4px
+}
+
+	/*Contact Page*/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+/**{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}*/
+
+.wrapper{
+ /*position: absolute;
+  top: 80%;
+  left: 80%;
+  transform: translate(-50%,-50%);*/
+  max-width: 350px;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  background: #17b5f1;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgba(254,236,164,1);
 }
-.card i {
-  position: relative;
-  right: -50%;
-  top: 60%;
-  font-size: 12rem;
-  line-height: 0;
-  opacity: 0.2;
+
+
+.wrapper h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+}
+
+.wrapper .input_field{
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea{
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea{
+  resize: none;
+  height: 80px;
+}
+.formContact{
+  text-align: center;
+}
+/*
+.contactSubmit{
+  padding: 4px 8px;
+  text-align: center;
+}
+.contactSubmit input{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #FC8C78;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: auto;*/
+
+.contactUs{
+text-align: center;
+padding-top: 10px;
+}
+#btn{
+font-size: 24px;
+background: #FC8c78;
+}
+
+
+
+#error_message{
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+.wrapper h3{
+
+}
+.wrapper h4{
+  text-align: center;
+}
+
+.figWrapper{/*
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;*/
+    font-size: 24px;
+}
+.figWrapper figure{
+  padding-top: 25px;
+  text-align: right;
+}
+.figWrapper figure figcaption{
+    margin-bottom: 10px;
+}
+
+/*Responsive*/
+@media all and (min-width: 420px) and (max-width: 767px) {
+    .contactUs article{
+        padding-left: 15%;
+    }
+
+}
+@media all and (min-width: 768px) {
+    .figWrapper{
+        ;
+        padding-left: 50px;
+        text-align: center;
+        /*padding-top: 50px;
+        text-align: right;*/
+    }
+    .figWrapper figure{
+        margin: 0 auto;
+        font-size: 20px;
+        text-align: right;
+        padding-top: 40%;
+        max-width: 345px;
+        margin-top: 50px;
+    }
+    .figWrapper figure figcaption{
+        margin-bottom: 15px;
+    }
+}
+/*Questionnaire*/
+
+.questionnaire h1{
+  padding-bottom: 50px;
+}
+
+.questionnaire h2 {
+  margin: 5px 0;
+  text-align: left;
+}
+
+.questionnaire h5 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.questionnaire p{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.questionnaire #wrapper {
+  width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.questionnaire input {
+  margin: 5px 10px;
+}
+.questionnaire button {
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0;
   color: white;
-  z-index: 0;
+  border: 0;
+  border-radius: 8px;
+  border-bottom: 3px solid #333;
+}
+.questionnaire #submit {
+  background: #17B5F1;
+}
+.questionnaire #reset {
+  background: #FC8C78
+}
+.questionnaire #answer {
+  border: 1px dashed #ccc;
+  background: #eee;
+  padding: 10px;
+  text-align: center;
 }
 
-/*Contact Page*/
-
-.contactUs h1{
-    text-align: center;
-}
-.contactUs p{
-    text-align: center;
-}
-.contactUs h2{
-    text-align: center;
-}
-.contactUs p{
-    text-align: center;
-}
-.contactUs h3{
-    text-align: center;
-}
-.contactUs p{
-    text-align: center;
-}
-.contactUs h4{
-    text-align: center;
-}
-.contactUs p{
-    text-align: center;
-}

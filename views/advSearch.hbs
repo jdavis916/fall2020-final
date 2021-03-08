@@ -2,237 +2,114 @@
 		<h1>{{title}}</h1>
 		<p>{{msg}}</p>
 
-<form action="/forms/adv" method="POST">
-            <select name="brands">
-                {{#each brands}}
-                    <option value="{{this}}">{{this}}</option>
-                {{/each}}
-            </select>
-
-            <select name="models">
-                {{#each models}}
-                    <option value="{{this}}">{{this}}</option>
-                {{/each}}
-            </select>
-
-            <select name="mpg">
-                {{#each mpg}}
-                    <option value="{{this.title}}">{{this.title}}</option>
-                {{/each}}
-            </select>
-
-            <select name="fuel">
-                {{#each fuel}}
-                    <option value="{{this}}">{{this}}</option>
-                {{/each}}
-            </select>
-
-            <select name="door">
-                {{#each door}}
-                    <option value="{{this}}">{{this}}</option>
-                {{/each}}
-            </select>
-            <select name="seat">
-                {{#each seat}}
-                    <option value="{{this}}">{{this}}</option>
-                {{/each}}
-            </select>
-            <input type="submit" value="Submit">
-        </form>
+    <form action='/indivCar' method='POST' class="formAdvSearch">
 <!-- /.container -->
- <div class="container">
+ <div class="container formWrapper bgcolor">
 <!-- /.row -->
    <div class="row pad1">
-     <div class="col-md-3 bg-info">
+     <div class="col-md-4">
 
-<!-- /.Drop down button -->
-     	<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Brand
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
+
+  <label class="colortext">Brand</label>
+  <div aria-labelledby="dropdownMenuButton">
+     <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="brands">
+         <option value=""></option>
+         {{#each brands}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+      </select>
   </div>
-	</div>
+</div>
+<!-- </div> -->
+
+  <div class="col-md-4"><!-- /.Drop down button -->
+
+      <label class="colortext">Models</label>
+      <div aria-labelledby="dropdownMenuButton">
+
+     <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="models">
+         <option value=""></option>
+         {{#each models}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+            </select>
+
+      </div>
+    </div>
+
 </div>
 
-  <div class="col-md-2 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Model
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
+
+<!-- /.row -->
+   <div class="row pad1">
+     <div class="col-md-4">
+
+      <label class="colortext">mpg</label>
+      <div aria-labelledby="dropdownMenuButton">
+
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="mpg">
+          <option value=""></option>
+          {{#each mpg}}
+            <option value="{{this._id}}">{{this.title}}</option>
+          {{/each}}
+      </select>
+
       </div>
+</div>
+
+<div class="col-md-4"><!-- /.Drop down button -->
+
+      <label class="colortext">fuel</label>
+      <div aria-labelledby="dropdownMenuButton">
+
+     <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="fuel">
+         <option value=""></option>
+         {{#each fuel}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+
+      </div>
+</div>
+</div>
+
+<!-- /.row -->
+<div class="row">
+  <div class="col-md-4">
+    <label class="colortext">doors</label>
+    <div aria-labelledby="dropdownMenuButton">
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="doors">
+          <option value=""></option>
+          {{#each door}}
+        <option value="{{this}}">{{this}}</option>
+          {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-4"><!-- /.Drop down button -->
+    <label class="colortext">seats</label>
+    <div aria-labelledby="dropdownMenuButton">
+      <select class="btn-outline btn dropdown-toggle btn-sm bg-white" name="seats">
+          <option value=""></option>
+          {{#each seat}}
+        <option value="{{this}}">{{this}}</option>
+          {{/each}}
+      </select>
     </div>
 
 </div>
 </div>
 
-<!-- /.row -->
+     <!-- /.row submit button -->
    <div class="row pad1">
-     <div class="col-md-4 bg-info">
+	   <div class="col-md-4">
 
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>
-
-<!-- /.row -->
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
-
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>
-
-<!-- /.row -->
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
-
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>
-
-<!-- /.row -->
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
-
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>
-
-<!-- /.row -->
-   <div class="row pad1">
-     <div class="col-md-4 bg-info">
-
-<!-- /.Drop down button -->
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Blank
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">a</a>
-    <a class="dropdown-item" href="#">b</a>
-    <a class="dropdown-item" href="#">c</a>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-4 bg-warning"><!-- /.Drop down button -->
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blank
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">a</a>
-      <a class="dropdown-item" href="#">b</a>
-      <a class="dropdown-item" href="#">c</a>
-      </div>
-    </div>
-
-</div>
-</div>
-
-     <!-- /.row -->
-   <div class="row">
-	<div class="col-md-4 bg-danger mt-n1">
-    <input class="btn btn-primary" type="submit" value="Submit">
-  </div>
+      <a class="nav-link" href="/carList"><input class="btn mt-n1 btnSearchSubmit" type="submit" value="Submit"></a>
+     </div>
    </div>
+</div>
 
  </div>
+</form>
 </main>

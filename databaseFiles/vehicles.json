@@ -1,4 +1,4 @@
-({
+[{
   "_id": 1,
   "make": "Chevrolet",
   "model": "Silverado 1500 LT",
@@ -803,7 +803,7 @@
 },{
   "_id": 63,
   "make": "Ford",
-  "model": "Espedition",
+  "model": "Expedition",
   "year": 2013,
   "body_type": "suv",
   "fuel": "gasoline",
@@ -1289,4 +1289,17 @@
   ],
   "seats": 2,
   "doors": 2
-})
+},{
+  "_id": 101,
+  "make": "Ford",
+  "model": "F-150",
+  "year": 2015,
+  "body_type": "truck",
+  "fuel": "gasoline",
+  "mpgCityHwy": [
+    19,
+    26
+  ],
+  "seats": 5,
+  "doors": 4
+}]
