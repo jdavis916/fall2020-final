@@ -7,25 +7,25 @@
             <div class="wrapper">
             <h2>Send Us A Message</h2>
             <!--<div id="error_message"></div>-->
-            <form id="formContact" class="formContact" action="#" method="#">
+            <form id="formContact" class="formContact" action="/formModel" method="POST">
 
-                <div class=input_field>
-                    <input type="text" placeholder="Name" id="name">
+                <div class="input_field">
+                    <input type="text" placeholder="Name" id="Name" name="Name">
                 </div>
                 <div class="input_field">
-                    <input type="text" placeholder="Subject" id="Subject">
+                    <input type="text" placeholder="Subject" id="subject" name="subject">
                 </div>
                 <div class="input_field">
-                    <input type="text" placeholder="Phone" id="Phone">
+                    <input type="text" placeholder="Phone" id="phone" name="phone">
                 </div>
                 <div class="input_field">
-                    <input type="text" placeholder="Email" id="Email">
+                    <input type="text" placeholder="Email" id="email" name="email">
                 </div>
                 <div class="input_field">
-                    <textarea id="Message" placeholder="Message" ></textarea>
+                    <textarea id="msg" placeholder="Message" name="msg" ></textarea>
                  </div>
                 <div class="contactUs">
-                <button id ="btn"> Submit </button>
+                <input type="submit" value ="Submit" id ="btn"></input>
                 </div>
 
                <!--

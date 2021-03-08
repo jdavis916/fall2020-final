@@ -1,10 +1,38 @@
 <main class="{{pageMainClass}}">
 		<h1>{{title}}</h1>
-		<p class="msg">{{msg}}</p>
-	<div class="featured">
-		<h2>Featured selection</h2>
+  <article class="container">
+  <div class="row carResults">
+  <p class="personalityText">{{resMsg}}</p>
+    {{#each response}}
+    <figure class="col-sm-6 col-md-4">
+      <section class="carImageWrapper">
 
+        {{!-- couldn't load photo, will try to fix later --}}
+        {{!-- <img src="/img/{{{pic}}}" alt="{{this.model}} pic"/> --}}
+      </section>
+      <figcaption>
+                <div class="carInfoWrapper">
+                     <span>{{this.year}}</span> |
+                     <span>{{this.make}}</span> |
+                     <span>{{this.model}}</span> |
+                     <span>{{this.body_type}}</span> |
+                     <span>{{this.fuel}}</span> |
+                     <span>{{this.mpgCityHwy}}</span> |
+                     <span>{{this.doors}} Doors</span> |
+                     <span>{{this.seats}} Seats</span>
+                </div>
+
+      </figcaption>
+    </figure>
+
+    {{/each}}
+  </div>
+  </article>
+<!--    <div class="featured">
+        <h2>Featured selection</h2>-->
 	<div class="container">
+  <h3>{{prompt}}</h3>
+  <p>{{msg}}</p>
 	<div class="card">
       <div class="card-image"></div>
       <div class="card-text">

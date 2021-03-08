@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "60464e65c87d9b5d707e72fa"
+  },
+  "subject": "stuff",
+  "phone": "8105130018",
+  "email": "eail@gmail.com",
+  "msg": "Its snowing on mt fuji",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60464f77c87d9b5d707e72fc"
+  },
+  "subject": "Momma",
+  "phone": "6564548795",
+  "email": "cjlong95@gmail.com",
+  "msg": "erwerw",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046502116a61029886c20d2"
+  },
+  "subject": "Momma",
+  "phone": "6564548795",
+  "email": "cjlong95@gmail.com",
+  "msg": "erwerw",
+  "__v": 0
+}]

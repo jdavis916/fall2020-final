@@ -68,26 +68,29 @@
             <input type="submit" value="Submit">
         </form>
 
--->{{--}}<form>
+-->{{--}}
     <div id="wrapper">
   <h1>Find Your Dream Car Today!</h1>
   <h5>Personality Questionnaire</h5>
   
-  <form id="quiz">
+  <form action='/carList' method='POST' id="quiz">
     <!-- Question 1 -->
     <h2>How Many Seats Would You Like In The Car?</h2>
     <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
     <!-- The value is which answer the choice corresponds to. -->
-    <label><input type="radio" name="q1" value="c1">
+    <label><input type="radio" name="seats" value=1>
       2
     </label><br />
-    <label><input type="radio" name="q1" value="c2">
+    <label><input type="radio" name="seats" value="2">
       4
     </label><br />
-    <label><input type="radio" name="q1" value="c3">
-      6
+    <label><input type="radio" name="seats" value="3">
+      5
     </label><br />
-    <label><input type="radio" name="q1" value="c4">
+    <label><input type="radio" name="seats" value="4">
+      7
+    </label><br />
+    <label><input type="radio" name="seats" value="5">
       8
     </label><br />
     <br>
@@ -95,19 +98,19 @@
     <!-- Question 2 -->
     <h2>What Car Type Are You Looking For?</h2>
     <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
-    <label><input type="radio" name="q2" value="c1">
+    <label><input type="radio" name="body_style" value="sedan">
       Sedan
     </label><br />
-    <label><input type="radio" name="q2" value="c2">
+    <label><input type="radio" name="body_style" value="suv">
       SUV
     </label><br />
-    <label><input type="radio" name="q2" value="c3">
+    <label><input type="radio" name="body_style" value="truck">
       Truck
     </label><br />
-    <label><input type="radio" name="q2" value="c4">
+    <label><input type="radio" name="body_style" value="compact">
       Compact
     </label><br />
-    <label><input type="radio" name="q2" value="c8">
+    <label><input type="radio" name="body_style" value="sports">
       Sports
     </label><br />
     <br>
@@ -115,31 +118,31 @@
     <!-- Question 3 -->
     <h2>What Is Your Personality Like?</h2>
     <!-- Choices for the third question -->
-    <label><input type="radio" name="q3" value="c1">
+    <label><input type="radio" name="personality" value="5">
       Chilled
     </label><br />
-    <label><input type="radio" name="q3" value="c2">
+    <label><input type="radio" name="personality" value="10">
       Assertive
     </label><br />
-    <label><input type="radio" name="q3" value="c3">
+    <label><input type="radio" name="personality" value="9">
       Short-Tempered
     </label><br />
-    <label><input type="radio" name="q3" value="c4">
+    <label><input type="radio" name="personality" value="8">
       Compassionate
     </label><br />
-    <label><input type="radio" name="q3" value="c5">
+    <label><input type="radio" name="personality" value="11">
       Eco Friendly
     </label><br />
-    <label><input type="radio" name="q3" value="c6">
+    <label><input type="radio" name="personality" value="13">
       Family Oriented
     </label><br />
-    <label><input type="radio" name="q3" value="c7">
+    <label><input type="radio" name="personality" value="12">
       Autonomous
     </label><br />
-    <label><input type="radio" name="q3" value="c8">
+    <label><input type="radio" name="personality" value="7">
       Likes To Impress
     </label><br />
-    <label><input type="radio" name="q3" value="c9">
+    <label><input type="radio" name="personality" value="6">
       Here to Get The Job Done
     </label><br />
     <br>
@@ -147,57 +150,57 @@
     <!-- Question 4 -->
     <h2>What Do You Find Yourself Doing Most?</h2>
     <!-- Choices for the fourth question -->
-    <label><input type="radio" name="q4" value="c1">
+    <label><input type="radio" name="activity" value="12">
       Family Road Trip &#38; Outings
     </label><br />
-    <label><input type="radio" name="q4" value="c2">
+    <label><input type="radio" name="activity" value="9">
       Music Festivals
     </label><br />
-    <label><input type="radio" name="q4" value="c3">
+    <label><input type="radio" name="activity" value="6">
       Commuting To Work
     </label><br />
-    <label><input type="radio" name="q4" value="c4">
+    <label><input type="radio" name="activity" value="3">
       Date Night For Two
     </label><br />
     <br>
      <!-- Question 5 -->
     <h2>How Would You Describe Driving?</h2>
     <!-- Choices for the Fifth question -->
-    <label><input type="radio" name="q4" value="c1">
+    <label><input type="radio" name="driving" value="9">
       Getting From Point A To Point B
     </label><br />
-    <label><input type="radio" name="q4" value="c2">
+    <label><input type="radio" name="driving" value="3">
       Going Fast
     </label><br />
-    <label><input type="radio" name="q4" value="c3">
+    <label><input type="radio" name="driving" value="12">
       Being Safe
     </label><br />
-    <label><input type="radio" name="q4" value="c4">
+    <label><input type="radio" name="driving" value="6">
       Looking Good
     </label><br />
-    <label><input type="radio" name="q4" value="c5">
+    <label><input type="radio" name="driving" value="15">
       Being Able To Drive With Groups
-    </label><br />
+    </label><br />attributes
     <br>
       <!-- Question 6 -->
     <h2>What Is Most Imporant To You In Your Next Car? What Is Your First Priority You Have When Looking For A Car?</h2>
     <!-- Choices for the Sixth question -->
-    <label><input type="radio" name="q4" value="c1">
+    <label><input type="radio" name="attributes" value="15">
       Longevity: Car Durability, Gas Mileage/Fuel Efficency
     </label><br />
-    <label><input type="radio" name="q4" value="c2">
+    <label><input type="radio" name="attributes" value="25">
       Versatility: Off-Road And Work Usage 
     </label><br />
-    <label><input type="radio" name="q4" value="c3">
+    <label><input type="radio" name="attributes" value="5">
       Exterior Design: Look And Style Purely To Impress
     </label><br />
-    <label><input type="radio" name="q4" value="c4">
+    <label><input type="radio" name="attributes" value="10">
       Internal Design: Spacious Or Compact
     </label><br />
-    <label><input type="radio" name="q4" value="c1">
+    <label><input type="radio" name="attributes" value="20">
       Brand Name &#38; Manufacurting: American Made Or Foreign
     </label><br />
-    <button type="submit" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
+    <button type="submit" id="submit" {{!-- onclick="tabulateAnswers()" --}}>Submit Your Answers</button>
   <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
   </form>
   
@@ -207,6 +210,6 @@
 </div>
 
 
-     </form>
+     
 </main>
 

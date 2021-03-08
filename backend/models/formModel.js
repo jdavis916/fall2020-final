@@ -5,11 +5,10 @@ import mongoose from "mongoose";
 //app.use(mongoSanitize());
 const Schema = mongoose.Schema;
 export const contactSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
-    phone: Number,
+    Name: String,
     subject: String,
+    phone: String,
+    email: String,
     msg : String
 });
  // 
