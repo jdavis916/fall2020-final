@@ -2,8 +2,9 @@
 		<h1>{{title}}</h1>
   <article class="container">
       <div class="row carResults">
-      <p class="personalityText">{{resMsg}}</p>
+      <p class="personalityText">"{{resMsg}}"</p>
         {{#each response}}
+        <div class="resultText">
         <figure class="col-sm-6 col-md-4">
           <section class="carImageWrapper">
 
@@ -11,7 +12,7 @@
             {{!-- <img src="/img/{{{pic}}}" alt="{{this.model}} pic"/> --}}
           </section>
           <figcaption>
-                    <div class="carInfoWrapper">
+                    <div class="carInfoWrapper" style="font-size: 24px;">
                          <span>{{this.year}}</span> |
                          <span>{{this.make}}</span> |
                          <span>{{this.model}}</span> |
@@ -24,12 +25,12 @@
 
           </figcaption>
         </figure>
-
+        </div>
         {{/each}}
       </div>
   </article>
     <div class="featured">
-        <h2>Featured selection</h2>
+        
         <div class="container">
             <h3>{{prompt}}</h3>
             <p>{{msg}}</p>
