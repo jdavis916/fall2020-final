@@ -69,11 +69,11 @@
         </form>
 
 -->{{--}}
-    <div id="wrapper">
+    <div class="wrapper quizWrapper">
   <h1>Find Your Dream Car Today!</h1>
   <h5>Personality Questionnaire</h5>
   
-  <form action='/carList' method='POST' id="quiz">
+  <form action='/carList' method='POST' id="formQuiz">
     <!-- Question 1 -->
     <h2>How Many Seats Would You Like In The Car?</h2>
     <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
@@ -200,16 +200,17 @@
     <label><input type="radio" name="attributes" value="20">
       Brand Name &#38; Manufacurting: American Made Or Foreign
     </label><br />
-    <button type="submit" id="submit" class="btnSubmit">Submit Your Answers</button>
+    <button type="submit" id="submit" class="btnSubmit" onclick="tabulateAnswers()">Submit Your Answers</button>
   <button type="reset" id="reset"  class="btnReset" onclick="resetAnswer()">Reset</button>
-  </form>
+
   
   
   <div class="answer">Someone will be with you shortly with your results.</div>
   <p>Please Answer Honestly To Ensure Accurate Reults.</p>
-</div>
+  </form>
+    </div>
 
 
-     
+
 </main>
 

@@ -32,7 +32,7 @@ footer p{
 }
 
 main{
-    padding: 50px 0;
+    padding: 30px ;
 }
 
 /*rating for the header*/
@@ -120,6 +120,7 @@ a {
 .dropdown {
   position: relative;
   display: inline-block;
+  padding: 10px;
 }
 
 .dropdown-content {
@@ -175,17 +176,37 @@ h2, h3 {
   position: center;
 }
 
-.button1 {
-	background-color: #FC8C78;
+.btn-lg {
+	background-color: #feeca4;
 	color: #000000;
 	border: none;
 }
-.button1:hover {
+.btn-lg:hover {
 	background-color: #FC8C78;
 	color: #000000;
 	}
 
+.btn-lg:focus{
+  color:rgb(255,255,255);
+  background:#004A14;
+}
+.quote {
+  font-family: serif;
+  font-style:italic;
+  color: black;
+  font-size:28px;
+}
 
+
+.row-quote{
+  margin-top:0px;
+
+}
+
+.row-social{
+  margin-top:50px;
+  //margin-bottom: 20px;
+}
 	/*
 	.col-lg {
 		text-align: center;
@@ -708,6 +729,25 @@ border: 2px;
     transform: translate(0px, -10px)
 }
 
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+    background-color: #0099cc;
+}
+
+
 .card_body {
     color: #8c9490;
     font-size: 16px;
@@ -903,7 +943,7 @@ padding-top: 10px;
 .questionnaire #wrapper {
   width: 600px;
   margin: 0 auto;
-  background: white;
+  background: #f6ebe6;
   padding: 10px 15px;
   border-radius: 10px;
 }
@@ -957,8 +997,11 @@ padding-top: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.menu li:hover {
-    background-color: #0099cc;
+#quiz{
+    background-image: url("../../assets/horizon.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
 }
 
 /*Responsive design controls*/
@@ -974,9 +1017,7 @@ padding-top: 10px;
 
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
-    	.abtContainer{
 
-    	}
 
     }
 
