@@ -281,8 +281,8 @@ border: 2px;
 
 }
 .carImageWrapper{
-    overflow: hidden;
-    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
 }
 
  /*CarViewPag*/
@@ -1004,18 +1004,30 @@ padding-top: 10px;
   padding: 10px;
   text-align: center;
 }
+.resultText{
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  margin: auto;
+  width: 600px;
+  padding-bottom: 40px;
+}
 .personalityText{
     text-align: center;
     font-weight: bold;
     padding: 40px;
+    position: relative;
+    width: 1000px;
+    margin: auto;
 
 }
 .carInfoWrapper{
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
+    position: relative;
+    margin: 0;
+    width: 600px;
 }
-
 .menu ul {
     list-style-type: none;
     margin: 0;
