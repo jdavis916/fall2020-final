@@ -767,6 +767,7 @@ router
                 picInput = pic[2];
             };
             db.collection('vehicles').find({ _id: finalResult}).toArray(function(err, resp){
+                console.log(resp);
                 try{
                     if(resp.length === 0){
                         res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path});
