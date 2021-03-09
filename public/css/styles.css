@@ -128,7 +128,7 @@ a {
   color: black;
   padding: 16px;
   font-size: 16px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   border: none;
 }
 
@@ -163,7 +163,7 @@ a {
 /* about us paragraph text */
 .p1 {
 	text-align: center;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 	font: 20px Arial
 
 }
@@ -173,7 +173,7 @@ a {
 /* about us header text */
 h2, h3 {
 	text-align: center;
-	font-family: system-ui;
+	/*font-family: system-ui;*/
     font-weight: 700;
 }
 
@@ -187,41 +187,45 @@ h2, h3 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   margin: 4px 2px;
   cursor: pointer;
   position: center;
 }
 
-.btn-lg {
+.btnMain {
 	background-color: white;
 	color: black;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
 }
-.btn-lg:hover {
-	background-color: #f2f2f2;
-	color: #000000;
-	}
+.btnMain:hover {
+    background-color: #F2F2F2;
+    color: #000000;
+}
 
-.btn-lg:focus{
+.btnMain:focus{
   color: black;
   background:#e6e6e6;
 }
 .quote {
 
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   color: black;
   font-size:28px;
 }
 
 
 .row-quote{
-  margin-top:0px;
+  margin-top:0;
 
 }
 
 .row-social{
   margin-top:50px;
-  //margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 	/*
 	.col-lg {
@@ -238,13 +242,13 @@ h2, h3 {
       color: white;
       font-weight: bold;
       font-size: 20px;
-      font-family: system-ui;
+      /*font-family: system-ui;*/
 
 	}
 
     .formAdvSearch{
         text-align: center;
-        font-family: system-ui;
+        /*font-family: system-ui;*/
     }
     .formAdvSearch .formWrapper {
       padding-bottom: 60px;
@@ -257,7 +261,6 @@ h2, h3 {
 
   .colortext {
     padding-top: 1rem;
-    color: white;
     font-weight: bold;
     font-size: 20px;
       /*
@@ -277,7 +280,7 @@ h2, h3 {
   }
 
   .btnSearchSubmit {
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   border-radius: 25px;
   border: 2px solid #FC8C78;
   width: 150px;
@@ -319,12 +322,12 @@ h2, h3 {
   border-radius: 18px;
   background: white;
   box-shadow: 5px 5px 15px rgba(165 162 162 , 0.9);
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
   transition: 0.5s ease;
   cursor: pointer;
-  margin:30px 0;
-  inline-size:fit-content;
+  margin: 30px 0;
+  /*inline-size: fit-content;*/
 
 }
 @media all and (min-width: 576px){
@@ -347,18 +350,18 @@ h2, h3 {
 .card-text .date {
   color: #FC8C78;
   font-size:13px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 }
 .card-text p {
   color: grey;
   font-size: 15px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   font-weight: 300;
 }
 .card-text h2 {
-  margin-top:0px;
+  margin-top:0;
   font-size:28px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 }
 .card-stats {
   grid-area: stats;
@@ -383,17 +386,17 @@ h2, h3 {
 }
 .card-stats .value{
   font-size:22px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   font-weight: 500;
 }
 .card-stats .value sup{
   font-size:12px;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 }
 .card-stats .type{
   font-size:11px;
   font-weight: 300;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-transform: uppercase;
 }
 .card:hover {
@@ -444,7 +447,7 @@ h2, h3 {
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: system-ui;
+	  /*font-family: system-ui;*/
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	}
 
@@ -456,7 +459,7 @@ h2, h3 {
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: system-ui;
+	  /*font-family: system-ui;*/
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://s1.cdn.autoevolution.com/images/news/2021-bmw-330e-plug-in-costs-3800-more-than-330i-142190-7.jpg");
 	}
@@ -469,7 +472,7 @@ h2, h3 {
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: system-ui;
+	  /*font-family: system-ui;*/
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
 	}
@@ -482,7 +485,7 @@ h2, h3 {
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: system-ui;
+	  /*font-family: system-ui;*/
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
 	}
@@ -495,7 +498,7 @@ h2, h3 {
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: system-ui;
+	  /*font-family: system-ui;*/
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
 	}
@@ -546,7 +549,7 @@ h2, h3 {
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: system-ui;
+	  /*font-family: system-ui;*/
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 
 	}
@@ -556,15 +559,15 @@ h2, h3 {
 	}
 	.Gcard .txt h1 {
 	  font-size: 1.5rem;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
 	  font-weight: 300;
 	  text-transform: uppercase;
 	  border-bottom: none;
 	}
 	.Gcard .txt p {
 	  font-size: 0.7rem;
-	  font-family: system-ui;
-	  letter-spacing: 0rem;
+	  /*font-family: system-ui;*/
+	  letter-spacing: 0;
 	  margin-top: 33px;
 	  opacity: 0;
 	  color: white;
@@ -577,7 +580,7 @@ h2, h3 {
 	  position: relative;
 	  bottom: -0.5rem;
 	  text-transform: uppercase;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
 	}
 	.Gcard a:after {
 	  content: "";
@@ -606,7 +609,7 @@ h2, h3 {
 	  right: -50%;
 	  top: 60%;
 	  font-size: 12rem;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
 	  line-height: 0;
 	  opacity: 0.2;
 	  color: white;
@@ -614,7 +617,7 @@ h2, h3 {
 	}
 
 	.msg{
-    font-family: system-ui;
+    /*font-family: system-ui;*/
 		font-size: x-large;
 		padding: 10px;
 	}
@@ -627,7 +630,7 @@ h2, h3 {
 }
 .aboutTxt {
     text-align: center;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     color: gray;
     padding: 70px;
 
@@ -645,13 +648,13 @@ h2, h3 {
   padding: 15px;
   color: #ffffff;
   text-align: center;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .title {
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     font-size: 22px;
     color: #2c2c2c
 }
@@ -660,7 +663,7 @@ h2, h3 {
     color: #212529;
     font-weight: 300;
     font-size: 1.1em;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     line-height: 1.45em;
     width: 70%;
     margin: 0 auto
@@ -669,7 +672,7 @@ h2, h3 {
 @media (max-width: 630px) {
     .title {
         font-size: 18px;
-        font-family: system-ui;
+        /*font-family: system-ui;*/
     }
 }
 
@@ -678,7 +681,7 @@ h2, h3 {
 	border-radius: 18px;
     background: white;
     box-shadow: 5px 5px 15px rgb(220, 218, 218);
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     text-align: center;
     transition: 0.5s ease;
     cursor: pointer;
@@ -702,9 +705,9 @@ h2, h3 {
 }
 /*.Abtcard {
     display: flex;
-    text-align: center;
-    font-family: system-ui;
-    justify-content: center;
+    text-align: center;*/
+    /*font-family: system-ui;*/
+    /*justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 10px
@@ -712,12 +715,13 @@ h2, h3 {
 .cardImgContainer{
 	padding-top: 20px;
     text-align: center;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
 }
 
 .goal{
 	border-bottom: none;
 	background-image: url("../../assets/tesla.png");
+    color: #FFF;
 }
 
 /*.abtContainer{
@@ -727,16 +731,16 @@ h2, h3 {
 }*/
 .meetTheTeam{
 	padding: 30px;
-	font-family: system-ui;
+	/*font-family: system-ui;*/
 }
 .infoTxt{
 	padding: 40px;
 
 	font-size: x-large;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 }
 .abtTxt{
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 	text-align: center;
 	font-size: x-large;
 	font-weight: bolder;
@@ -772,7 +776,7 @@ h2, h3 {
     position: absolute;
     color: #63b563;
     transform: translate(-52%, 75%);
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     font-size: 40px
 
 }
@@ -784,7 +788,7 @@ h2, h3 {
     color: #17B5F1;
     transition: color .2s;
     border-bottom: inset;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     padding: 20px;
 }
 
@@ -818,7 +822,7 @@ h2, h3 {
 .card_body {
     color: #8c9490;
     font-size: 16px;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     padding: 0 5px;
     line-height: 1.5;
     word-spacing: 4px
@@ -832,8 +836,9 @@ h2, h3 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
-  font-family: system-ui;
+  outline: none;*/
+/*font-family: system-ui;*/
+/*
 }*/
 
 .wrapper{
@@ -851,7 +856,7 @@ h2, h3 {
 
 
 .wrapper h2{
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -875,33 +880,38 @@ h2, h3 {
   height: 80px;
 }
 .formContact{
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
 }
 /*
 .contactSubmit{
   padding: 4px 8px;
   text-align: center;
-  font-family: system-ui;
-}
+  /*font-family: system-ui;
+}*//*
 .contactSubmit input{
   font-size: 20px;
-  font-family: system-ui;
+  *//*font-family: system-ui;*//*
   font-weight: bold;
   background-color: #FC8C78;
   padding: 10px;
   border-radius: 25px;
   cursor: pointer;
-  margin: auto;*/
+  margin: auto;}*/
 
 .contactUs{
-font-family: system-ui;
+/*font-family: system-ui;*/
 text-align: center;
 padding-top: 10px;
 }
+.contactUs .figWrapper{
+    padding: 1px 0px 20px 25px;;
+
+    margin-top: 30px;
+}
 .btnClass{
     font-size: 24px;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     background: #FC8C78;
     color: white;
 }
@@ -909,7 +919,7 @@ padding-top: 10px;
   margin-bottom: 20px;
   background: #FE8B8E;
   padding: 0;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
   font-size: 14px;
   transition: all 0.5s ease;
@@ -918,7 +928,7 @@ padding-top: 10px;
 
 }
 .wrapper h4{
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
 }
 
@@ -927,11 +937,11 @@ padding-top: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 50px;*/
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     font-size: 18px;
 }
 .figWrapper figure{
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
 
 }
@@ -957,7 +967,7 @@ padding-top: 10px;
     .figWrapper{
         ;
         padding-top: 50px;
-        font-family: system-ui;
+        /*font-family: system-ui;*/
         text-align: center;
         /*padding-top: 50px;
         text-align: right;*/
@@ -966,7 +976,7 @@ padding-top: 10px;
         margin: 0 auto;
         font-size: 18px;
         text-align: center;
-        font-family: system-ui;
+        /*font-family: system-ui;*/
 
         max-width: 365px;
 
@@ -977,7 +987,7 @@ padding-top: 10px;
 }
 .icons{
 	color: white;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 	font-size: xx-large;
 }
 
@@ -987,13 +997,13 @@ padding-top: 10px;
 	background-color: #33b5e5;
 	background-blend-mode: soft-light;*/
 	color: #000000;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 	text-align: center;
 	font-size: 14px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .contactCard .figWrapper figure{
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     max-width: initial;
     text-align: left;
     margin-top: 40px;
@@ -1012,7 +1022,7 @@ padding-top: 10px;
 
 .caption{
     font-size: 20px;
-    font-family: system-ui;
+    /*font-family: system-ui;*/
 /*	font-variant-caps: all-small-caps;
 	font-size: xxx-large;*/
     font-weight: 500;
@@ -1031,17 +1041,17 @@ padding-top: 10px;
 }*/
 /*.questionnaire h2 {
     text-align: center;
-    font-family: system-ui;
+    *//*font-family: system-ui;*//*
     padding: 20px 0;
 }*/
 .questionnaire h3 {
-  margin: 5px 0;
-  text-align: right;
+  margin: 30px 0 15px 0;
+  text-align: center;
 }
 
 
 .questionnaire p{
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   text-align: center;
   padding-top: 10px;
 }
@@ -1057,7 +1067,7 @@ padding-top: 10px;
   margin: 5px 10px;
 }
 .questionnaire button {
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   font-size: 18px;
   padding: 10px;
   margin: 20px 0;
@@ -1077,11 +1087,11 @@ padding-top: 10px;
   background: #EEE;
   padding: 10px;
   text-align: center;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
 }
 .resultText{
   text-align: center;
-  font-family: system-ui;
+  /*font-family: system-ui;*/
   font-weight: bold;
   position: relative;
   height: auto;
@@ -1089,7 +1099,7 @@ padding-top: 10px;
   padding-bottom: 40px;
 }
 .personalityText{
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     text-align: center;
     font-weight: bold;
     padding: 40px;
@@ -1098,7 +1108,7 @@ padding-top: 10px;
 
 }
 .carInfoWrapper{
-    font-family: system-ui;
+    /*font-family: system-ui;*/
     text-align: center;
     font-weight: bold;
     position: relative;
@@ -1166,11 +1176,12 @@ padding-top: 10px;
 
 }
 	@media all and (min-width: 768px) {
-    .figWrapper{
-        ;
-        padding-top: 50px;
+
+    .contactUs .figWrapper{
+        padding: 35px 0 25px 0;
+        margin-top: 0;
         text-align: center;
-        font-family: system-ui;
+        /*font-family: system-ui;*/
         /*padding-top: 50px;
         text-align: right;*/
     }
@@ -1182,7 +1193,7 @@ padding-top: 10px;
 }
 	@media (max-width: 630px) {
     .title {
-        font-family: system-ui;
+        /*font-family: system-ui;*/
         font-size: 18px
     }
 }

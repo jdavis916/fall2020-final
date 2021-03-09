@@ -1,113 +1,113 @@
 <main class="{{pageMainClass}}">
-		<h1>{{title}}</h1>
-		<h2>{{msg}}</h2>
+  <h1>{{title}}</h1>
+  <h2>{{msg}}</h2>
+
+  <!-- /wrapper -->
+  <div class="wrapper formWrapper">
     <form action='/indivCar' method='POST' class="formAdvSearch">
-<!-- /.container -->
- <div class="formWrapper">
-<!-- /.row -->
-   <div class="row pad1">
-     <div class="col-12 offset-md-2 col-md-4">
+      <!-- /row -->
+      <div class="row pad1">
+        <div class="col-12 offset-md-2 col-md-4">
 
 
-  <label class="colortext">Brand</label>
-  <div aria-labelledby="dropdownMenuButton">
-     <select class="dropdown-toggle btn-outline default" name="brands">
-         <option value=""></option>
-         {{#each brands}}
-            <option value="{{this}}">{{this}}</option>
-          {{/each}}
-      </select>
-  </div>
-</div>
-<!-- </div> -->
+          <label class="colortext">Brand</label>
+          <div aria-labelledby="dropdownMenuButton">
+            <select class="dropdown-toggle btn-outline default" name="brands">
+              <option value=""></option>
+              {{#each brands}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
 
-  <div class="col-12 col-md-4"><!-- /.Drop down button -->
 
-      <label class="colortext">Models</label>
-      <div aria-labelledby="dropdownMenuButton">
+        <div class="col-12 col-md-4"><!-- /.Drop down button -->
 
-     <select class="btn-outline dropdown-toggle bg-white" name="models">
-         <option value=""></option>
-         {{#each models}}
-            <option value="{{this}}">{{this}}</option>
-          {{/each}}
+          <label class="colortext">Models</label>
+          <div aria-labelledby="dropdownMenuButton">
+
+            <select class="btn-outline dropdown-toggle bg-white" name="models">
+              <option value=""></option>
+              {{#each models}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
             </select>
 
-      </div>
-    </div>
-
-</div>
-
-
-<!-- /.row -->
-   <div class="row">
-     <div class="col-12 offset-md-2 col-md-4">
-
-      <label class="colortext">mpg</label>
-      <div aria-labelledby="dropdownMenuButton">
-
-      <select class="btn-outline dropdown-toggle bg-white" name="mpg">
-          <option value=""></option>
-          {{#each mpg}}
-            <option value="{{this._id}}">{{this.title}}</option>
-          {{/each}}
-      </select>
+          </div>
+        </div>
 
       </div>
-</div>
 
-<div class="col-12 col-md-4"><!-- /.Drop down button -->
 
-      <label class="colortext">fuel</label>
-      <div aria-labelledby="dropdownMenuButton">
+      <!-- /row -->
+      <div class="row">
+        <div class="col-12 offset-md-2 col-md-4">
 
-     <select class="btn-outline dropdown-toggle bg-white" name="fuel">
-         <option value=""></option>
-         {{#each fuel}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
+          <label class="colortext">mpg</label>
+          <div aria-labelledby="dropdownMenuButton">
 
+            <select class="btn-outline dropdown-toggle bg-white" name="mpg">
+              <option value=""></option>
+              {{#each mpg}}
+                <option value="{{this._id}}">{{this.title}}</option>
+              {{/each}}
+            </select>
+
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4"><!-- /.Drop down button -->
+
+          <label class="colortext">fuel</label>
+          <div aria-labelledby="dropdownMenuButton">
+
+            <select class="btn-outline dropdown-toggle bg-white" name="fuel">
+              <option value=""></option>
+              {{#each fuel}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+
+          </div>
+        </div>
       </div>
-</div>
-</div>
 
-<!-- /.row -->
-<div class="row">
-  <div class="col-12 offset-md-2 col-md-4">
-    <label class="colortext">doors</label>
-    <div aria-labelledby="dropdownMenuButton">
-      <select class="btn-outline dropdown-toggle bg-white" name="doors">
-          <option value=""></option>
-          {{#each door}}
-        <option value="{{this}}">{{this}}</option>
-          {{/each}}
-      </select>
-    </div>
+      <!-- /row -->
+      <div class="row">
+        <div class="col-12 offset-md-2 col-md-4">
+          <label class="colortext">doors</label>
+          <div aria-labelledby="dropdownMenuButton">
+            <select class="btn-outline dropdown-toggle bg-white" name="doors">
+              <option value=""></option>
+              {{#each door}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4"><!-- /.Drop down button -->
+          <label class="colortext">seats</label>
+          <div aria-labelledby="dropdownMenuButton">
+            <select class="btn-outline dropdown-toggle bg-white" name="seats">
+              <option value=""></option>
+              {{#each seat}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- /row submit button -->
+      <div class="pad1 txtCenter">
+        <div class="">
+
+          <a class="nav-link" href="/carList"><input class="btnSubmit1" type="submit" value="Submit"></a>
+        </div>
+      </div>
+    </form>
   </div>
-
-  <div class="col-12 col-md-4"><!-- /.Drop down button -->
-    <label class="colortext">seats</label>
-    <div aria-labelledby="dropdownMenuButton">
-      <select class="btn-outline dropdown-toggle bg-white" name="seats">
-          <option value=""></option>
-          {{#each seat}}
-            <option value="{{this}}">{{this}}</option>
-          {{/each}}
-      </select>
-    </div>
-
-</div>
-</div>
-
-     <!-- /.row submit button -->
-   <div class="pad1 txtCenter">
-	   <div class="">
-
-      <a class="nav-link" href="/carList"><input class="btnSubmit1" type="submit" value="Submit"></a>
-     </div>
-   </div>
-
-
-</form>
 </main>
