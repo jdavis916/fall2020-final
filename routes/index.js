@@ -582,6 +582,14 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
+    .get('/thanks', function(req, res, next) {
+        res.render('thankYou', 
+            { 
+                pageMainClass: 'thanks',
+                title: 'Thank You',
+                msg: 'Thank you for your feedback. A representative will contact you shortly.'
+            });
+    })
     .post('/indivCar', sanitizeArr3, async (req,res) => {
         try{
             var ind = 0;
@@ -655,7 +663,7 @@ router
 
     
     /* POST contact form. */
-    .post('/formModel', sanitizeArr,
+    .post('/thanks', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);   
@@ -672,10 +680,12 @@ router
             msg: req.body.msg
         });
         contactMsg.save()
-        .then(result => {   
-            res.status(200).json({
+        .then(result => {
+               
+            var thankYou = {
                 doc: 'Thank you for your feedback. A representative will contact you shortly.'
-            });
+            };
+            res.render('./thanks', thankYou);
         })
         .catch(err => {
             res.status(500).json({
