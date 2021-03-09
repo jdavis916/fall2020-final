@@ -582,12 +582,12 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
-    .get('/thanks', function(req, res, next) {
-        res.render('thankYou', 
-            { 
-                pageMainClass: 'thanks',
-                title: 'Thank You',
-                msg: 'Thank you for your feedback. A representative will contact you shortly.'
+
+    .get('/thankyou', function(req, res, next) {
+        res.render('thankyou',
+            {
+                pageMainClass: 'thankYou',
+                title: 'Thank you for your feedback!',
             });
     })
     .post('/indivCar', sanitizeArr3, async (req,res) => {
@@ -663,14 +663,16 @@ router
 
     
     /* POST contact form. */
-    .post('/thanks', sanitizeArr,
+    .post('/thankyou', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);   
         //returns error array if input fails check
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
+
+            res.render('errPage', {pageMainClass: 'errPage'});
+            /*return res.status(400).json({ errors: errors.array() });*/
+        };
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
             Name: req.body.firstName,
@@ -680,17 +682,15 @@ router
             msg: req.body.msg
         });
         contactMsg.save()
-        .then(result => {
-               
-            var thankYou = {
-                doc: 'Thank you for your feedback. A representative will contact you shortly.'
-            };
-            res.render('./thanks', thankYou);
+        .then(result => {   
+            res.render('thankyou', {
+                pageMainClass: 'thankYou',
+                title: 'Thank you for your feedback!',
+            });
+
         })
         .catch(err => {
-            res.status(500).json({
-                errRes:[errorMsg]
-            });
+            res.render('errPage', {pageMainClass: 'errPage'});
             console.log(err);
         });
     })
@@ -769,7 +769,8 @@ router
                         response : resp,
                         prompt: prompt,
                         resMsg: flavorText,
-                        /*pic: picInput */
+                        pic: picInput
+                        /*pic: 'fordExpedition2013.png'*/
                     });
                     console.log(picInput);
                 } catch (err){
@@ -794,8 +795,12 @@ router
             });
                 
     }
-});
-
-//console.log(getQuestionFour().subArr[1].Title)
+})
+.get('/errPage', function(req, res){
+  res.render('errPage',
+    {
+        pageMainClass: 'errPage',
+    });
+  });
 module.exports = router;
 
