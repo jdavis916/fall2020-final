@@ -78,7 +78,17 @@ a {
 }
 */
 
-
+/* Public Buttons */
+ .btnSubmit1 {
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0;
+  color: white;
+  background-color: #17B5F1;
+  border: 0;
+  border-radius: 8px;
+  border-bottom: 3px solid #333;
+}
 
 /* For HOMEPAGE */
 
@@ -179,18 +189,17 @@ h2, h3 {
 }
 
 .btn-lg {
-	background-color: #feeca4;
-	color: #000000;
-	border: none;
+	background-color: white;
+	color: black;
 }
 .btn-lg:hover {
-	background-color: #FC8C78;
+	background-color: #f2f2f2;
 	color: #000000;
 	}
 
 .btn-lg:focus{
-  color:rgb(255,255,255);
-  background:#004A14;
+  color: black;
+  background:#e6e6e6;
 }
 .quote {
   font-family: serif;
@@ -218,7 +227,7 @@ h2, h3 {
 	*/
 
 	/*Advance Search */
-	.mt-n1 {
+	.bgcolor-fonts {
 
       background-color: #FC8C78;
       color: white;
@@ -232,7 +241,7 @@ h2, h3 {
     }
     .formAdvSearch .formWrapper {
       padding-bottom: 60px;
-      background-color: #17B5F1;
+
     }
 
 	.pad1 {
@@ -248,12 +257,9 @@ h2, h3 {
   }
 
   .btn-outline{
-
-border: 2px;
    width: 200px;
   height: 50px;
       padding: 6px 12px;
-    font-size: 17px;
   }
 
   .btnSearchSubmit {
@@ -966,7 +972,7 @@ padding-top: 10px;
 }*/
 .questionnaire h3 {
   margin: 5px 0;
-  text-align: left;
+  text-align: right;
 }
 
 
