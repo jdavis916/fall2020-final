@@ -10,8 +10,11 @@ body {
 .txtCenter{
     text-align: center;
 }
+section label{
+  font-weight: 400;
+}
 main h1{
-	font-family: sans-serif;
+	  font-family: sans-serif;
     font-size: 32px;
     border-bottom: 4px solid #FC8C78;
     margin: 40px 0;
@@ -115,7 +118,7 @@ a {
   color: black;
   padding: 16px;
   font-size: 16px;
-  font-family: arial, sans-serif;
+  font-family: system-ui;
   border: none;
 }
 
@@ -150,6 +153,7 @@ a {
 /* about us paragraph text */
 .p1 {
 	text-align: center;
+  font-family: system-ui;
 	font: 20px Arial
 
 }
@@ -159,7 +163,7 @@ a {
 /* about us header text */
 h2, h3 {
 	text-align: center;
-	font-family: Arial, sans-serif;
+	font-family: system-ui;
     font-weight: 700;
 }
 
@@ -173,6 +177,7 @@ h2, h3 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family: system-ui;
   margin: 4px 2px;
   cursor: pointer;
   position: center;
@@ -193,8 +198,8 @@ h2, h3 {
   background:#004A14;
 }
 .quote {
-  font-family: serif;
-  font-style:italic;
+  
+  font-family: system-ui;
   color: black;
   font-size:28px;
 }
@@ -224,11 +229,13 @@ h2, h3 {
       color: white;
       font-weight: bold;
       font-size: 20px;
+      font-family: system-ui;
 
 	}
 
     .formAdvSearch{
         text-align: center;
+        font-family: system-ui;
     }
     .formAdvSearch .formWrapper {
       padding-bottom: 60px;
@@ -244,6 +251,7 @@ h2, h3 {
     color: white;
     font-weight: bold;
     font-size: 20px;
+    font-family: system-ui;
 
   }
 
@@ -254,9 +262,11 @@ border: 2px;
   height: 50px;
       padding: 6px 12px;
     font-size: 17px;
+    font-family: system-ui;
   }
 
   .btnSearchSubmit {
+  font-family: system-ui;
   border-radius: 25px;
   border: 2px solid #FC8C78;
   width: 150px;
@@ -298,7 +308,7 @@ border: 2px;
   border-radius: 18px;
   background: white;
   box-shadow: 5px 5px 15px rgba(165 162 162 , 0.9);
-  font-family: roboto;
+  font-family: system-ui;
   text-align: center;
   transition: 0.5s ease;
   cursor: pointer;
@@ -321,15 +331,18 @@ border: 2px;
 .card-text .date {
   color: #FC8C78;
   font-size:13px;
+  font-family: system-ui;
 }
 .card-text p {
   color: grey;
-  font-size:15px;
+  font-size: 15px;
+  font-family: system-ui;
   font-weight: 300;
 }
 .card-text h2 {
   margin-top:0px;
   font-size:28px;
+  font-family: system-ui;
 }
 .card-stats {
   grid-area: stats;
@@ -354,14 +367,17 @@ border: 2px;
 }
 .card-stats .value{
   font-size:22px;
+  font-family: system-ui;
   font-weight: 500;
 }
 .card-stats .value sup{
   font-size:12px;
+  font-family: system-ui;
 }
 .card-stats .type{
   font-size:11px;
   font-weight: 300;
+  font-family: system-ui;
   text-transform: uppercase;
 }
 .card:hover {
@@ -412,7 +428,7 @@ border: 2px;
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: "Oswald", sans-serif;
+	  font-family: system-ui;
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	}
 
@@ -424,7 +440,7 @@ border: 2px;
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: "Oswald", sans-serif;
+	  font-family: system-ui;
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://s1.cdn.autoevolution.com/images/news/2021-bmw-330e-plug-in-costs-3800-more-than-330i-142190-7.jpg");
 	}
@@ -437,7 +453,7 @@ border: 2px;
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: "Oswald", sans-serif;
+	  font-family: system-ui;
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
 	}
@@ -450,7 +466,7 @@ border: 2px;
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: "Oswald", sans-serif;
+	  font-family: system-ui;
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
 	}
@@ -463,7 +479,7 @@ border: 2px;
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: "Oswald", sans-serif;
+	  font-family: system-ui;
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 	  background-image: url("https://www.genesisofpreston.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Genesis/2021/G70/images/2021-Genesis-G70-01.jpg");
 	}
@@ -514,7 +530,7 @@ border: 2px;
 	  border-radius: 0;
 	  color: black;
 	  letter-spacing: 0.05rem;
-	  font-family: "Oswald", sans-serif;
+	  font-family: system-ui;
 	  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
 
 	}
@@ -524,13 +540,14 @@ border: 2px;
 	}
 	.Gcard .txt h1 {
 	  font-size: 1.5rem;
+    font-family: system-ui;
 	  font-weight: 300;
 	  text-transform: uppercase;
 	  border-bottom: none;
 	}
 	.Gcard .txt p {
 	  font-size: 0.7rem;
-	  font-family: "Open Sans", sans-serif;
+	  font-family: system-ui;
 	  letter-spacing: 0rem;
 	  margin-top: 33px;
 	  opacity: 0;
@@ -544,6 +561,7 @@ border: 2px;
 	  position: relative;
 	  bottom: -0.5rem;
 	  text-transform: uppercase;
+    font-family: system-ui;
 	}
 	.Gcard a:after {
 	  content: "";
@@ -572,6 +590,7 @@ border: 2px;
 	  right: -50%;
 	  top: 60%;
 	  font-size: 12rem;
+    font-family: system-ui;
 	  line-height: 0;
 	  opacity: 0.2;
 	  color: white;
@@ -579,7 +598,7 @@ border: 2px;
 	}
 
 	.msg{
-
+    font-family: system-ui;
 		font-size: x-large;
 		padding: 10px;
 	}
@@ -592,6 +611,7 @@ border: 2px;
 }
 .aboutTxt {
     text-align: center;
+    font-family: system-ui;
     color: gray;
     padding: 70px;
 
@@ -609,11 +629,13 @@ border: 2px;
   padding: 15px;
   color: #ffffff;
   text-align: center;
+  font-family: system-ui;
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .title {
+    font-family: system-ui;
     font-size: 22px;
     color: #2c2c2c
 }
@@ -622,6 +644,7 @@ border: 2px;
     color: #212529;
     font-weight: 300;
     font-size: 1.1em;
+    font-family: system-ui;
     line-height: 1.45em;
     width: 70%;
     margin: 0 auto
@@ -629,7 +652,8 @@ border: 2px;
 
 @media (max-width: 630px) {
     .title {
-        font-size: 18px
+        font-size: 18px;
+        font-family: system-ui;
     }
 }
 
@@ -638,7 +662,7 @@ border: 2px;
 	border-radius: 18px;
     background: white;
     box-shadow: 5px 5px 15px rgb(220, 218, 218);
-    font-family: roboto, sans-serif;
+    font-family: system-ui;
     text-align: center;
     transition: 0.5s ease;
     cursor: pointer;
@@ -663,6 +687,7 @@ border: 2px;
 /*.Abtcard {
     display: flex;
     text-align: center;
+    font-family: system-ui;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -671,6 +696,7 @@ border: 2px;
 .cardImgContainer{
 	padding-top: 20px;
     text-align: center;
+    font-family: system-ui;
 }
 
 .goal{
@@ -685,14 +711,16 @@ border: 2px;
 }*/
 .meetTheTeam{
 	padding: 30px;
-	font-style: oblique;
+	font-family: system-ui;
 }
 .infoTxt{
 	padding: 40px;
 
 	font-size: x-large;
+  font-family: system-ui;
 }
 .abtTxt{
+  font-family: system-ui;
 	text-align: center;
 	font-size: x-large;
 	font-weight: bolder;
@@ -728,7 +756,9 @@ border: 2px;
     position: absolute;
     color: #63b563;
     transform: translate(-52%, 75%);
+    font-family: system-ui;
     font-size: 40px
+
 }
 
 .card_title {
@@ -738,7 +768,7 @@ border: 2px;
     color: #17B5F1;
     transition: color .2s;
     border-bottom: inset;
-    font-family: sans-serif;
+    font-family: system-ui;
     padding: 20px;
 }
 
@@ -772,6 +802,7 @@ border: 2px;
 .card_body {
     color: #8c9490;
     font-size: 16px;
+    font-family: system-ui;
     padding: 0 5px;
     line-height: 1.5;
     word-spacing: 4px
@@ -786,17 +817,18 @@ border: 2px;
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: system-ui;
 }*/
 
 .wrapper{
- /*position: absolute;
+  /*position: absolute;
   top: 80%;
   left: 80%;
-  transform: translate(-50%,-50%);*/
+  transform: translate(-50%,-50%)*/
   /*max-width: 350px;*/
-  width: 100%;
+  
   background: #17B5F1;
+  width: 100%;
   padding: 50px;
   border-radius: 5px;
   /*box-shadow: 4px 4px 2px rgba(254,236,164,1);*/
@@ -805,6 +837,7 @@ border: 2px;
 
 
 .wrapper h2{
+  font-family: system-ui;
   text-align: center;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -828,15 +861,18 @@ border: 2px;
   height: 80px;
 }
 .formContact{
+  font-family: system-ui;
   text-align: center;
 }
 /*
 .contactSubmit{
   padding: 4px 8px;
   text-align: center;
+  font-family: system-ui;
 }
 .contactSubmit input{
   font-size: 20px;
+  font-family: system-ui;
   font-weight: bold;
   background-color: #FC8C78;
   padding: 10px;
@@ -845,17 +881,21 @@ border: 2px;
   margin: auto;*/
 
 .contactUs{
+font-family: system-ui;
 text-align: center;
 padding-top: 10px;
 }
 .btnClass{
     font-size: 24px;
+    font-family: system-ui;
     background: #FC8C78;
+    color: white;
 }
 .error_message{
   margin-bottom: 20px;
   background: #FE8B8E;
   padding: 0;
+  font-family: system-ui;
   text-align: center;
   font-size: 14px;
   transition: all 0.5s ease;
@@ -864,6 +904,7 @@ padding-top: 10px;
 
 }
 .wrapper h4{
+  font-family: system-ui;
   text-align: center;
 }
 
@@ -872,10 +913,11 @@ padding-top: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 50px;*/
+    font-family: system-ui;
     font-size: 18px;
 }
 .figWrapper figure{
-
+  font-family: system-ui;
   text-align: center;
 
 }
@@ -894,6 +936,7 @@ padding-top: 10px;
     .figWrapper{
         ;
         padding-top: 50px;
+        font-family: system-ui;
         text-align: center;
         /*padding-top: 50px;
         text-align: right;*/
@@ -902,6 +945,7 @@ padding-top: 10px;
         margin: 0 auto;
         font-size: 18px;
         text-align: center;
+        font-family: system-ui;
 
         max-width: 365px;
 
@@ -912,20 +956,23 @@ padding-top: 10px;
 }
 .icons{
 	color: white;
+  font-family: system-ui;
 	font-size: xx-large;
 }
 
 .contactCard{
-	background-image: url("../../assets/gmc.png");
-	background-repeat: no-repeat;
-	  background-color: #33b5e5;
-	 background-blend-mode: soft-light;
-	  color: #ffffff;
-	  text-align: center;
-	  font-size: 14px;
-	  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	/*background-image: url("../../assets/gmc.png");*/
+	/*background-repeat: no-repeat;
+	background-color: #33b5e5;
+	background-blend-mode: soft-light;*/
+	color: #000000;
+  font-family: system-ui;
+	text-align: center;
+	font-size: 14px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .contactCard .figWrapper figure{
+    font-family: system-ui;
     max-width: initial;
     text-align: left;
     margin-top: 40px;
@@ -933,7 +980,7 @@ padding-top: 10px;
 
 
 /*Responsive*/
-@media all and (min-width: 576px){
+@media all and (min-width: 768px){
     .contactCard .figWrapper figure{
         padding: 0 20px;
         margin-top: 0;
@@ -943,7 +990,8 @@ padding-top: 10px;
 /*----------*/
 
 .caption{
-    font-size: 24px;
+    font-size: 20px;
+    font-family: system-ui;
 /*	font-variant-caps: all-small-caps;
 	font-size: xxx-large;*/
     font-weight: 500;
@@ -962,15 +1010,18 @@ padding-top: 10px;
 }*/
 /*.questionnaire h2 {
     text-align: center;
+    font-family: system-ui;
     padding: 20px 0;
 }*/
 .questionnaire h3 {
   margin: 5px 0;
+  font-family: system-ui;
   text-align: left;
 }
 
 
 .questionnaire p{
+  font-family: system-ui;
   text-align: center;
   padding-top: 10px;
 }
@@ -986,6 +1037,7 @@ padding-top: 10px;
   margin: 5px 10px;
 }
 .questionnaire button {
+  font-family: system-ui;
   font-size: 18px;
   padding: 10px;
   margin: 20px 0;
@@ -1005,9 +1057,11 @@ padding-top: 10px;
   background: #EEE;
   padding: 10px;
   text-align: center;
+  font-family: system-ui;
 }
 .resultText{
   text-align: center;
+  font-family: system-ui;
   font-weight: bold;
   position: relative;
   margin: auto;
@@ -1015,6 +1069,7 @@ padding-top: 10px;
   padding-bottom: 40px;
 }
 .personalityText{
+    font-family: system-ui;
     text-align: center;
     font-weight: bold;
     padding: 40px;
@@ -1024,6 +1079,7 @@ padding-top: 10px;
 
 }
 .carInfoWrapper{
+    font-family: system-ui;
     text-align: center;
     font-weight: bold;
     position: relative;
@@ -1046,6 +1102,7 @@ padding-top: 10px;
 
 .quizWrapper{
     max-width: initial;
+    background: white;
 }
 .quiz{
     background-image: url("../../assets/horizon.jpg");
@@ -1095,6 +1152,7 @@ padding-top: 10px;
         ;
         padding-top: 50px;
         text-align: center;
+        font-family: system-ui;
         /*padding-top: 50px;
         text-align: right;*/
     }
@@ -1106,6 +1164,7 @@ padding-top: 10px;
 }
 	@media (max-width: 630px) {
     .title {
+        font-family: system-ui;
         font-size: 18px
     }
 }
