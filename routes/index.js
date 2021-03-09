@@ -592,6 +592,8 @@ router
     })
     .post('/indivCar', sanitizeArr3, async (req,res) => {
         try{
+            var errMsg = 'Something went wrong with your search. Try again.';
+            var path = '/advSearch';
             var ind = 0;
             var pics = [''];
             var promptMsg = '';
@@ -635,7 +637,8 @@ router
             db.collection('vehicles').find(carArray).toArray(function(err, resp){
                 console.log(resp);
                 if(resp.length===0){
-                    promptMsg = 'No exact results.';
+                    errMsg = 'No exact results.';
+                     res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path});
                 } else {
                     let len = resp.length;
                     for(i = 0; i < len ; i++){
@@ -652,9 +655,7 @@ router
             console.log(res.render);
             });
         }catch(error){
-            res.status(500).json({
-                error: error.toString()
-            })
+             res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path});
         }
     })
     
@@ -666,11 +667,13 @@ router
     .post('/thankyou', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
-        const errors = validationResult(req);   
+        const errors = validationResult(req); 
+        var path = '/contact';
+        var errMsg = "Either you submitted an incomplete form, or you submitted with special characters (!@#$%^*()-=+/?,.;'').";  
         //returns error array if input fails check
         if (!errors.isEmpty()) {
 
-            res.render('errPage', {pageMainClass: 'errPage'});
+            res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path});
             /*return res.status(400).json({ errors: errors.array() });*/
         };
         const contactMsg = new ContactForm({
@@ -700,6 +703,8 @@ router
     .post('/carList', async function(req, res, next){
         try{
             //Form data is assigned to variables to be converted into an integer before math 
+            var path = '/questionnaire';
+            var errMsg = 'Something went wrong with your search. Try again.';
             var seatCount = parseInt(req.body.seats);
             var persCount = parseInt(req.body.personality);
             var actCount = parseInt(req.body.activity);
@@ -725,7 +730,7 @@ router
             const errors = validationResult(req);
             //returns error array if input fails check
             if (!errors.isEmpty()) {
-                return res.status(400).json({ errors: errors.array() });
+                res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path})
             };     
             //Choosing the set of representatives to choose from 
             if (req.body.body_style === 'truck'){
@@ -763,6 +768,10 @@ router
             };
             db.collection('vehicles').find({ _id: finalResult}).toArray(function(err, resp){
                 try{
+                    if(resp.length === 0){
+                        res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path});
+                        return;
+                    };
                     resp.pics = picInput;  
                     res.render('carList', {
                         title: "Here's your match!",
@@ -790,17 +799,16 @@ router
             questions.save()
             
             } catch(error){
-            res.status(500).json({
-                    errRes:[errorMsg]
-            });
+                res.render('errPage', {pageMainClass: 'errPage', errInfo: errMsg, path: path});
+            };
                 
-    }
-})
-.get('/errPage', function(req, res){
-  res.render('errPage',
-    {
-        pageMainClass: 'errPage',
-    });
-  });
+    
+    })
+    .get('/errPage', function(req, res){
+      res.render('errPage',
+        {
+            pageMainClass: 'errPage',
+        });
+      });
 module.exports = router;
 

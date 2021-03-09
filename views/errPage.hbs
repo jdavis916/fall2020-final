@@ -1,8 +1,8 @@
 <main class="{{pageMainClass}}">
 	<h1>Oops! Something went wrong...</h1>
 	<div class="p-3 mb-2 bg-danger text-white" style="text-align: center">
-		<span style="text-align: center">Either you submitted an incomplete form, or you submitted with special characters (!@#$%^*()-=+/?,.;'').</span>
-		<form class="errFrm" action="/contact" method="get">
+		<span style="text-align: center">{{errInfo}}</span>
+		<form class="errFrm" action="{{path}}" method="get">
     		<input type="submit" class="btn btn-primary" value="Go Back" name="Submit" id="frm1_submit"></input>
 		</form>
 	</div>
