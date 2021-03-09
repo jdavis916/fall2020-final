@@ -1,0 +1,463 @@
+{
+  "_id": {
+    "$oid": "60469ba88c2944577882a5f8"
+  },
+  "seats": 3,
+  "personality": 9,
+  "activity": 3,
+  "driving": 6,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60469be68c2944577882a5fa"
+  },
+  "seats": 3,
+  "personality": 9,
+  "activity": 3,
+  "driving": 6,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60469c1f8c2944577882a5fc"
+  },
+  "seats": 3,
+  "personality": 9,
+  "activity": 3,
+  "driving": 6,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60469c6d8c2944577882a5fe"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a0b18c2944577882a600"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a0cf8c2944577882a602"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a12f8c2944577882a604"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a13a8c2944577882a606"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a2dc8c2944577882a608"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a2de8c2944577882a60a"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a2de8c2944577882a60c"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a2e58c2944577882a60e"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a3988c2944577882a610"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a3b58c2944577882a612"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a3de8c2944577882a614"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a49a1891a112503e5d7f"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a4b21891a112503e5d81"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a4c51891a112503e5d83"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a51c1891a112503e5d85"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a5371891a112503e5d87"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a54d1891a112503e5d89"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a6711891a112503e5d8b"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a69f1891a112503e5d8d"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a6a91891a112503e5d8f"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a6aa1891a112503e5d91"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a73a1891a112503e5d93"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a76a1891a112503e5d95"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a7831891a112503e5d97"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046a7981891a112503e5d99"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046b4a88760f766e8403a16"
+  },
+  "seats": 2,
+  "personality": 8,
+  "activity": 9,
+  "driving": 12,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046c0c694ace261ec4f61f5"
+  },
+  "seats": 2,
+  "personality": 8,
+  "activity": 9,
+  "driving": 12,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046dd70e2bd863314df416e"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 12,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046de84e2bd863314df4170"
+  },
+  "seats": 3,
+  "personality": 12,
+  "activity": 3,
+  "driving": 12,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046de94e2bd863314df4172"
+  },
+  "seats": 4,
+  "personality": 8,
+  "activity": 3,
+  "driving": 12,
+  "attributes": 15,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046decee2bd863314df4174"
+  },
+  "seats": 1,
+  "personality": 9,
+  "activity": 3,
+  "driving": 6,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046df3ce2bd863314df4176"
+  },
+  "seats": 1,
+  "personality": 13,
+  "activity": 9,
+  "driving": 12,
+  "attributes": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046dfa710a66e20a80b0381"
+  },
+  "seats": 3,
+  "personality": 13,
+  "activity": 12,
+  "driving": 6,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046e0ad10a66e20a80b0383"
+  },
+  "seats": 3,
+  "personality": 13,
+  "activity": 12,
+  "driving": 6,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046e14410a66e20a80b0385"
+  },
+  "seats": 3,
+  "personality": 13,
+  "activity": 12,
+  "driving": 6,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046e29410a66e20a80b0387"
+  },
+  "seats": 3,
+  "personality": 13,
+  "activity": 12,
+  "driving": 6,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6046e4beeb544018c425600d"
+  },
+  "seats": 3,
+  "personality": 13,
+  "activity": 12,
+  "driving": 6,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6047cb273c14216d789346ba"
+  },
+  "seats": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6047cb677ce59915c4aaadc1"
+  },
+  "seats": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6047cd2b13ec3e4aec7b8999"
+  },
+  "seats": 5,
+  "personality": 10,
+  "activity": 6,
+  "driving": 15,
+  "attributes": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6047cd7f13ec3e4aec7b899b"
+  },
+  "seats": 4,
+  "personality": 12,
+  "activity": 6,
+  "driving": 12,
+  "attributes": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6047cdce13ec3e4aec7b899d"
+  },
+  "seats": 1,
+  "personality": 5,
+  "activity": 6,
+  "driving": 6,
+  "attributes": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6047efb578767a7bc0b65988"
+  },
+  "seats": 5,
+  "personality": 6,
+  "activity": 12,
+  "driving": 3,
+  "attributes": 20,
+  "__v": 0
+}
