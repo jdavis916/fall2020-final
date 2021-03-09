@@ -935,8 +935,8 @@ padding-top: 10px;
   text-align: center;
   font-weight: bold;
   position: relative;
-  margin: auto;
-  width: 600px;
+  height: auto;
+  width: 100%;
   padding-bottom: 40px;
 }
 .personalityText{
@@ -944,7 +944,6 @@ padding-top: 10px;
     font-weight: bold;
     padding: 40px;
     position: relative;
-    width: 1000px;
     margin: auto;
 
 }
@@ -953,7 +952,6 @@ padding-top: 10px;
     font-weight: bold;
     position: relative;
     margin: 0;
-    width: 600px;
 }
 .menu ul {
     list-style-type: none;

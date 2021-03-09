@@ -655,14 +655,22 @@ router
 
     
     /* POST contact form. */
-    .post('/formModel', sanitizeArr,
+    .post('/thanks', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);   
         //returns error array if input fails check
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
+            var errMsg = res.status(500).json({
+                errRes:[errorMsg]
+            });
+            errObj = {
+                title: 'Error',
+                err: errMsg
+            };
+            res.render('error' , errObj); 
+            /*return res.status(400).json({ errors: errors.array() });*/
+        };
         const contactMsg = new ContactForm({
             _id: mongoose.Types.ObjectId(),
             Name: req.body.firstName,
@@ -673,14 +681,19 @@ router
         });
         contactMsg.save()
         .then(result => {   
-            res.status(200).json({
+            res.render('/thanks', ).json({
                 doc: 'Thank you for your feedback. A representative will contact you shortly.'
             });
         })
         .catch(err => {
-            res.status(500).json({
+            var errMsg = res.status(500).json({
                 errRes:[errorMsg]
             });
+            errObj = {
+                title: 'Error',
+                err: errMsg
+            };
+            res.render('error' , errObj); 
             console.log(err);
         });
     })
@@ -759,7 +772,8 @@ router
                         response : resp,
                         prompt: prompt,
                         resMsg: flavorText,
-                        /*pic: picInput */
+                        pic: picInput 
+                        /*pic: 'fordExpedition2013.png'*/
                     });
                     console.log(picInput);
                 } catch (err){
@@ -784,6 +798,9 @@ router
             });
                 
     }
+})
+.get('/error', function(req, res){
+  res.send('what???', 404);
 });
 
 //console.log(getQuestionFour().subArr[1].Title)
