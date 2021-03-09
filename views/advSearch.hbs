@@ -1,10 +1,9 @@
 <main class="{{pageMainClass}}">
 		<h1>{{title}}</h1>
 		<h2>{{msg}}</h2>
-
     <form action='/indivCar' method='POST' class="formAdvSearch">
 <!-- /.container -->
- <div class="formWrapper bgcolor">
+ <div class="formWrapper">
 <!-- /.row -->
    <div class="row pad1">
      <div class="col-12 offset-md-2 col-md-4">
@@ -12,7 +11,7 @@
 
   <label class="colortext">Brand</label>
   <div aria-labelledby="dropdownMenuButton">
-     <select class="btn-outline dropdown-toggle bg-white" name="brands">
+     <select class="dropdown-toggle btn-outline default" name="brands">
          <option value=""></option>
          {{#each brands}}
             <option value="{{this}}">{{this}}</option>
@@ -105,7 +104,7 @@
    <div class="pad1 txtCenter">
 	   <div class="">
 
-      <a class="nav-link" href="/carList"><input class="mt-n1 btnSearchSubmit" type="submit" value="Submit"></a>
+      <a class="nav-link" href="/carList"><input class="btnSubmit1" type="submit" value="Submit"></a>
      </div>
    </div>
 
