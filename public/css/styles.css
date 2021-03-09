@@ -277,9 +277,14 @@ border: 2px;
   text-align: center;
   transition: 0.5s ease;
   cursor: pointer;
-  margin:30px;
+  margin:30px 0;
   inline-size:fit-content;
 
+}
+@media all and (min-width: 576px){
+    .card{
+        margin: 30px;
+    }
 }
 .card-image {
   grid-area: image;
@@ -821,6 +826,13 @@ padding-top: 10px;
     margin-bottom: 10px;
 }
 
+.errinfo {
+  font-weight: bold;
+}
+.errFrm{
+  text-align: center;
+  margin: 0 auto;
+}
 /*Responsive*/
 @media all and (min-width: 420px) and (max-width: 767px) {
     .contactUs article{

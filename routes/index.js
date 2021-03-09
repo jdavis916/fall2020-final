@@ -582,6 +582,14 @@ router
                 msg: 'Browse our selection of automobiles...'
             });
     })
+
+    .get('/thankyou', function(req, res, next) {
+        res.render('thankyou', 
+            { 
+                pageMainClass: 'thankYou',
+                title: 'Thank you for your feedback!',
+            });
+    })
     .post('/indivCar', sanitizeArr3, async (req,res) => {
         try{
             var ind = 0;
@@ -655,20 +663,14 @@ router
 
     
     /* POST contact form. */
-    .post('/thanks', sanitizeArr,
+    .post('/thankyou', sanitizeArr,
         (req, res, next) =>{
         console.log(req.body);
         const errors = validationResult(req);   
         //returns error array if input fails check
         if (!errors.isEmpty()) {
-            var errMsg = res.status(500).json({
-                errRes:[errorMsg]
-            });
-            errObj = {
-                title: 'Error',
-                err: errMsg
-            };
-            res.render('error' , errObj); 
+
+            res.render('errPage', {pageMainClass: 'errPage'}); 
             /*return res.status(400).json({ errors: errors.array() });*/
         };
         const contactMsg = new ContactForm({
@@ -681,19 +683,14 @@ router
         });
         contactMsg.save()
         .then(result => {   
-            res.render('/thanks', ).json({
-                doc: 'Thank you for your feedback. A representative will contact you shortly.'
-            });
+            res.render('thankyou', { 
+                pageMainClass: 'thankYou',
+                title: 'Thank you for your feedback!',
+            }); 
+               
         })
         .catch(err => {
-            var errMsg = res.status(500).json({
-                errRes:[errorMsg]
-            });
-            errObj = {
-                title: 'Error',
-                err: errMsg
-            };
-            res.render('error' , errObj); 
+            res.render('errPage', {pageMainClass: 'errPage'}); 
             console.log(err);
         });
     })
@@ -799,10 +796,11 @@ router
                 
     }
 })
-.get('/error', function(req, res){
-  res.send('what???', 404);
-});
-
-//console.log(getQuestionFour().subArr[1].Title)
+.get('/errPage', function(req, res){
+  res.render('errPage',
+    {
+        pageMainClass: 'errPage',
+    });
+  });
 module.exports = router;
 
