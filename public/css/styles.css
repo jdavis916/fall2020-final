@@ -250,9 +250,8 @@ h2, h3 {
 
   .colortext {
     padding-top: 1rem;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+    color: black;
+    font-size: 17px;
 
   }
 
@@ -260,6 +259,7 @@ h2, h3 {
    width: 200px;
   height: 50px;
       padding: 6px 12px;
+  border-radius: 8px;
   }
 
   .btnSearchSubmit {
@@ -802,7 +802,6 @@ h2, h3 {
   transform: translate(-50%,-50%);*/
   /*max-width: 350px;*/
   width: 100%;
-  background: #17B5F1;
   padding: 50px;
   border-radius: 5px;
   /*box-shadow: 4px 4px 2px rgba(254,236,164,1);*/
