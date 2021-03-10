@@ -19,6 +19,7 @@ main h1{
     border-bottom: 4px solid #FC8C78;
     margin: 40px 0;
     text-align: center;
+    padding-bottom: 35px;
 }
 
 /* Responsive*/
