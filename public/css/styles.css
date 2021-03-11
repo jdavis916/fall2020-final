@@ -42,6 +42,7 @@ footer p{
 
 .homeTxt{
 	font-weight:400;
+ 
 }
 
 /*main{
@@ -101,6 +102,9 @@ a {
   border-bottom: 3px solid #333;
 }
 
+/*change btn color when hovering over it */
+.btn-outline:hover, .btn-outline:active {background-color: red;}
+
 /* For HOMEPAGE */
 
 /* dropdown buttons */
@@ -131,6 +135,10 @@ a {
     padding-bottom: 15rem;
   }
 
+  .pad3 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 .dropbtn {
   background-color: #FC8C78;
   color: black;
@@ -284,7 +292,7 @@ h2, h3 {
   height: 50px;
       padding: 6px 12px;
     font-size: 17px;
-      border-radius: 8px;
+      border-radius: 5px;
   }
 
   .btnSearchSubmit {
