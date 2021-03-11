@@ -21,12 +21,33 @@ form section label{
   display: inline;
 }
 main h1{
-	  font-family: sans-serif;
+    font-family: sans-serif;
     font-size: 32px;
     border-bottom: 4px solid #FC8C78;
     margin: 40px 0;
     text-align: center;
     padding-bottom: 35px;
+}
+
+h2{
+    font-size: 24px;
+}
+h2.goal{
+    font-family: sans-serif;
+    font-size: 32px;
+    border-bottom: 4px solid #FC8C78;
+    margin: 40px 0 10px 0;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.goalTxt{
+
+}
+/* header text */
+h2, h3 {
+    text-align: center;
+    /*font-family: system-ui;*/
+    /*font-weight: 700;*/
 }
 
 /* Responsive*/
@@ -193,12 +214,7 @@ a {
 
 /* find your next match header text */
 
-/* about us header text */
-h2, h3 {
-	text-align: center;
-	/*font-family: system-ui;*/
-    font-weight: 700;
-}
+
 
 /* button */
 .button {
@@ -646,11 +662,12 @@ h2, h3 {
 	}
 /*About page*/
 .menu {
-    width: 44px;
+    /*width: 44px;*/
     position: relative;
-    top: -10px;
-    height: 3px;
+    /*top: -10px;*/
+    /*height: 3px;*/
 }
+
 .CompanyTxt {
     text-align: center;
     /*font-family: system-ui;*/
@@ -679,22 +696,31 @@ h2, h3 {
 .goalTxt{
 	color: white;
 	filter: drop-shadow(2px 4px 6px black);
-	font:small-caption;
+	font-size: 14px;
 }
 .aside {
   background-color: #33b5e5;
-  padding: 15px;
-  color: #ffffff;
+  /*padding: 15px;*/
+  color: #FFFFFF;
   text-align: center;
   /*font-family: system-ui;*/
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+.right .aside h2{
+    margin-top: 0;
+}
+
+.right .aside h2:not(:first-of-type){
+    margin-top: 15px;
+}
+
+
 .title {
     /*font-family: system-ui;*/
     font-size: 22px;
-    color: #2c2c2c
+    color: #2C2C2C;
 }
 
 .desc {
@@ -998,6 +1024,13 @@ padding-top: 10px;
     }
 
 }
+@media all and (min-width: 600px) and (max-width: 767px) {
+    .right {
+        padding: 0;
+    }
+
+}
+
 @media all and (min-width: 768px) {
     .figWrapper{
         ;
@@ -1018,6 +1051,9 @@ padding-top: 10px;
     }
     .figWrapper figure figcaption{
         margin-bottom: 15px;
+    }
+    .goalTxt{
+        font-size: 18px;
     }
 }
 .icons{
@@ -1217,7 +1253,7 @@ padding-top: 10px;
 }
 	  .formWrapper {
     	max-width: fit-content;
-    	 padding: 0px;
+    	 padding: 0;
     	border-radius: 5px;
 		}
 
@@ -1227,14 +1263,28 @@ padding-top: 10px;
 
     }
 
-    /* Small Devices, Tablets */
-    @media only screen and (max-width : 768px) {
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .goalContainer{
+        /*background-image: none;*/
+        padding: 0;
+    }
 
+}
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        .menu {
+            width: inherit;
+            position: relative;
+            /*top: -10px;*/
+            /*height: 3px;*/
+        }
 
     }
 
     /* Medium Devices, Desktops */
-    @media only screen and (max-width : 992px) {
+    @media only screen and (min-width : 992px) {
     	.abtContainer{
     		display: flex;
     		flex-direction: column;
@@ -1265,9 +1315,9 @@ padding-top: 10px;
     }
 }
 	@media (max-width: 494px) {
-    .row {
+    /*.row {
         flex-direction: column
-    }
+    }*/
 }
 	@media (max-width: 630px) {
     .title {
@@ -1283,20 +1333,6 @@ padding-top: 10px;
     }
   }
 
-  // Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
 
 @media only screen and (max-width: 767px) {
 
@@ -1304,41 +1340,28 @@ padding-top: 10px;
 
 
 /* Create four equal columns */
-.col-6, .col-3 {
+/*.col-6, .col-3 {
   flex: 25%;
   padding: 20px;
-}
+}*/
 
 /* On screens that are 992px wide or less, go from four columns to two columns */
 @media screen and (max-width: 992px) {
 
 }
 
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-   .goalContainer{
-    background-image: none;
-    padding: 0px;
-  }
-
-  .menu {
-    width: inherit;
-    position: relative;
-    top: -10px;
-    height: 3px;
- }
-
-}
 
 
-.row::after {
+
+/*.row::after {
   content: "";
   clear: both;
   display: block;
-}
+}*/
 
 
 
+/*
 .col-3{
 	max-width: none;
-}
+}*/
