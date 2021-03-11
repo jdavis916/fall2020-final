@@ -67,6 +67,7 @@ footer p{
 
 .homeTxt{
 	font-weight:400;
+ 
 }
 
 /*main{
@@ -126,6 +127,27 @@ a {
   border-bottom: 3px solid #333;
 }
 
+ .btnOrange {
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0;
+  color: white;
+  background-color: #FC8C78;
+  border: 0;
+  border-radius: 8px;
+  border-bottom: 3px solid #333;
+}
+/*Change btn color when hovering over it */
+
+/*For dropdown on AdvSearch*/
+.btn-outline:hover, .btn-outline:active {background-color: #F8F8F8;}
+
+/*Submit btn*/
+.btnSubmit1:hover, .btnSubmit1:active {background-color: #15a6de;}
+
+/*Orange btn*/
+.btnOrange:hover, .btnOrange:active {background-color: #e17d6b;}
+.btnReset:hover, .btnReset:active {background-color: #e17d6b;}
 /* For HOMEPAGE */
 
 /* dropdown buttons */
@@ -167,6 +189,10 @@ a {
     padding-bottom: 15rem;
   }
 
+  .pad3 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 .dropbtn {
   background-color: #FC8C78;
   color: black;
@@ -315,7 +341,7 @@ a {
   height: 50px;
       padding: 6px 12px;
     font-size: 17px;
-      border-radius: 8px;
+      border-radius: 5px;
   }
 
   .btnSearchSubmit {
@@ -1154,7 +1180,7 @@ padding-top: 10px;
   border-bottom: 3px solid #333;
 }
 .questionnaire .btnSubmit {
-  background: #17B5F1;
+
 }
 .questionnaire .btnReset {
   background: #FC8C78
