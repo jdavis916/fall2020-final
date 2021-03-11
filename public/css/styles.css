@@ -3,6 +3,10 @@ body {
   background-color: #FFFFFF;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /*Header and footer*/
 .bgcolor {
     background-color: #17B5F1;
@@ -126,6 +130,14 @@ a {
       min-height:200px;
   }
 
+ @media (min-width: 768px){
+	.navbar-collapse.collapse {
+    display: none;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+ }
+}
   .pad2 {
     padding-bottom: 15rem;
   }
@@ -635,7 +647,7 @@ h2, h3 {
     top: -10px;
     height: 3px;
 }
-.aboutTxt {
+.CompanyTxt {
     text-align: center;
     /*font-family: system-ui;*/
     color: gray;
@@ -645,11 +657,26 @@ h2, h3 {
 
 }
 
-.goalWrapper{
+
+.goalContainer{
 	padding: 60px;
 	background-image: url("../../assets/tesla.png");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+
 }
 
+.goalInner{
+	filter:  drop-shadow(2px 4px 6px black);
+}
+
+.goalTxt{
+	color: white;
+	filter: drop-shadow(2px 4px 6px black);
+	font:small-caption;
+}
 .aside {
   background-color: #33b5e5;
   padding: 15px;
@@ -726,8 +753,6 @@ h2, h3 {
 }
 
 .goal{
-	border-bottom: none;
-	background-image: url("../../assets/tesla.png");
     color: #FFF;
 }
 
@@ -749,8 +774,7 @@ h2, h3 {
 .abtTxt{
   /*font-family: system-ui;*/
 	text-align: center;
-	font-size: x-large;
-	font-weight: bolder;
+	font-size:large;
 	padding: 30px;
 
 }
@@ -998,6 +1022,8 @@ padding-top: 10px;
 	font-size: xx-large;
 }
 
+
+
 .contactCard{
 	/*background-image: url("../../assets/gmc.png");*/
 	/*background-repeat: no-repeat;
@@ -1157,7 +1183,32 @@ padding-top: 10px;
     }
 
     /* Extra Small Devices, Phones */
-    @media only screen and (min-width : 480px) {
+    @media only screen and (max-width : 480px) {
+    	.wrapper h2 {
+    	font-size: 16px;
+      }
+
+      .caption {
+   		 font-size: 15px;
+    	/* font-family: system-ui; */
+    	 font-weight: 500;
+	  }
+
+	  .contact{
+    max-width: inherit;
+    width: inherit;
+     padding: 50px;
+    border-radius: 5px;
+}
+	  .formWrapper {
+    	max-width: fit-content;
+    	 padding: 0px;
+    	border-radius: 5px;
+		}
+
+		.goalTxt{
+			font-size: inherit;
+		}
 
     }
 
@@ -1173,6 +1224,7 @@ padding-top: 10px;
     		display: flex;
     		flex-direction: column;
     	}
+    	
     }
 
     /* Large Devices, Wide Screens */
@@ -1215,3 +1267,63 @@ padding-top: 10px;
       display: none;
     }
   }
+
+  // Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+@media only screen and (max-width: 767px) {
+  
+}
+
+
+/* Create four equal columns */
+.col-6, .col-3 {
+  flex: 25%;
+  padding: 20px;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+   .goalContainer{
+    background-image: none;
+    padding: 0px;
+  }
+
+  .menu {
+    width: inherit;
+    position: relative;
+    top: -10px;
+    height: 3px;
+ }
+
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+
+.col-3{
+	max-width: none;
+}
