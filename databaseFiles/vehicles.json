@@ -1,4 +1,4 @@
-{
+[{
   "_id": 1,
   "make": "Chevrolet",
   "model": "Silverado 1500 LT",
@@ -1302,4 +1302,4 @@
   ],
   "seats": 5,
   "doors": 4
-}
+}]
