@@ -775,6 +775,7 @@ router
                     };
                     resp.pics = picInput;  
                     res.render('carList', {
+                        pageMainClass: 'carList',
                         title: "Here's your match!",
                         response : resp,
                         prompt: prompt,
